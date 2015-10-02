@@ -1,0 +1,28 @@
+1. Java 
+Java  is an object-oriented language released in 1995 by Sun Microsystems. C# is influenced by it.
+Java is the number one programming language today for many reasons. First, it is a well-organized
+language with a strong library of reusable software components. Second, programs written in Java can run
+on many different computer architectures and operating systems because of the use of the JVM ( Java virtual machine ).
+
+2. C
+C is a compiled, procedural language developed in 1972 by Dennis Ritchie for use in the UNIX operating system.
+ Although designed to be portable in nature, C programs must be specifically compiled for computers with different
+ architectures and operating systems. This helps make them lightning fast. Although C is a relatively old language,
+ it is still widely used for system programming, writing other programming languages, and in embedded systems.
+
+3. C++
+C++ is a compiled, multi-paradigm language written as an update to C in 1979 by Bjarne Stroustrup and later influenced C#.
+It attempts to be backwards-compatible with C and brings object-orientation, which helps in larger projects. Despite it's age, C++
+is used to create a wide array of applications from games to office suites.
+
+4. PHP
+PHP uses a run-time interpreter, and is a multi-paradigm language originally developed in 1996 by Rasmus Lerdorf to
+create dynamic web pages. At first it was not even a real programming language, but over time it eventually grew into
+a fully featured object-oriented programming language.
+
+5. Python 
+Python is an interpreted, multi-paradigm programming language written by Guido van Rossum in the late 1980's and
+intended for general programming purposes. Python was not named after the snake but actually after the Monty Python
+comedy group. Python is characterized by its use of indentation for readability, and its encouragement for elegant
+code by making developers do similar things in similar ways. Python is used as the main programming choice of both
+Google and Ubuntu. 

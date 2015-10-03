@@ -11,7 +11,7 @@ namespace Problem_2.Line_Numbers
     {
         static void Main(string[] args)
         {
-            StreamReader reader = new StreamReader("textInput.txt");
+            StreamReader reader = new StreamReader("textInput.txt"); // files in bin/debug
             StreamWriter writer = new StreamWriter("textOutput.txt");
             using (reader)
             {

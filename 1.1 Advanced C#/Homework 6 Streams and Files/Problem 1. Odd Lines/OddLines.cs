@@ -11,7 +11,7 @@ namespace Problem_1.Odd_Lines
     {
         static void Main(string[] args)
         {
-            StreamReader reader = new StreamReader("text.txt");
+            StreamReader reader = new StreamReader("text.txt"); // file in bin/debug
             using (reader)
             {
                 int lines = 0;

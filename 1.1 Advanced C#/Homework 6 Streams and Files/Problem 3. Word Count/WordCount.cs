@@ -11,7 +11,7 @@ namespace Problem_3.Word_Count
     {
         static void Main(string[] args)
         {
-            StreamReader wordReader = new StreamReader("words.txt");
+            StreamReader wordReader = new StreamReader("words.txt"); // files in bin/debug
             StreamReader textReader = new StreamReader("text.txt");
             StreamWriter resultWriter = new StreamWriter("result.txt");
             Dictionary<string, string> words = new Dictionary<string, string>();
@@ -34,7 +34,8 @@ namespace Problem_3.Word_Count
                         int wordCount = Convert.ToInt32(words[word.Key]);
                         foreach (var textWord in textWords)
                         {
-                            if (word.Key == textWord)
+                            string neatWord = textWord.Trim(',', '!', '.', '?', '-');
+                            if (word.Key == neatWord)
                             {
                                 wordCount++;
                             }

@@ -1,15 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
-namespace Problem_4.Copy_Binary_File
+class CopyBinaryFile
 {
-    class CopyBinaryFile
+    const string NImagePath = "arnold.jpg"; // files in bin/debug
+    const string DestinationPath = "result.txt";
+
+    static void Main()
     {
-        static void Main(string[] args)
+        using (var source = new FileStream(NImagePath, FileMode.Open))
         {
+            using (var destination = new FileStream(DestinationPath, FileMode.Create))
+            {
+                byte[] buffer = new byte[source.Length];
+                while (true)
+                {
+                    int readBytes = source.Read(buffer, 0, buffer.Length);
+                    if (readBytes == 0)
+                    {
+                        break;
+                    }
+
+                    destination.Write(buffer, 0, readBytes);
+                }
+            }
         }
+
+        // open image file with results
+        System.Diagnostics.Process.Start(@"..\..\result.txt");
     }
 }

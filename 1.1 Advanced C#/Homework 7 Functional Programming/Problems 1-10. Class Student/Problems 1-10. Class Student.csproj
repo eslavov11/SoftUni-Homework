@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C030C77-F2A6-47AC-A542-DA4025C60D4B}</ProjectGuid>
+    <ProjectGuid>{53463066-7D63-4950-A9C0-442432D75BB4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem_4.Students_by_Age</RootNamespace>
-    <AssemblyName>Problem_4.Students_by_Age</AssemblyName>
+    <RootNamespace>Problem_1.Class_Student</RootNamespace>
+    <AssemblyName>Problem_1.Class_Student</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StudentsByAge.cs" />
+    <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

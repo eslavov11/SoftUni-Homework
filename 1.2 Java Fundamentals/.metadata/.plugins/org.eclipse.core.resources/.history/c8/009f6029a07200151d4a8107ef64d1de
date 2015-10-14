@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class RectangleArea {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		int[] rectangleSizes = Integer.parseInt(input.nextLine().split(@" "));
+		int a = rectangleSizes[0];
+		int b = rectangleSizes[1];
+		System.out.println("Rectangle area: " + a*b);
+	}
+}

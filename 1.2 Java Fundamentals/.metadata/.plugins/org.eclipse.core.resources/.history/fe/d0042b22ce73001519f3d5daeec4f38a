@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class GetFirstOddOrEvenElements {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String[] text = input.nextLine().split(" ");
+		String[] commands = input.nextLine().split(" ");
+		
+		int[] numbers = new int[text.length];
+		for (int i = 0; i < numbers.length; i++) {
+			numbers[i] = Integer.parseInt(text[i]);
+		}
+		GetNumbers(numbers, commands[1], commands[2]);
+	}
+	public static void GetNumbers(int[] numbers, String count, String oddOrEven){
+		if (oddOrEven == "odd") {
+			for (int i = 1; i < Integer.parseInt(count); i+=2) {
+				try {
+					System.out.println(numbers[i] + " ";
+				} catch (Exception e) {
+					return;
+				}
+			}
+		} else {
+			for (int i = 0; i < Integer.parseInt(count); i+=2) {
+				try {
+					System.out.println(numbers[i] + " ");
+				} catch (Exception e) {
+					return;
+				}
+			}
+		}
+	}
+}

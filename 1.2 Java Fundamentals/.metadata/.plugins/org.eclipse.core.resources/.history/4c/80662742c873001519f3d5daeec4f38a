@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class OddAndEvenPairs {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String[] text = input.nextLine().split(" ");
+		String wordOne = text[0];
+		String wordTwo = text[1];
+		int smallestLength = Integer.min(wordOne.length(), wordTwo.length());
+		System.out.println(smallestLength);
+		}
+	}

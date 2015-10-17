@@ -1,0 +1,14 @@
+A compiled language is one where the program, once compiled, is expressed in the instructions of the target machine. For example, an addition "+" operation in your source code could be translated directly to the "ADD" instruction in machine code.
+
+An interpreted language is one where the instructions are not directly executed by the target machine, but instead read and executed by some other program (which normally is written in the language of the native machine). For example, the same "+" operation would be recognised by the interpreter at run time, which would then call its own "add(a,b)" function with the appropriate arguments, which would then execute the machine code "ADD" instruction.
+
+The advantages of compiled languages:
+
+Faster performance by directly using the native code of the target machine
+Opportunity to apply quite powerful optimisations during the compile stage
+
+The advantages of interpreted languages:
+
+Easier to implement (writing good compilers is very hard!!)
+No need to run a compilation stage: can execute code directly "on the fly"
+Can be more convenient for dynamic languages

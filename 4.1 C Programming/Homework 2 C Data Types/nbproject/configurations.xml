@@ -13,7 +13,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>BankAccountData.c</itemPath>
-      <itemPath>ComparingFloats.c</itemPath>
       <itemPath>DeclareVariables.c</itemPath>
       <itemPath>EmployeeData.c</itemPath>
       <itemPath>ExchangeVariableValues.c</itemPath>
@@ -47,8 +46,6 @@
       <compileType>
       </compileType>
       <item path="BankAccountData.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ComparingFloats.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="DeclareVariables.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -90,8 +87,6 @@
         </asmTool>
       </compileType>
       <item path="BankAccountData.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ComparingFloats.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="DeclareVariables.c" ex="false" tool="0" flavor2="0">
       </item>

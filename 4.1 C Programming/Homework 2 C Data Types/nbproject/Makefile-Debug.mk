@@ -36,7 +36,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/BankAccountData.o \
-	${OBJECTDIR}/ComparingFloats.o \
 	${OBJECTDIR}/DeclareVariables.o \
 	${OBJECTDIR}/EmployeeData.o \
 	${OBJECTDIR}/ExchangeVariableValues.o \
@@ -76,11 +75,6 @@ ${OBJECTDIR}/BankAccountData.o: BankAccountData.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BankAccountData.o BankAccountData.c
-
-${OBJECTDIR}/ComparingFloats.o: ComparingFloats.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ComparingFloats.o ComparingFloats.c
 
 ${OBJECTDIR}/DeclareVariables.o: DeclareVariables.c 
 	${MKDIR} -p ${OBJECTDIR}

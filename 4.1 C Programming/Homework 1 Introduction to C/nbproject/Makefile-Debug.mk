@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/AgeAfterTenYears.o \
 	${OBJECTDIR}/CurrentDateAndTime.o \
 	${OBJECTDIR}/HelloWorld.o \
 	${OBJECTDIR}/PrintASequence.o \
@@ -68,11 +67,6 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_1_introduction_to_c.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_1_introduction_to_c ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/AgeAfterTenYears.o: AgeAfterTenYears.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AgeAfterTenYears.o AgeAfterTenYears.c
 
 ${OBJECTDIR}/CurrentDateAndTime.o: CurrentDateAndTime.c 
 	${MKDIR} -p ${OBJECTDIR}

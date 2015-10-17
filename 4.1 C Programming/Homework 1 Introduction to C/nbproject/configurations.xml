@@ -12,7 +12,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>AgeAfterTenYears.c</itemPath>
       <itemPath>CurrentDateAndTime.c</itemPath>
       <itemPath>HelloWorld.c</itemPath>
       <itemPath>PrintASequence.c</itemPath>
@@ -43,8 +42,6 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="AgeAfterTenYears.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="CurrentDateAndTime.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="HelloWorld.c" ex="false" tool="0" flavor2="0">
@@ -80,8 +77,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="AgeAfterTenYears.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="CurrentDateAndTime.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="HelloWorld.c" ex="false" tool="0" flavor2="0">

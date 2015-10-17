@@ -1,18 +1,13 @@
-/* 
- * File:   Names.c
- * Author: Edward Slavov
- *
- * Created on 17 Октомври 2015, 21:38
- */
 
 #include <stdio.h>
 #include <stdlib.h>
 
 /*
- * 
  */
 int main(int argc, char** argv) {
-
+    char *firstName = "Geri";
+    char secondName[] = "Nicole";
+    printf("%s %s\n",firstName, secondName);
     return (EXIT_SUCCESS);
 }
 

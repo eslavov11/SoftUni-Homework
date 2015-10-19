@@ -1,18 +1,15 @@
-/* 
- * File:   SumOfNNumbers.c
- * Author: Edward Slavov
- *
- * Created on 17 Октомври 2015, 21:46
- */
-
 #include <stdio.h>
-#include <stdlib.h>
-
-/*
- * 
- */
-int main(int argc, char** argv) {
-
-    return (EXIT_SUCCESS);
+int main()
+{
+    int n, i;
+    double temp = 0 ,sum = 0;
+    scanf("%d", &n);
+    for (i = 0; i < n; i++) 
+    {
+        scanf("%lf", &temp);
+        sum = sum + temp;
+        temp = 0;
+    }
+    printf("%.2f\n", sum);
+    return 0;
 }
-

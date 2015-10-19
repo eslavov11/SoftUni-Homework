@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/CirclePerimeterAndArea.o \
 	${OBJECTDIR}/FibonacciNumbers.o \
 	${OBJECTDIR}/FormattingNumbers.o \
+	${OBJECTDIR}/NumbersFromOneToN.o \
 	${OBJECTDIR}/NumbersInIntervalDevidableByGivenNumber.o \
 	${OBJECTDIR}/PrintCompanyInformation.o \
 	${OBJECTDIR}/SumFromOneToN.o \
@@ -84,6 +85,11 @@ ${OBJECTDIR}/FormattingNumbers.o: FormattingNumbers.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FormattingNumbers.o FormattingNumbers.c
+
+${OBJECTDIR}/NumbersFromOneToN.o: NumbersFromOneToN.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NumbersFromOneToN.o NumbersFromOneToN.c
 
 ${OBJECTDIR}/NumbersInIntervalDevidableByGivenNumber.o: NumbersInIntervalDevidableByGivenNumber.c 
 	${MKDIR} -p ${OBJECTDIR}

@@ -15,6 +15,7 @@
       <itemPath>CirclePerimeterAndArea.c</itemPath>
       <itemPath>FibonacciNumbers.c</itemPath>
       <itemPath>FormattingNumbers.c</itemPath>
+      <itemPath>NumbersFromOneToN.c</itemPath>
       <itemPath>NumbersInIntervalDevidableByGivenNumber.c</itemPath>
       <itemPath>PrintCompanyInformation.c</itemPath>
       <itemPath>SumFromOneToN.c</itemPath>
@@ -49,6 +50,8 @@
       <item path="FibonacciNumbers.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="FormattingNumbers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="NumbersFromOneToN.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="NumbersInIntervalDevidableByGivenNumber.c"
             ex="false"
@@ -91,6 +94,8 @@
       <item path="FibonacciNumbers.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="FormattingNumbers.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="NumbersFromOneToN.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="NumbersInIntervalDevidableByGivenNumber.c"
             ex="false"

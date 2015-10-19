@@ -1,18 +1,17 @@
-/* 
- * File:   SumOfThreeNumbers.c
- * Author: Edward Slavov
- *
- * Created on 17 Октомври 2015, 21:45
- */
-
 #include <stdio.h>
-#include <stdlib.h>
 
 /*
- * 
+ * Write a program that reads 3 real numbers from the console 
+ * and prints their sum.
  */
-int main(int argc, char** argv) {
-
-    return (EXIT_SUCCESS);
+int main() 
+{
+    double a,b,c;
+    scanf("%lf",&a);
+    scanf("%lf",&b);
+    scanf("%lf",&c);
+    double sum = a + b + c;
+    printf("%.2f", sum);
+            
+    return 0;
 }
-

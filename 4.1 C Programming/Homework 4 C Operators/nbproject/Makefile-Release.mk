@@ -46,6 +46,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/PointInsideACircleAndOutsideOfARectangle.o \
 	${OBJECTDIR}/PrimeNumberCheck.o \
 	${OBJECTDIR}/PureDivisor.o \
+	${OBJECTDIR}/Rectangles.o \
 	${OBJECTDIR}/ThirdDigitIsSeven.o \
 	${OBJECTDIR}/Trapezoids.o
 
@@ -128,6 +129,11 @@ ${OBJECTDIR}/PureDivisor.o: PureDivisor.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PureDivisor.o PureDivisor.c
+
+${OBJECTDIR}/Rectangles.o: Rectangles.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Rectangles.o Rectangles.c
 
 ${OBJECTDIR}/ThirdDigitIsSeven.o: ThirdDigitIsSeven.c 
 	${MKDIR} -p ${OBJECTDIR}

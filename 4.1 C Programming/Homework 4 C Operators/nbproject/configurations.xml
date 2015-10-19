@@ -23,6 +23,7 @@
       <itemPath>PointInsideACircleAndOutsideOfARectangle.c</itemPath>
       <itemPath>PrimeNumberCheck.c</itemPath>
       <itemPath>PureDivisor.c</itemPath>
+      <itemPath>Rectangles.c</itemPath>
       <itemPath>ThirdDigitIsSeven.c</itemPath>
       <itemPath>Trapezoids.c</itemPath>
     </logicalFolder>
@@ -73,6 +74,8 @@
       </item>
       <item path="PureDivisor.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="Rectangles.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="ThirdDigitIsSeven.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Trapezoids.c" ex="false" tool="0" flavor2="0">
@@ -122,6 +125,8 @@
       <item path="PrimeNumberCheck.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="PureDivisor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Rectangles.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="ThirdDigitIsSeven.c" ex="false" tool="0" flavor2="0">
       </item>

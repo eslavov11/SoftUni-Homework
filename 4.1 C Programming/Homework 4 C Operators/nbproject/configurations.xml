@@ -20,7 +20,6 @@
       <itemPath>NthDigit.c</itemPath>
       <itemPath>OddOrEvenIntegers.c</itemPath>
       <itemPath>PointInACircle.c</itemPath>
-      <itemPath>PointInsideACircleAndOutsideOfARectangle.c</itemPath>
       <itemPath>PrimeNumberCheck.c</itemPath>
       <itemPath>PureDivisor.c</itemPath>
       <itemPath>Rectangles.c</itemPath>
@@ -64,11 +63,6 @@
       <item path="OddOrEvenIntegers.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="PointInACircle.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="PointInsideACircleAndOutsideOfARectangle.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
       </item>
       <item path="PrimeNumberCheck.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -116,11 +110,6 @@
       <item path="OddOrEvenIntegers.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="PointInACircle.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="PointInsideACircleAndOutsideOfARectangle.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
       </item>
       <item path="PrimeNumberCheck.c" ex="false" tool="0" flavor2="0">
       </item>

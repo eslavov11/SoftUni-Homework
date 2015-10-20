@@ -43,7 +43,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/NthDigit.o \
 	${OBJECTDIR}/OddOrEvenIntegers.o \
 	${OBJECTDIR}/PointInACircle.o \
-	${OBJECTDIR}/PointInsideACircleAndOutsideOfARectangle.o \
 	${OBJECTDIR}/PrimeNumberCheck.o \
 	${OBJECTDIR}/PureDivisor.o \
 	${OBJECTDIR}/Rectangles.o \
@@ -114,11 +113,6 @@ ${OBJECTDIR}/PointInACircle.o: PointInACircle.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PointInACircle.o PointInACircle.c
-
-${OBJECTDIR}/PointInsideACircleAndOutsideOfARectangle.o: PointInsideACircleAndOutsideOfARectangle.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PointInsideACircleAndOutsideOfARectangle.o PointInsideACircleAndOutsideOfARectangle.c
 
 ${OBJECTDIR}/PrimeNumberCheck.o: PrimeNumberCheck.c 
 	${MKDIR} -p ${OBJECTDIR}

@@ -35,18 +35,15 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/BeerTime.o \
 	${OBJECTDIR}/BonusScore.o \
 	${OBJECTDIR}/CheckForAPlayCard.o \
 	${OBJECTDIR}/DigitAsWord.o \
 	${OBJECTDIR}/ExchangeIfGreater.o \
 	${OBJECTDIR}/MultiplicationSign.o \
-	${OBJECTDIR}/NumberAsWords.o \
 	${OBJECTDIR}/PlayWithIntDoubleAndString.o \
 	${OBJECTDIR}/SortThreeNumbersWithNestedIfs.o \
 	${OBJECTDIR}/TheBiggestOfFiveNumbers.o \
-	${OBJECTDIR}/TheBiggestOfThreeNumbers.o \
-	${OBJECTDIR}/ZeroSubset.o
+	${OBJECTDIR}/TheBiggestOfThreeNumbers.o
 
 
 # C Compiler Flags
@@ -73,11 +70,6 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_5_conditional_statements.exe
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_5_conditional_statements ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/BeerTime.o: BeerTime.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BeerTime.o BeerTime.c
-
 ${OBJECTDIR}/BonusScore.o: BonusScore.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -103,11 +95,6 @@ ${OBJECTDIR}/MultiplicationSign.o: MultiplicationSign.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MultiplicationSign.o MultiplicationSign.c
 
-${OBJECTDIR}/NumberAsWords.o: NumberAsWords.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NumberAsWords.o NumberAsWords.c
-
 ${OBJECTDIR}/PlayWithIntDoubleAndString.o: PlayWithIntDoubleAndString.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -127,11 +114,6 @@ ${OBJECTDIR}/TheBiggestOfThreeNumbers.o: TheBiggestOfThreeNumbers.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TheBiggestOfThreeNumbers.o TheBiggestOfThreeNumbers.c
-
-${OBJECTDIR}/ZeroSubset.o: ZeroSubset.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ZeroSubset.o ZeroSubset.c
 
 # Subprojects
 .build-subprojects:

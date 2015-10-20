@@ -12,18 +12,15 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>BeerTime.c</itemPath>
       <itemPath>BonusScore.c</itemPath>
       <itemPath>CheckForAPlayCard.c</itemPath>
       <itemPath>DigitAsWord.c</itemPath>
       <itemPath>ExchangeIfGreater.c</itemPath>
       <itemPath>MultiplicationSign.c</itemPath>
-      <itemPath>NumberAsWords.c</itemPath>
       <itemPath>PlayWithIntDoubleAndString.c</itemPath>
       <itemPath>SortThreeNumbersWithNestedIfs.c</itemPath>
       <itemPath>TheBiggestOfFiveNumbers.c</itemPath>
       <itemPath>TheBiggestOfThreeNumbers.c</itemPath>
-      <itemPath>ZeroSubset.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -47,8 +44,6 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="BeerTime.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="BonusScore.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="CheckForAPlayCard.c" ex="false" tool="0" flavor2="0">
@@ -59,8 +54,6 @@
       </item>
       <item path="MultiplicationSign.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="NumberAsWords.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="PlayWithIntDoubleAndString.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="SortThreeNumbersWithNestedIfs.c" ex="false" tool="0" flavor2="0">
@@ -68,8 +61,6 @@
       <item path="TheBiggestOfFiveNumbers.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="TheBiggestOfThreeNumbers.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ZeroSubset.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -92,8 +83,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="BeerTime.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="BonusScore.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="CheckForAPlayCard.c" ex="false" tool="0" flavor2="0">
@@ -104,8 +93,6 @@
       </item>
       <item path="MultiplicationSign.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="NumberAsWords.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="PlayWithIntDoubleAndString.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="SortThreeNumbersWithNestedIfs.c" ex="false" tool="0" flavor2="0">
@@ -113,8 +100,6 @@
       <item path="TheBiggestOfFiveNumbers.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="TheBiggestOfThreeNumbers.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ZeroSubset.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>

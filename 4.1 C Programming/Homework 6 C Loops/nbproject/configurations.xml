@@ -20,9 +20,6 @@
       <itemPath>14 Decimal to Binary Number.c</itemPath>
       <itemPath>15 Hexadecimal to Decimal Number.c</itemPath>
       <itemPath>16 Decimal to Hexadecimal Number.c</itemPath>
-      <itemPath>17 Calculate GCD.c</itemPath>
-      <itemPath>18 Trailing Zeroes in N.c</itemPath>
-      <itemPath>19 Spiral Matrix.c</itemPath>
       <itemPath>2 NumbersNotDivisableByThreeAndSeven.c</itemPath>
       <itemPath>3 MinMaxSumAndAverageOfNNumbers.c</itemPath>
       <itemPath>4 PrintADeskOf52Cards.c</itemPath>
@@ -69,12 +66,6 @@
       <item path="15 Hexadecimal to Decimal Number.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="16 Decimal to Hexadecimal Number.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="17 Calculate GCD.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="18 Trailing Zeroes in N.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="19 Spiral Matrix.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="2 NumbersNotDivisableByThreeAndSeven.c"
             ex="false"
@@ -131,12 +122,6 @@
       <item path="15 Hexadecimal to Decimal Number.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="16 Decimal to Hexadecimal Number.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="17 Calculate GCD.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="18 Trailing Zeroes in N.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="19 Spiral Matrix.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="2 NumbersNotDivisableByThreeAndSeven.c"
             ex="false"

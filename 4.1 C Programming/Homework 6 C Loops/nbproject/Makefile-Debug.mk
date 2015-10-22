@@ -43,9 +43,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/14\ Decimal\ to\ Binary\ Number.o \
 	${OBJECTDIR}/15\ Hexadecimal\ to\ Decimal\ Number.o \
 	${OBJECTDIR}/16\ Decimal\ to\ Hexadecimal\ Number.o \
-	${OBJECTDIR}/17\ Calculate\ GCD.o \
-	${OBJECTDIR}/18\ Trailing\ Zeroes\ in\ N.o \
-	${OBJECTDIR}/19\ Spiral\ Matrix.o \
 	${OBJECTDIR}/2\ NumbersNotDivisableByThreeAndSeven.o \
 	${OBJECTDIR}/3\ MinMaxSumAndAverageOfNNumbers.o \
 	${OBJECTDIR}/4\ PrintADeskOf52Cards.o \
@@ -127,24 +124,6 @@ ${OBJECTDIR}/16\ Decimal\ to\ Hexadecimal\ Number.o: 16\ Decimal\ to\ Hexadecima
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/16\ Decimal\ to\ Hexadecimal\ Number.o 16\ Decimal\ to\ Hexadecimal\ Number.c
-
-.NO_PARALLEL:${OBJECTDIR}/17\ Calculate\ GCD.o
-${OBJECTDIR}/17\ Calculate\ GCD.o: 17\ Calculate\ GCD.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/17\ Calculate\ GCD.o 17\ Calculate\ GCD.c
-
-.NO_PARALLEL:${OBJECTDIR}/18\ Trailing\ Zeroes\ in\ N.o
-${OBJECTDIR}/18\ Trailing\ Zeroes\ in\ N.o: 18\ Trailing\ Zeroes\ in\ N.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/18\ Trailing\ Zeroes\ in\ N.o 18\ Trailing\ Zeroes\ in\ N.c
-
-.NO_PARALLEL:${OBJECTDIR}/19\ Spiral\ Matrix.o
-${OBJECTDIR}/19\ Spiral\ Matrix.o: 19\ Spiral\ Matrix.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/19\ Spiral\ Matrix.o 19\ Spiral\ Matrix.c
 
 .NO_PARALLEL:${OBJECTDIR}/2\ NumbersNotDivisableByThreeAndSeven.o
 ${OBJECTDIR}/2\ NumbersNotDivisableByThreeAndSeven.o: 2\ NumbersNotDivisableByThreeAndSeven.c 

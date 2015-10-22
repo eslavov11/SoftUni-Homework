@@ -1,32 +1,40 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
+#define BUFFER_SIZE 30
 int main() 
 {
-    int i,j,n,evenProduct=1,oddProduct=1;
-    printf("Numbers count = ");
-    scanf("%d", &n);
-    n=n*2-1;
-    char num[n];
-    printf("Enter numbers: ");
-    fgets(num, n, stdin);
-    for (i = 0, j=0; i < n; i+=2,j++) 
+    char line[BUFFER_SIZE];
+    fgets(line, BUFFER_SIZE, stdin);
+    int oddProduct = 1, evenProduct = 1, isOdd = 1;
+    char* token = strtok(line, " ");
+    while (token != NULL)
     {
-        if (j%2==0)
+        int num = atoi(token);
+        
+        if (isOdd)
         {
-            evenProduct*=(num[i]-48);
+            oddProduct *= num;
         }
-        else oddProduct*=(num[i]-48);
+        else
+        {
+            evenProduct *= num; 
+        }
+        
+        isOdd = !isOdd;
+        
+        token = strtok(NULL, " ");
     }
-    if (oddProduct == evenProduct) 
+    
+    if (oddProduct == evenProduct)
     {
-        printf("yes\nproduct = %d\n", oddProduct);
+        printf("yes\n%d\n", oddProduct);
     }
     else
     {
-        printf("no\nodd_product = %d\neven_product = %d\n", oddProduct, evenProduct);
+        printf("no\nodd_product = %d\neven_product = %d\n",
+                oddProduct, evenProduct);
     }
     
     return 0;
 }
-

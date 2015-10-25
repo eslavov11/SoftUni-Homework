@@ -49,6 +49,6 @@ public class CountCharacterTypes {
 	    catch (IOException ioex) {
 			  System.err.println("Error ");
 			}
-		System.exit(0);
+
 	}
 }

@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>array_manipulations.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,7 +13,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.c</itemPath>
+      <itemPath>Problem 1. Bigger Number.c</itemPath>
+      <itemPath>Problem 2. Last Digit of Number.c</itemPath>
+      <itemPath>Problem 3. Last Occurrence of Character.c</itemPath>
+      <itemPath>Problem 4. Reverse Number.c</itemPath>
+      <itemPath>Problem 5. Array Manipulation.c</itemPath>
+      <itemPath>Problem 5.1 Array Manipulation.c</itemPath>
+      <itemPath>Problem 6. First Larger Than Neighbours.c</itemPath>
+      <itemPath>Problem 7. Recursive String Reverse.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -36,7 +44,32 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="Problem 1. Bigger Number.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 2. Last Digit of Number.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 3. Last Occurrence of Character.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 4. Reverse Number.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 5. Array Manipulation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 5.1 Array Manipulation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 6. First Larger Than Neighbours.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 7. Recursive String Reverse.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="array_manipulations.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -59,7 +92,32 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="Problem 1. Bigger Number.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 2. Last Digit of Number.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 3. Last Occurrence of Character.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 4. Reverse Number.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 5. Array Manipulation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 5.1 Array Manipulation.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 6. First Larger Than Neighbours.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 7. Recursive String Reverse.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="array_manipulations.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

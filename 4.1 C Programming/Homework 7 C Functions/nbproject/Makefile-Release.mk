@@ -35,7 +35,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/Problem\ 1.\ Bigger\ Number.o \
+	${OBJECTDIR}/Problem\ 2.\ Last\ Digit\ of\ Number.o \
+	${OBJECTDIR}/Problem\ 3.\ Last\ Occurrence\ of\ Character.o \
+	${OBJECTDIR}/Problem\ 4.\ Reverse\ Number.o \
+	${OBJECTDIR}/Problem\ 5.\ Array\ Manipulation.o \
+	${OBJECTDIR}/Problem\ 5.1\ Array\ Manipulation.o \
+	${OBJECTDIR}/Problem\ 6.\ First\ Larger\ Than\ Neighbours.o \
+	${OBJECTDIR}/Problem\ 7.\ Recursive\ String\ Reverse.o
 
 
 # C Compiler Flags
@@ -62,10 +69,53 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_7_c_functions.exe: ${OBJECTF
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_7_c_functions ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/main.o: main.c 
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 1.\ Bigger\ Number.o
+${OBJECTDIR}/Problem\ 1.\ Bigger\ Number.o: Problem\ 1.\ Bigger\ Number.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 1.\ Bigger\ Number.o Problem\ 1.\ Bigger\ Number.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 2.\ Last\ Digit\ of\ Number.o
+${OBJECTDIR}/Problem\ 2.\ Last\ Digit\ of\ Number.o: Problem\ 2.\ Last\ Digit\ of\ Number.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 2.\ Last\ Digit\ of\ Number.o Problem\ 2.\ Last\ Digit\ of\ Number.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 3.\ Last\ Occurrence\ of\ Character.o
+${OBJECTDIR}/Problem\ 3.\ Last\ Occurrence\ of\ Character.o: Problem\ 3.\ Last\ Occurrence\ of\ Character.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 3.\ Last\ Occurrence\ of\ Character.o Problem\ 3.\ Last\ Occurrence\ of\ Character.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 4.\ Reverse\ Number.o
+${OBJECTDIR}/Problem\ 4.\ Reverse\ Number.o: Problem\ 4.\ Reverse\ Number.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 4.\ Reverse\ Number.o Problem\ 4.\ Reverse\ Number.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 5.\ Array\ Manipulation.o
+${OBJECTDIR}/Problem\ 5.\ Array\ Manipulation.o: Problem\ 5.\ Array\ Manipulation.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 5.\ Array\ Manipulation.o Problem\ 5.\ Array\ Manipulation.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 5.1\ Array\ Manipulation.o
+${OBJECTDIR}/Problem\ 5.1\ Array\ Manipulation.o: Problem\ 5.1\ Array\ Manipulation.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 5.1\ Array\ Manipulation.o Problem\ 5.1\ Array\ Manipulation.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 6.\ First\ Larger\ Than\ Neighbours.o
+${OBJECTDIR}/Problem\ 6.\ First\ Larger\ Than\ Neighbours.o: Problem\ 6.\ First\ Larger\ Than\ Neighbours.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 6.\ First\ Larger\ Than\ Neighbours.o Problem\ 6.\ First\ Larger\ Than\ Neighbours.c
+
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 7.\ Recursive\ String\ Reverse.o
+${OBJECTDIR}/Problem\ 7.\ Recursive\ String\ Reverse.o: Problem\ 7.\ Recursive\ String\ Reverse.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 7.\ Recursive\ String\ Reverse.o Problem\ 7.\ Recursive\ String\ Reverse.c
 
 # Subprojects
 .build-subprojects:

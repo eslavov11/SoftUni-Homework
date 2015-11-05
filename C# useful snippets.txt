@@ -1,0 +1,108 @@
+how to comment code
+-----
+comment = Ctrl+K, Ctrl+C
+uncomment = Ctrl+K, Ctrl+U
+===============================================
+how to convert to decimal with .00
+-----
+Console.WriteLine("{0:0.00 leva}", demo); //this
+Console.WriteLine("{0:F2} levs", demo); // or that
+===============================================
+how to split a string into list of nums/words
+----
+string input = Console.ReadLine();
+List<string> listIt = input.Split(' ').ToList();
+=================================================
+CREATE NEW STRING FOR THE LOOP (Problem number 4 from
+ 
+exams)
+----
+string stars = new string('*', 10);
+=================================================
+split string into characters
+----
+char[] characters = "this is a test".ToCharArray();
+=================================================
+how to remove white space and lower all letters
+----
+string newText = text.ToLower().Replace(" ", string.Empty);
+=================================================
+how to split number into individual digits
+----
+string inputLine = Console.ReadLine();
+inputLine = inputLine + " " + int.MaxValue;
+string[] inputTokens = inputLine.Split(' ');
+   for (int i = 0; i < inputTokens.Length; i++)
+            {
+                int num = int.Parse(inputTokens[i]);
+            }
+=================================================
+sum the number for example 1254 (working with 4 digits)
+----
+int n = int.Parse(Console.ReadLine());
+int nSum = 0;
+while (n >; 0)
+{
+    nSum += n % 10;
+    n /= 10;
+}
+=================================================
+how to compare time in c#
+----
+TimeSpan time = TimeSpan.Parse(Console.ReadLine());
+TimeSpan start = new TimeSpan(14, 0, 0);
+TimeSpan end = new TimeSpan(18, 59, 0);
+if ((time > start) && (time < end))
+{
+     Console.WriteLine("match found");
+}
+=================================================
+how to create new empty string and append char/s to it
+----
+var string = new StringBuilder();
+string.Append(character[i]);
+=================================================
+convert StringBuilder to String
+----
+string newString = oldString.ToString();
+=================================================
+subtract string with the function
+----
+string leftFirstStr = "test".Substring(0, firstIndex);
+ 
+//outputs: "est"
+=================================================
+how to convert char into ASCII (int)
+----
+int ascii = (int)Convert.ToChar(item)
+=================================================
+how to convert int into hex
+----
+int.ToString("X"); //IMPORTANT "X" HAVE TO STAY, DONT
+ 
+CHANGE IT
+=================================================
+find all possible combinations of a string
+----
+string alphabet = Console.ReadLine();
+int n = int.Parse(Console.ReadLine());
+ 
+var q = alphabet.Select(x =>; x.ToString());
+int size = 5; //enter the length of the string...
+for (int i = 0; i < size - 1; i++)
+{
+    q = q.SelectMany(x =>; alphabet, (x, y) =>; x + y);
+}
+foreach (var item in q)
+{
+    Console.WriteLine(item);
+}
+============================================
+Create new list
+-----
+List<int> decimalArray = new List<int>();
+============================================
+ 
+TIPS:
+using arrays/string in a loop = constant.Length
+using list in a loop = constant.Count

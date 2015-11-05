@@ -1,0 +1,152 @@
+print array in one line
+--------
+Console.WriteLine(string.Join(", ", arr));
+Console.WriteLine("[{0}]", string.Join(", ", arr));
+=================================================
+replace text using regex
+--------
+string text = Regex.Replace(sb.ToString(), @"\s+", " ");
+==================================================
+string to int array
+--------
+int[] arr = Console.ReadLine().Split(' ').Select
+ 
+(int.Parse).ToArray();
+==================================================
+list all elements in array
+--------
+int[] arr = { 1 , 2 , 3 };
+arr.ToList().ForEach(a => Console.WriteLine(a));
+==================================================
+find if a number is float/decimal/double or not
+--------
+if (item % 1 == 0)
+{
+        // it is not
+}
+else
+{
+        // it is
+}
+==================================================
+Remove all numbers that are bigger then `n` in a list
+--------
+list.RemoveAll(p => p <= `n`);
+==================================================
+Select and order by elements in list
+--------
+var results = list.Where(i => i % 2 == 0).OrderBy(p => p);
+==================================================
+Print only half all elements in a list
+---------
+list.ForEach(p => Console.WriteLine(p/2));
+==================================================
+Split and remove all white spaces in a list
+---------
+List<int> numsList = Console.ReadLine().Split(' ').Where(s
+ 
+=> !string.IsNullOrWhiteSpace(s)).Select(p => int.Parse
+ 
+(p)).ToList();
+==================================================
+Split string by multiple character delimiter (new char[]
+ 
+{'.', '?'})
+---------
+List<string> input = Console.ReadLine().Split(new string[]
+ 
+{ " ", "," },
+ 
+StringSplitOptions.RemoveEmptyEntries).ToList();
+==================================================
+Match collection !!!!
+---------
+MatchCollection cleanData = Regex.Matches(input, pattern);
+foreach (Match match in cleanData)
+{
+Console.WriteLine("Area Code: {0}", match.Groups[1].Value);
+}
+===================================================
+Split using regex
+---------
+string pattern = @"\s+";
+string[] substrings = Regex.Split(input, pattern);
+==================================================
+Replace using regex
+---------
+string athlete = Regex.Replace(tokens[0].Trim(), @"\s+", "
+ 
+");
+==================================================
+Sort ints Asc or Desc
+---------
+li.Sort((a, b) => a.CompareTo(b)); // ascending sort
+li.Sort((a, b) => -1* a.CompareTo(b)); // descending sort
+===================================================
+Sort by name and if the name is the same order by age
+ 
+(OrderBy || OrderByDesending)
+---------
+var pets = new [] { new { Name="Rex", Age=3 } };
+var sorted = pets.OrderBy(pet => pet.Name).ThenBy(pet =>
+ 
+pet.Age);
+====================================================
+Output dictionary by order of the values
+---------
+foreach (KeyValuePair<string, int> item in
+ 
+dictionary.OrderByDescending(key => key.Value))
+{
+   Console.WriteLine("{0} - {1}", item.Key, item.Value);
+}
+====================================================
+using LINQ sorting and ordering arrays
+---------
+int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+var result = numbers.Where(num => num < 4 && num % 2 == 0).    
+ 
+OrderBy(num => num).Select(num => num * 2);
+====================================================
+put in a list all posible pairs
+----------
+string[] towns = { "Sofia", "Varna", "Pleven", "Ruse" };
+var pairs = (from firstTown in towns
+        from secondTown in towns
+        select new { First = firstTown, Second =
+ 
+secondTown}).ToList();
+foreach (var townPair in pairs) {
+        Console.WriteLine("{0} : {1}", townPair.First,
+ 
+townPair.Second);
+        }
+====================================================
+LINQ:
+Operations
+-----------
+Where() - Searches by given condition
+First() / FirstOrDefault() - Gets the first element
+Last() / LastOrDefault() - Gets the last element
+Select() / Cast() - Makes projection (conversion) to other
+ 
+type
+OrderBy() / ThenBy() / OrderByDescending() - Orders a
+ 
+collection
+Any() - Checks if any element matches a condition
+All() - Checks if all elements match a condition
+ToArray()/ToList()/AsEnumerable() - Converts the collection
+Reverse() - Reverses a collection
+ 
+Aggregation Methods
+-----------
+Average() - Calculates the average value of a collection
+Count() - Counts the elements in a collection
+Max() - Determines the maximum value of a collection
+Sum() - Sums the value in a collecition
+=====================================================
+How can I detect if this dictionary key exists?
+-----------
+if (dict.ContainsKey(key)) { ... }
+=====================================================

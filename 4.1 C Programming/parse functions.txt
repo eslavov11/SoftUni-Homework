@@ -1,3 +1,10 @@
 atoi(str); // string to integer (!!not checking if str>sizeof(int))
 atol(str); // string to long
 atod(str); // string to double
+
+strtol(str,&remainder,10) // source string, if source = 123a, remainder = a, 10 == number base);
+
+strncpy(copyStr, str, size);
+copyStr[size-1] = '\0'; // copy a string
+
+strncat(str, "Petrov", bufferSize - strlen(str) -1); //(str, "Petrov", bufferSize|na str| - strlen(str) -1 |za \0|);

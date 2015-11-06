@@ -1,0 +1,3 @@
+atoi(str); // string to integer (!!not checking if str>sizeof(int))
+atol(str); // string to long
+atod(str); // string to double

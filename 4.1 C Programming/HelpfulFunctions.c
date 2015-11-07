@@ -130,6 +130,24 @@ char *remove_equal_consecutive_chars(char *input)
     return input;
 }
 
+int countSubstringOccurances(const char *string, const char *substr)
+{
+    int count = 0;
+    int i,j,subIn,inCount;
+    for (i = 0; i < strlen(string); i++) {
+        for (j = i,subIn=0, inCount = 0; j < i + strlen(substr); j++) {
+            if(string[j] == substr[subIn++])
+            {
+                inCount++;
+            }
+        }
+        if(inCount == strlen(substr))
+        {
+            count++;
+        }
+
+    }
+
 int
 has_text_characters (char *string)
 {

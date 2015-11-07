@@ -1,41 +1,29 @@
 #include <stdio.h>
-#include <string.h>
-char * getline(void) {
-    char *line = malloc(100), *linep = line;
-    size_t lenmax = 100, len = lenmax;
-    int c;
-
-    if(line == NULL)
-        return NULL;
-
-    for(;;) {
-        c = fgetc(stdin);
-        if(c == EOF)
-            break;
-
-        if(--len == 0) {
-            len = lenmax;
-            char *linen = realloc(linep, lenmax *= 2);
-
-            if(linen == NULL) {
-                free(linep);
-                return NULL;
-            }
-            line = linen + (line - linep);
-            linep = linen;
-        }
-
-        if((*line++ = c) == '\n')
-            break;
-    }
-    *line = '\0';
-    linep[strlen(linep)-1] = '\0'; // added by edward slavov, because it returns string with /n
-    return linep;
-}
-int main()
+#include <math.h>
+int pow_ints(int a, int b);
+int main() 
 {
-    char *string = getline();
-    strcat(string, "when");
-    printf("%s\n", string);
+    unsigned int n, firstPair, secondPair, p, q, k;
+    scanf("%d", &n);
+    scanf("%d", &p);
+    scanf("%d", &q);
+    scanf("%d", &k);
+    
+    firstPair = (n>>p) & (pow_ints(2,k)-1);
+    secondPair = (n>>q) & (pow_ints(2,k)-1);
+    n &= ~((pow_ints(2,k)-1)<<p);
+    n &= ~((pow_ints(2,k)-1)<<q);
+    n |= firstPair << q;
+    n |= secondPair << p;
+    printf("%d\n", n);
     return 0;
+}
+
+int pow_ints(int a, int b)
+{
+    int i,result=1;
+    for (i = 0; i < b; i++) {
+        result*=a;
+    }
+    return result;
 }

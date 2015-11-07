@@ -1,10 +1,13 @@
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//
-//int main() 
-//{
-//
-//    return 0;
-//}
-//
+#include <stdio.h>
+
+int main() 
+{
+    int n, p, v;
+    scanf("%d", &n);
+    scanf("%d", &p);
+    scanf("%d", &v);
+    v ? (n |= (1 << p)) : (n &= ~(1 << p));
+    printf("%d\n", n);
+    return 0;
+}
+

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Homework 10 C Bit Manipulation
+PROJECTNAME=Homework 11 C Bit Manipulation
 
 # Active Configuration
 DEFAULTCONF=Debug

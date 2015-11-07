@@ -63,11 +63,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_10_c_bit_manipulation.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_bit_manipulation.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_10_c_bit_manipulation.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_bit_manipulation.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_10_c_bit_manipulation ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_bit_manipulation ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 .NO_PARALLEL:${OBJECTDIR}/Bitwise\ Extract\ Bit\ #3.o
 ${OBJECTDIR}/Bitwise\ Extract\ Bit\ #3.o: Bitwise\ Extract\ Bit\ #3.c 
@@ -123,7 +123,7 @@ ${OBJECTDIR}/Problem\ 7.\ Bits\ Exchange\ \(Advanced\).o: Problem\ 7.\ Bits\ Exc
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_10_c_bit_manipulation.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_bit_manipulation.exe
 
 # Subprojects
 .clean-subprojects:

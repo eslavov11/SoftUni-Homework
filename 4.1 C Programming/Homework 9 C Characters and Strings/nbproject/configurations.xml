@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>Problem 01. Reverse String.c</itemPath>
+      <itemPath>Problem 02. String Length.c</itemPath>
+      <itemPath>Problem 03. Series of Letters.c</itemPath>
+      <itemPath>Problem 04. Count Substring Occurrences.c</itemPath>
+      <itemPath>Problem 05. Text Filter.c</itemPath>
+      <itemPath>Problem 06. Palindromes.c</itemPath>
+      <itemPath>Problem 07. Implement a String Copy Function.c</itemPath>
+      <itemPath>Problem 08. Implement a String Concatenation Function.c</itemPath>
+      <itemPath>Problem 09. Implement a Word Count function.c</itemPath>
+      <itemPath>Problem 10. Implement a String Length function.c</itemPath>
+      <itemPath>Problem 11. Implement a String Search function.c</itemPath>
+      <itemPath>Problem 12. Implement a Substring function.c</itemPath>
+      <itemPath>Problem 13. Read Line Function.c</itemPath>
+      <itemPath>Problem 14. Matrix of Palindromes.c</itemPath>
+      <itemPath>Problem 15. Remove Names.c</itemPath>
+      <itemPath>Problem 16. Longest Word in a Text.c</itemPath>
+      <itemPath>Problem 17. XML Parser.c</itemPath>
+      <itemPath>Problem 18. Longest Area in Array.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="Problem 01. Reverse String.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 02. String Length.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 03. Series of Letters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 04. Count Substring Occurrences.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 05. Text Filter.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 06. Palindromes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 07. Implement a String Copy Function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 08. Implement a String Concatenation Function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 09. Implement a Word Count function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 10. Implement a String Length function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 11. Implement a String Search function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 12. Implement a Substring function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 13. Read Line Function.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 14. Matrix of Palindromes.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 15. Remove Names.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 16. Longest Word in a Text.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 17. XML Parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 18. Longest Area in Array.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="Problem 01. Reverse String.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 02. String Length.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 03. Series of Letters.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 04. Count Substring Occurrences.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 05. Text Filter.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 06. Palindromes.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 07. Implement a String Copy Function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 08. Implement a String Concatenation Function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 09. Implement a Word Count function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 10. Implement a String Length function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 11. Implement a String Search function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 12. Implement a Substring function.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 13. Read Line Function.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 14. Matrix of Palindromes.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 15. Remove Names.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 16. Longest Word in a Text.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="Problem 17. XML Parser.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Problem 18. Longest Area in Array.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

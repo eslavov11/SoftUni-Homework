@@ -1,32 +1,34 @@
 
-package nakov;
+    package nakov;
+    import java.util.Map;
+    import java.util.HashMap;
+    import java.util.Scanner;
 
-import java.util.Scanner;
+    public class Nakov {
 
-public class Nakov {
-
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int minutes=0,hours=0;
-        String text = input.nextLine();
-        while (!text.equals("End")) {
-            minutes+=text.charAt(text.length()-1)-48;
-            minutes+=(text.charAt(text.length()-2)-48)*10;
-            String[] in = text.split(":");
-            hours+= Integer.parseInt(in[0]);
-            if (minutes>59) {
-                hours++;
-                minutes-=60;
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            int numbersCount = input.nextInt();
+            boolean found = false;
+            int arr[] = new int[numbersCount];
+            Map<int,int> matcher = new HashMap<int,int>();  
+            for (int i = 0; i < numbersCount; i++) {
+                arr[i] = input.nextInt();
             }
-            text = input.nextLine();
+            for (int i = 0; i < numbersCount; i++) {
+                for (int j = 0; j < numbersCount; j++) {
+                    for (int k = 0; k < numbersCount; k++) {
+
+                        if (arr[i]*arr[i] + arr[j]*arr[j] == arr[k]*arr[k]) {
+                            System.out.println(arr[i] + "*" + arr[i] + " + " + arr[j] + "*" + arr[j] 
+                                            + " = " + arr[k] + "*" + arr[k]);
+                            found=true;
+                        }
+                    }
+                }
+            }
+            if (!found) {
+                System.out.println("No"); 
+            }
         }
-        String finalMinutes;
-        if (minutes<10) {
-            finalMinutes = "0" + minutes;
-        } else {
-            finalMinutes = "" + minutes;
-        }
-        System.out.println(hours + ":" + finalMinutes);
     }
-    
-}

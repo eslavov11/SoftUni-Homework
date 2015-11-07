@@ -4,6 +4,131 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//reads the intire line
+char *read_line()
+{
+    int initialSize = 4;
+    char *readline = malloc(initialSize);
+    int index = 0;
+    char ch = getchar();
+    while (ch != '\n' && ch != EOF)
+    {
+        if (index == initialSize - 1)
+        {
+            char *newReadLine = realloc(readline, initialSize * 2);
+            if (!newReadLine)
+            {
+                printf("Not enough memory!");
+                exit(1);
+            }
+            
+            readline = newReadLine;
+            initialSize *= 2;
+        }
+        
+        *(readline + index) = ch;
+        index++;
+        ch = getchar();
+    }
+    
+    *(readline + index) = '\0';
+    
+    return readline;
+}
+
+//reverses string
+char *string_reverse(char *input)
+{
+    size_t stringLength= strlen(input);
+    char *reversed = calloc(stringLength + 1, sizeof(char));
+    if (!reversed)
+    {
+        printf("Cannot allocate enough memory!");
+        exit(1);
+    }
+    
+    int i, j;
+    for (i = stringLength - 1, j = 0; i >= 0; i--, j++)
+    {
+        reversed[j] = input[i];
+    }
+    
+    reversed[j] = '\0';
+    
+    return reversed;
+}
+
+//pad string right with chars
+char *pad_right(char *input, char paddingChar, int totalStringSize)
+{
+    //doesnt work with big values over 40
+    size_t stringLength= strlen(input);
+    
+    char *cpy = malloc(totalStringSize+1);
+    
+    if(stringLength<totalStringSize)
+    {
+        strcpy(cpy,input);
+        int i;
+        for (i = stringLength; i < totalStringSize; i++) 
+        {
+            cpy[i] = paddingChar;
+        }
+        cpy[totalStringSize] = '\0';
+        strcpy(input,cpy);
+    }
+    
+    return input;
+}
+
+//pad string left with chars
+char *pad_left(char *input, char paddingChar, int totalStringSize)
+{
+    //doesnt work with big values over 40
+    size_t stringLength= strlen(input);
+    
+    char *cpy = malloc(totalStringSize+1);
+    
+    if(stringLength<totalStringSize)
+    {
+        strcpy(cpy,input);
+        int i,j;
+        for (i = 0; i < totalStringSize-stringLength; i++) 
+        {
+            cpy[i] = paddingChar;
+        }
+        for (i = totalStringSize-stringLength,j=0; i < totalStringSize; i++) {
+            cpy[i] = input[j++];
+        }
+
+        cpy[totalStringSize] = '\0';
+        strcpy(input,cpy);
+    }
+    
+    return input;
+}
+
+//removes equal consecutive chars ex. aaabb -> ab
+char *remove_equal_consecutive_chars(char *input)
+{
+    size_t stringLength= strlen(input);
+    
+    char *cpy = malloc(stringLength);
+    cpy[0] = input[0];
+    int i,index=0;
+    for (i = 0; i < stringLength; i++) 
+    {
+        if(input[i] != input[i-1])
+        {
+            cpy[index] = input[i];
+            index++;
+        }
+    }
+    cpy[index] = '\0';
+    strcpy(input,cpy);
+        
+    return input;
+}
 
 int
 has_text_characters (char *string)

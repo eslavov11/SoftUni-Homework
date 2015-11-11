@@ -130,6 +130,15 @@ char *remove_equal_consecutive_chars(char *input)
     return input;
 }
 
+int pow_ints(int a, int b)
+{
+    int i,result=1;
+    for (i = 0; i < b; i++) {
+        result*=a;
+    }
+    return result;
+}
+
 int countSubstringOccurances(const char *string, const char *substr)
 {
     int count = 0;

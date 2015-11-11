@@ -108,6 +108,37 @@ char *pad_left(char *input, char paddingChar, int totalStringSize)
     return input;
 }
 
+
+long long *rotateLeft(long long nums[], long long positions)
+{
+    //not fully tested, rotating bits, works with 64bits signed
+    size_t i;
+    positions = positions % 64;
+    for (i = 0; i < sizeof(nums); i++) 
+    {
+        int mask = pow(2,63-positions)-1;
+        mask = nums[i] & mask;
+        nums[i]<<=positions;
+        nums[i] |= mask>>(positions);
+    }
+
+}
+
+long long *rotateRight(long long nums[], long long positions)
+{
+    //not fully tested, rotating bits, works with 64bits signed
+    size_t i;
+    positions = positions % 64;
+    for (i = 0; i < sizeof(nums); i++) 
+    {
+        int mask = pow(2,positions)-1;
+        mask = nums[i] & mask;
+        nums[i]>>=positions;
+        nums[i] |= mask<<(63-positions);
+    }
+}
+
+
 //removes equal consecutive chars ex. aaabb -> ab
 char *remove_equal_consecutive_chars(char *input)
 {

@@ -116,7 +116,7 @@ long long *rotateLeft(long long nums[], long long positions)
     positions = positions % 64;
     for (i = 0; i < sizeof(nums); i++) 
     {
-        int mask = pow(2,63-positions)-1;
+        long long mask = pow(2,63-positions)-1; // 64 bits mask
         mask = nums[i] & mask;
         nums[i]<<=positions;
         nums[i] |= mask>>(positions);
@@ -131,7 +131,7 @@ long long *rotateRight(long long nums[], long long positions)
     positions = positions % 64;
     for (i = 0; i < sizeof(nums); i++) 
     {
-        int mask = pow(2,positions)-1;
+        long long mask = pow(2,positions)-1; //64 bits
         mask = nums[i] & mask;
         nums[i]>>=positions;
         nums[i] |= mask<<(63-positions);

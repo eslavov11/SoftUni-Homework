@@ -138,6 +138,28 @@ long long *rotateRight(long long nums[], long long positions)
     }
 }
 
+void print_binary(long long number)
+{
+    int bit;
+    for (bit = 64 - 1; bit >= 0; --bit)
+    {
+        if ((number >> bit) & 1)
+        {
+            break;
+        }
+
+        printf("0");
+    }
+
+    while (bit >= 0)
+    {
+        printf("%d", ( (number >> bit) & 1));
+        --bit;
+    }
+
+    printf("\n");
+}
+
 
 //removes equal consecutive chars ex. aaabb -> ab
 char *remove_equal_consecutive_chars(char *input)

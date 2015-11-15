@@ -16,7 +16,7 @@
       <itemPath>Problem 2. Odd Lines.c</itemPath>
       <itemPath>Problem 3. Line Numbers.c</itemPath>
       <itemPath>Problem 4. Copy Binary File.c</itemPath>
-      <itemPath>Problem 5. Slicing File.c</itemPath>
+      <itemPath>Problem 5 Slicing FIles.c</itemPath>
       <itemPath>Problem 6. Fix Subtitles.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -49,7 +49,7 @@
       </item>
       <item path="Problem 4. Copy Binary File.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="Problem 5. Slicing File.c" ex="false" tool="0" flavor2="0">
+      <item path="Problem 5 Slicing FIles.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Problem 6. Fix Subtitles.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -82,7 +82,7 @@
       </item>
       <item path="Problem 4. Copy Binary File.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="Problem 5. Slicing File.c" ex="false" tool="0" flavor2="0">
+      <item path="Problem 5 Slicing FIles.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="Problem 6. Fix Subtitles.c" ex="false" tool="0" flavor2="0">
       </item>

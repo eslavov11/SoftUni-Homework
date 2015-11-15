@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
-CND_ARTIFACT_NAME_Debug=homework_11_c_file_processing
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/homework_11_c_file_processing
+CND_ARTIFACT_NAME_Debug=homework_12_c_file_processing
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/homework_12_c_file_processing
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
-CND_PACKAGE_NAME_Debug=homework11cfileprocessing.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/homework11cfileprocessing.tar
+CND_PACKAGE_NAME_Debug=homework12cfileprocessing.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/homework12cfileprocessing.tar
 # Release configuration
 CND_PLATFORM_Release=MinGW-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
-CND_ARTIFACT_NAME_Release=homework_11_c_file_processing
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/homework_11_c_file_processing
+CND_ARTIFACT_NAME_Release=homework_12_c_file_processing
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/homework_12_c_file_processing
 CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
-CND_PACKAGE_NAME_Release=homework11cfileprocessing.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/homework11cfileprocessing.tar
+CND_PACKAGE_NAME_Release=homework12cfileprocessing.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/homework12cfileprocessing.tar
 #
 # include compiler specific variables
 #

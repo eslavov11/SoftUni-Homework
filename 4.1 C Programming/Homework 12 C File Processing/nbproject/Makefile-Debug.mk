@@ -39,7 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Problem\ 2.\ Odd\ Lines.o \
 	${OBJECTDIR}/Problem\ 3.\ Line\ Numbers.o \
 	${OBJECTDIR}/Problem\ 4.\ Copy\ Binary\ File.o \
-	${OBJECTDIR}/Problem\ 5.\ Slicing\ File.o \
+	${OBJECTDIR}/Problem\ 5\ Slicing\ FIles.o \
 	${OBJECTDIR}/Problem\ 6.\ Fix\ Subtitles.o
 
 
@@ -61,11 +61,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_file_processing.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_12_c_file_processing.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_file_processing.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_12_c_file_processing.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_file_processing ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_12_c_file_processing ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 .NO_PARALLEL:${OBJECTDIR}/Problem\ 1.\ Print\ File\ Contents.o
 ${OBJECTDIR}/Problem\ 1.\ Print\ File\ Contents.o: Problem\ 1.\ Print\ File\ Contents.c 
@@ -91,11 +91,11 @@ ${OBJECTDIR}/Problem\ 4.\ Copy\ Binary\ File.o: Problem\ 4.\ Copy\ Binary\ File.
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 4.\ Copy\ Binary\ File.o Problem\ 4.\ Copy\ Binary\ File.c
 
-.NO_PARALLEL:${OBJECTDIR}/Problem\ 5.\ Slicing\ File.o
-${OBJECTDIR}/Problem\ 5.\ Slicing\ File.o: Problem\ 5.\ Slicing\ File.c 
+.NO_PARALLEL:${OBJECTDIR}/Problem\ 5\ Slicing\ FIles.o
+${OBJECTDIR}/Problem\ 5\ Slicing\ FIles.o: Problem\ 5\ Slicing\ FIles.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 5.\ Slicing\ File.o Problem\ 5.\ Slicing\ File.c
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Problem\ 5\ Slicing\ FIles.o Problem\ 5\ Slicing\ FIles.c
 
 .NO_PARALLEL:${OBJECTDIR}/Problem\ 6.\ Fix\ Subtitles.o
 ${OBJECTDIR}/Problem\ 6.\ Fix\ Subtitles.o: Problem\ 6.\ Fix\ Subtitles.c 
@@ -109,7 +109,7 @@ ${OBJECTDIR}/Problem\ 6.\ Fix\ Subtitles.o: Problem\ 6.\ Fix\ Subtitles.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_11_c_file_processing.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/homework_12_c_file_processing.exe
 
 # Subprojects
 .clean-subprojects:

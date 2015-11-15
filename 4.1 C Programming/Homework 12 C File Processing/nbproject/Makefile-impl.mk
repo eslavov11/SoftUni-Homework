@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Homework 11 C File Processing
+PROJECTNAME=Homework 12 C File Processing
 
 # Active Configuration
 DEFAULTCONF=Debug

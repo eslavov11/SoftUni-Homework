@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P4.Namespaces", "P4.Namespa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P5.HTMLDispatcher", "P5.HTMLDispatcher\P5.HTMLDispatcher.csproj", "{1A5D633C-0BA7-4422-A176-F2E5AF8C642F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P6.BitArray", "P6.BitArray\P6.BitArray.csproj", "{7ACEE2F7-CD97-40D6-8C00-5DECC5DA282C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1A5D633C-0BA7-4422-A176-F2E5AF8C642F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A5D633C-0BA7-4422-A176-F2E5AF8C642F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A5D633C-0BA7-4422-A176-F2E5AF8C642F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ACEE2F7-CD97-40D6-8C00-5DECC5DA282C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ACEE2F7-CD97-40D6-8C00-5DECC5DA282C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ACEE2F7-CD97-40D6-8C00-5DECC5DA282C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ACEE2F7-CD97-40D6-8C00-5DECC5DA282C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

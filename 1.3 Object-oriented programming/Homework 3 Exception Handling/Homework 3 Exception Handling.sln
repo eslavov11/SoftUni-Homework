@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P1.SquareRoot", "P1.SquareRoot\P1.SquareRoot.csproj", "{3A158279-2DC8-4739-9B8C-B0205859A22E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P2.EnterNumbers", "P2.EnterNumbers\P2.EnterNumbers.csproj", "{4BF4CFFC-504D-4C21-B1C0-80839B0C96FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A158279-2DC8-4739-9B8C-B0205859A22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A158279-2DC8-4739-9B8C-B0205859A22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A158279-2DC8-4739-9B8C-B0205859A22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A158279-2DC8-4739-9B8C-B0205859A22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF4CFFC-504D-4C21-B1C0-80839B0C96FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF4CFFC-504D-4C21-B1C0-80839B0C96FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF4CFFC-504D-4C21-B1C0-80839B0C96FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF4CFFC-504D-4C21-B1C0-80839B0C96FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P1.HumanStudentAndWorker
+namespace _03.CompanyHierarchy.Interfaces
 {
-    class Program
+    public interface ICustomer : IPerson
     {
-        static void Main(string[] args)
-        {
-        }
+        decimal NetPurchaseAmount { get; set; }
     }
 }

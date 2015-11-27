@@ -9,15 +9,15 @@ namespace _01.Shapes
 {
     public abstract class BasicShape : IShape
     {
-        public BasicShape(double sideA, double sideB)
+        protected BasicShape(double sideA, double sideB)
         {
             this.SideA = sideA;
             this.SideB = sideB;
         }
 
-        public double SideA { get; private set; }
+        protected double SideA { get; private set; }
 
-        public double SideB { get; private set; }
+        protected double SideB { get; private set; }
 
         public abstract double CalculateArea();
 

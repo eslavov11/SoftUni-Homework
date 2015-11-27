@@ -81,8 +81,13 @@
         protected void ProcessTargetSearch(Character currentCharacter)
         {
             var availableTargets = this.characterList
-                .Where(t => this.IsWithinRange(currentCharacter.X, currentCharacter.Y, t.X, t.Y, currentCharacter.Range))
-                .ToList();
+                .Where(t => this.IsWithinRange(
+                    currentCharacter.X,
+                    currentCharacter.Y, 
+                    t.X,
+                    t.Y,
+                    currentCharacter.Range))
+                    .ToList();
 
             if (availableTargets.Count == 0)
             {

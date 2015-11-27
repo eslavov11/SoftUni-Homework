@@ -1,56 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TheSlum.Interfaces;
-
-namespace TheSlum.GameObjects.Items
+﻿namespace TheSlum
 {
+    using Interfaces;
+
     public abstract class Bonus : Item, ITimeoutable
     {
-        public Bonus(string id) 
-            : base(id)
+        protected Bonus(string id, int healthEffect, int defenseEffect, int attackEffect)
+            : base(id, healthEffect, defenseEffect, attackEffect)
         {
         }
 
-        public int Countdown
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public int Timeout { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public int Countdown { get; set; }
 
-        public bool HasTimedOut
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int Timeout
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public bool HasTimedOut { get; set; }
     }
 }

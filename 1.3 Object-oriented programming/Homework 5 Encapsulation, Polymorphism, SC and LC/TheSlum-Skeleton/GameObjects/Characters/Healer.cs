@@ -15,8 +15,8 @@ namespace TheSlum.Characters
 
         private int defaultHealPoints = 60;
 
-        public Healer(string id, int x, int y, string team) 
-            : base(id, x, y, team, DefaultHealthPoints, DefaultDefencePoints, DefaultRange)
+        public Healer(string id, int x, int y, Team team) 
+            : base(id, x, y, DefaultHealthPoints, DefaultDefencePoints, team, DefaultRange)
         {
         }
 
@@ -31,6 +31,33 @@ namespace TheSlum.Characters
             {
                 this.defaultHealPoints = value;
             }
+        }
+
+        public override Character GetTarget(IEnumerable<Character> targetsList)
+        {
+            return targetsList
+                .Where(x => x.IsAlive)
+                .Where(x => x.Team == this.Team)
+                .Where(x => x.Id != this.Id)
+                .OrderBy(x => x.Id)
+                .FirstOrDefault();
+        }
+
+        public override void AddToInventory(Item item)
+        {
+            this.Inventory.Add(item);
+            this.ApplyItemEffects(item);
+        }
+
+        public override void RemoveFromInventory(Item item)
+        {
+            this.Inventory.Remove(item);
+            this.RemoveItemEffects(item);
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, Healing: {1}", base.ToString(), this.HealingPoints);
         }
     }
 }

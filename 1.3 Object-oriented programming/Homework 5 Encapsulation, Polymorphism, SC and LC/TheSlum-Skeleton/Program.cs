@@ -6,7 +6,7 @@
     {
         public static void Main()
         {
-            Engine engine = new Engine();
+            Engine engine = new GameObjectEngine();
             engine.Run();
         }
     }

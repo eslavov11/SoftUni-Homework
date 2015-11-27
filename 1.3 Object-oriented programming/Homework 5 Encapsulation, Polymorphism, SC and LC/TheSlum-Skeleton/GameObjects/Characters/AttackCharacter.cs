@@ -11,8 +11,8 @@ namespace TheSlum.Characters
     {
         private int attack;
 
-        public AttackCharacter(string id, int x, int y, string team, int health, int defence, int range) 
-            : base(id, x, y, team, health, defence, range)
+        public AttackCharacter(string id, int x, int y, int health, int defence, Team team, int range) 
+            : base(id, x, y, health, defence, team, range)
         {
             this.AttackPoints = attack;
         }

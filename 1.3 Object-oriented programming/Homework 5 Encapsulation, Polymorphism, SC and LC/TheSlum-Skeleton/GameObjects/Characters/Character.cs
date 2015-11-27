@@ -1,78 +1,68 @@
-﻿using System;
-
-namespace TheSlum.Characters
+﻿namespace TheSlum
 {
+    using System;
+    using System.Collections.Generic;
+
     public abstract class Character : GameObject
     {
-        private int health;
-        private int defence;
-        private int range;
-
-        public Character(string id, int x, int y, string team, int health, int defence, int range)
-            : base (id)
+        protected Character(string id, int x, int y, int healthPoints, int defensePoints, Team team, int range)
+            : base(id)
         {
+            this.HealthPoints = healthPoints;
+            this.DefensePoints = defensePoints;
+            this.Team = team;
+            this.IsAlive = true;
             this.X = x;
             this.Y = y;
-            this.Team = team;
-            this.Health = health;
-            this.Defence = defence;
+            this.Inventory = new List<Item>();
             this.Range = range;
         }
-        
+
+        public int HealthPoints { get; set; }
+
+        public int DefensePoints { get; set; }
+
+        public Team Team { get; private set; }
+
+        public List<Item> Inventory { get; private set; }
+
+        public int Range { get; set; }
+
+        public bool IsAlive { get; set; }
+
         public int X { get; set; }
 
         public int Y { get; set; }
 
-        public string Team { get; set; }
+        public abstract Character GetTarget(IEnumerable<Character> targetsList);
 
-        public int Health
+        public abstract void AddToInventory(Item item);
+
+        public abstract void RemoveFromInventory(Item item);
+
+        public override string ToString()
         {
-            get
-            {
-                return this.health;
-            }
-
-            protected set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Invalid input");
-                }
-                this.health = value;
-            }
+            return string.Format(
+                "Name: {0}, Team: {2}, Health: {1}, Defense: {3}",
+                this.Id,
+                this.HealthPoints,
+                this.Team,
+                this.DefensePoints);
         }
 
-        public int Defence
+        protected virtual void ApplyItemEffects(Item item)
         {
-            get
-            {
-                return this.defence;
-            }
-
-            protected set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Invalid input");
-                }
-                this.defence = value;
-            }
+            this.HealthPoints += item.HealthEffect;
+            this.DefensePoints += item.DefenseEffect;
         }
 
-        public int Range
+        protected virtual void RemoveItemEffects(Item item)
         {
-            get
+            this.HealthPoints -= item.HealthEffect;
+            this.DefensePoints -= item.DefenseEffect;
+            if (this.HealthPoints < 0)
             {
-                return this.range;
-            }
-
-            protected set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Invalid input");
-                }
-                this.range = value;
+                this.HealthPoints = 1;
             }
         }
     }

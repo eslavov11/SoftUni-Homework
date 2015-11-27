@@ -1,49 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TheSlum.Interfaces;
-
-namespace TheSlum.GameObjects.Items
+﻿namespace TheSlum
 {
-    public class Item : GameObject
+    public abstract class Item : GameObject
     {
-        private const int HealthEffect = 0;
-        private int defenceEffect;
-        private int attackEffect;
-
-        public Item(string id)
+        protected Item(string id, int healthEffect, int defenseEffect, int attackEffect)
             : base(id)
         {
+            this.HealthEffect = healthEffect;
+            this.DefenseEffect = defenseEffect;
+            this.AttackEffect = attackEffect;
         }
 
-        public int DefenceEffect
-        {
-            get
-            {
-                return this.defenceEffect;
-            }
+        public int HealthEffect { get; set; }
 
-            set
-            {
-                this.defenceEffect = value;
-            }
-        }
+        public int DefenseEffect { get; set; }
 
-        public int AttackEffect
-        {
-            get
-            {
-                return this.attackEffect;
-            }
-
-            set
-            {
-                this.attackEffect = value;
-            }
-        }
-
-
+        public int AttackEffect { get; set; }
     }
 }

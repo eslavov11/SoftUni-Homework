@@ -40,31 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bonus.cs" />
-    <Compile Include="Character.cs" />
-    <Compile Include="GameObjects\Characters\AttackCharacter.cs" />
+    <Compile Include="GameEngine\GameObjectEngine.cs" />
+    <Compile Include="GameObjects\Items\Bonus.cs" />
     <Compile Include="GameObjects\Characters\Character.cs" />
+    <Compile Include="GameObjects\Characters\AttackCharacter.cs" />
     <Compile Include="GameObjects\Characters\Healer.cs" />
     <Compile Include="GameObjects\Characters\Mage.cs" />
     <Compile Include="GameObjects\Characters\Warrior.cs" />
     <Compile Include="GameEngine\Engine.cs" />
-    <Compile Include="GameObject.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\Items\Axe.cs" />
-    <Compile Include="GameObjects\Items\Bonus.cs" />
     <Compile Include="GameObjects\Items\Injection.cs" />
-    <Compile Include="GameObjects\Items\Item.cs" />
     <Compile Include="GameObjects\Items\Pill.cs" />
     <Compile Include="GameObjects\Items\Shield.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IHeal.cs" />
     <Compile Include="Interfaces\ITimeoutable.cs" />
-    <Compile Include="Item.cs" />
+    <Compile Include="GameObjects\Items\Item.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Team.cs" />
+    <Compile Include="GameObjects\Characters\Team.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

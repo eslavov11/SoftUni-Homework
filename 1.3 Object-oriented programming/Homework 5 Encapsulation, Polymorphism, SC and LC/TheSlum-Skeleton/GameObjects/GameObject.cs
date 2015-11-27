@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TheSlum.GameObjects
+﻿namespace TheSlum
 {
     public abstract class GameObject
     {
-        public GameObject(string id)
+        protected GameObject(string id)
         {
             this.Id = id;
         }

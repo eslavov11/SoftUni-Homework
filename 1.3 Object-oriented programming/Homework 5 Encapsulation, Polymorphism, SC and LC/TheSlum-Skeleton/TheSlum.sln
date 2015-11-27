@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheSlum", "TheSlum.csproj", "{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Shapes", "..\01.Shapes\01.Shapes.csproj", "{BBFB4201-4EF0-4CF8-A05E-4033C05FB3C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C6F7F25-2FDB-401F-B1A9-D8CE3BB7308D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFB4201-4EF0-4CF8-A05E-4033C05FB3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFB4201-4EF0-4CF8-A05E-4033C05FB3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFB4201-4EF0-4CF8-A05E-4033C05FB3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFB4201-4EF0-4CF8-A05E-4033C05FB3C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

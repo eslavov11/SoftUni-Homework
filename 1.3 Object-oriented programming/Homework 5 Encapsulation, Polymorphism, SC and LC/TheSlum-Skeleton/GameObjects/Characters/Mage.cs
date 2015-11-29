@@ -14,13 +14,13 @@ namespace TheSlum.Characters
         private const int DefaultAttackPoints = 300;
 
         public Mage(string id, int x, int y, Team team) 
-            : base(id, x, y, DefaultHealthPoints, DefaultDefencePoints, team, DefaultRange)
+            : base(id, x, y, DefaultHealthPoints, DefaultDefencePoints, DefaultAttackPoints, team, DefaultRange)
         {
         }
 
         public override Character GetTarget(IEnumerable<Character> targetsList)
         {
-            return targetsList.Where(x => x.IsAlive).Last(x => x.Team != this.Team);
+            return targetsList.Where(x => x.IsAlive).LastOrDefault(x => x.Team != this.Team);
         }
 
         public override void AddToInventory(Item item)

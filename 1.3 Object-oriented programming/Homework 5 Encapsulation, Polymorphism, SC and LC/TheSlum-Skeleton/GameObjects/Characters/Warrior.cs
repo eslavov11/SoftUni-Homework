@@ -14,7 +14,7 @@ namespace TheSlum.Characters
         private const int DefaultAttackPoints = 150;
 
         public Warrior(string id, int x, int y, Team team) 
-            : base(id, x, y, DefaultHealthPoints, DefaultDefencePoints, team, DefaultRange)
+            : base(id, x, y, DefaultHealthPoints, DefaultDefencePoints, DefaultAttackPoints, team, DefaultRange)
         {
         }
 

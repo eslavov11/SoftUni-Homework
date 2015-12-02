@@ -10,6 +10,11 @@ namespace _03.Action
     {
         static void Main(string[] args)
         {
+            var names = new List<string>()
+            {
+                "Ivan", "Georgi", "Dimitar"
+            };
+            names.ForEach(Console.WriteLine);
         }
     }
 }

@@ -1,0 +1,51 @@
+Problem 1.	Value and Reference Types
+Describe the differences between value and reference types. Answer the following questions:
+•	Which .NET data types are value types? 
+Primitive Value Types: such as Integer, Floating point, Logical value types
+Structures
+Enumerable Types
+
+Which types are reference types?
+Self-Descriptive Types (interfaces, Classes, Arrays, Boxed Value Types
+Pointers
+Dynamic
+
+•	How do value and reference types differ when assigned to a variable?
+In value types, a new copy is assigned to the variable.
+In reference types, the variable only points to the address of the value in the memory, many variables can point to the same object/address. 
+
+•	How do value and reference types behave when passed as argument to a method?
+Value types are passed to the method by value (by copy); reference types are passed to the method by reference, address
+
+•	
+Where in memory are value types allocated? In the stack.
+Where are reference types allocated? In the managed heap.
+
+•	What is data mutation? 
+Partially changing the value within the same variable, example:
+        StringBuilder sb = new StringBuilder("abc");
+        sb.Append("d");
+        sb.Remove(2, 1);
+        sb.Replace('a', 'k');
+Prints: kbd
+
+Can value types be mutated? The built-in value types (int, double and the like) are immutable.
+Can reference types be mutated? Yes.
+
+•	What is the difference between mutating and setting (assigning) a variable? Give examples.
+Int32 is immutable, you cannot change it's value, you can only assign new value to the variable which stores it, example:
+a = 2; 
+a +=2; (we have assigned a total value of 4 to a)
+a ^=2; (a is assigned a new total value of 6)
+
+String is immutable
+
+i.e. Strings cannot be altered. When you alter a string (by adding to it for example), you are actually creating a new string.
+
+But StringBuilder is not immutable (Mutable) - you can change its value, without the need of creating a new StringBuilder variable.
+
+•	What are the out and ref keywords used for? 
+They both indicate that the parameter is being passed by reference. 
+In what do they differ?
+The ref keyword causes an argument to be passed by reference, not by value. To use a ref parameter, both the method definition and the calling method must explicitly use the ref keyword.
+When a method uses the out modifier, you can be sure that after you invoke it, your variable is definitely assigned. This means you can write code that does not assign the variable before calling an out method.

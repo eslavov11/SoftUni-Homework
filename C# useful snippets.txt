@@ -32,10 +32,10 @@ how to split number into individual digits
 string inputLine = Console.ReadLine();
 inputLine = inputLine + " " + int.MaxValue;
 string[] inputTokens = inputLine.Split(' ');
-   for (int i = 0; i < inputTokens.Length; i++)
-            {
-                int num = int.Parse(inputTokens[i]);
-            }
+for (int i = 0; i < inputTokens.Length; i++)
+{
+   int num = int.Parse(inputTokens[i]);
+}
 =================================================
 sum the number for example 1254 (working with 4 digits)
 ----

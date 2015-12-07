@@ -1,0 +1,110 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Power point slide</title>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-size: 100% 106.5%;
+            background-color: #cccccc;
+            font-size: 1.25em;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        .yellow {
+            color: #FFCA7A;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+            ul > li {
+                color: #FFCA7A;
+                margin-bottom: 50px;
+                margin-top: 50px;
+            }
+
+                ul > li > span {
+                    color: black;
+                }
+
+                ul > li > div {
+                    color: white;
+                    border: 1px solid white;
+                    background-color: #303030;
+                    opacity: 0.8;
+                    line-height: 0.5em;
+                    margin-left: 5%;
+                    margin-right: 10%;
+                }
+
+        #indented {
+            text-indent: 50px;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .makeBold {
+            font-weight: bold;
+        }
+
+        img {
+            position: absolute;
+            right: 2.5%;
+            top: 5%;
+        }
+
+        body > div {
+            color: white;
+            position: absolute;
+            right: 2.5%;
+            bottom: 2.5%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="yellow">Headings and Paragraphs</h1>
+    <img src="Resources/05.Logo.png" alt="Logo" width="300" height="105" />
+
+    <ul>
+        <li>
+            <h2><span class="white">Heading Tags:</span> <span class="makeBold">&#60;h1&#62;</span> <span class="white">-</span> <span class="makeBold">&#60;h6&#62;</span></h2>
+            <div>
+                <div><h3>&#60;h1&#62;Heading 1&#60;\h1&#62;</h3></div>
+                <div><h3>&#60;h2&#62;Heading 1&#60;\h2&#62;</h3></div>
+                <div><h3>&#60;h3&#62;Heading 1&#60;\h3&#62;</h3></div>
+            </div>
+        </li>
+
+        <li>
+            <h2><span class="white">Paragraph Tags:</span> <span class="makeBold">&#60;p&#62;</span></h2>
+            <div>
+                <div><h3>&#60;p&#62;This is my first paragraph&#60;/p&#62;</h3></div>
+                <div><h3>&#60;p&#62;This is my second paragraph&#60;/p&#62;</h3></div>
+            </div>
+        </li>
+
+        <li>
+            <h2><span class="white">Sections:</span> <span class="makeBold">&#60;div&#62;</span> <span class="white">and</span> <span class="makeBold">&#60;span&#62;</span></h2>
+            <div>
+                <div><h3>&#60;div style="background: skyblue;"&#62; </h3></div>
+                <div id="indented"><h3>This is a div</h3></div>
+                <div><h3>&#60;/div&#62;</h3></div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="pageNumber">22</div>
+</body>
+</html>

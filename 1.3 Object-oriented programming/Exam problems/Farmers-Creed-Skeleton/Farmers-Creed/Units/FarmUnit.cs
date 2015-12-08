@@ -51,7 +51,7 @@ namespace FarmersCreed.Units
 
         public override string ToString()
         {
-            return $"{base.ToString()} {(this.IsAlive ? $"Health: {this.Health}" : "DEAD")}";
+            return $"{base.ToString()}{(this.IsAlive ? $", Health: {this.Health}" : ", DEAD")}";
         }
     }
 }

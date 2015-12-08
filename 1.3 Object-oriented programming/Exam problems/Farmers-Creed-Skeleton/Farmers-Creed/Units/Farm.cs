@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text;
 
 namespace FarmersCreed.Units
 {
@@ -83,6 +84,31 @@ namespace FarmersCreed.Units
             {
                 animal.Starve();
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+            result.AppendLine(base.ToString())
+                .AppendLine(
+                    string.Join(
+                        Environment.NewLine, 
+                        this.Animals.Where(x => x.IsAlive)
+                            .OrderBy(x => x.Id)))
+                .AppendLine(
+                    string.Join(
+                        Environment.NewLine, 
+                        this.Plants.Where(x => x.IsAlive)
+                            .OrderBy(x => x.Health)
+                            .ThenBy(x => x.Id)))
+                .Append(
+                    string.Join(
+                        Environment.NewLine, 
+                        this.Products.OrderBy(x => x.ProductType.ToString())
+                            .ThenByDescending(x => x.Quantity)
+                            .ThenBy(x => x.Id)));
+
+            return result.ToString();
         }
     }
 }

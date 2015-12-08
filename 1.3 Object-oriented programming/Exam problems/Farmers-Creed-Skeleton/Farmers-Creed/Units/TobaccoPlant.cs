@@ -6,7 +6,7 @@ namespace FarmersCreed
 {
     public class TobaccoPlant : Plant
     {
-        private const int DefaultTobaccoHealth = 15;
+        private const int DefaultTobaccoHealth = 12;
         private const int DefaultTobaccoGrowTime = 4;
         private const int DefaultTobaccoProductionQuantity = 10;
         public TobaccoPlant(string id)

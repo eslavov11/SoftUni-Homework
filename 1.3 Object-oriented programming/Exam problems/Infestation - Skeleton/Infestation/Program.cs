@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Infestation.Engine;
 
 namespace Infestation
 {
@@ -25,7 +26,7 @@ namespace Infestation
 
         private static HoldingPen InitializePen()
         {
-            return new HoldingPen();
+            return new ExtendedHoldingPen();
         }
     }
 }

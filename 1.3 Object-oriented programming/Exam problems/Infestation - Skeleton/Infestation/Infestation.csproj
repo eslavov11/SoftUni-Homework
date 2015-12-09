@@ -41,18 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dog.cs" />
-    <Compile Include="HoldingPen.cs" />
-    <Compile Include="Human.cs" />
+    <Compile Include="Engine\ExtendedHoldingPen.cs" />
+    <Compile Include="Supplements\AggressionCatalyst.cs" />
+    <Compile Include="Supplements\Catalyst.cs" />
+    <Compile Include="Supplements\HealthCatalyst.cs" />
+    <Compile Include="Supplements\InfestationSpores.cs" />
+    <Compile Include="Supplements\PowerCatalyst.cs" />
+    <Compile Include="Supplements\Supplement.cs" />
+    <Compile Include="Supplements\Weapon.cs" />
+    <Compile Include="Supplements\WeaponrySkill.cs" />
+    <Compile Include="Units\Dog.cs" />
+    <Compile Include="Engine\HoldingPen.cs" />
+    <Compile Include="Units\Human.cs" />
     <Compile Include="InfestationRequirements.cs" />
     <Compile Include="Interaction.cs" />
     <Compile Include="InteractionType.cs" />
-    <Compile Include="ISupplement.cs" />
+    <Compile Include="Interfaces\ISupplement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="UnitClassification.cs" />
-    <Compile Include="UnitInfo.cs" />
+    <Compile Include="Units\Marine.cs" />
+    <Compile Include="Units\Parasite.cs" />
+    <Compile Include="Units\Queen.cs" />
+    <Compile Include="Units\Tank.cs" />
+    <Compile Include="Units\Unit.cs" />
+    <Compile Include="Units\UnitClassification.cs" />
+    <Compile Include="Units\UnitInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

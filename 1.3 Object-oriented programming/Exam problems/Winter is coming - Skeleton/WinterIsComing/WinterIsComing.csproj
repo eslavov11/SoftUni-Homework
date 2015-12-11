@@ -65,10 +65,23 @@
     <Compile Include="Core\Exceptions\GameException.cs" />
     <Compile Include="Core\Exceptions\InvalidPositionException.cs" />
     <Compile Include="Core\Exceptions\NotEnoughEnergyException.cs" />
+    <Compile Include="Core\ExtendedCommandDispatcher.cs" />
     <Compile Include="Core\GlobalMessages.cs" />
     <Compile Include="Core\MatrixContainer.cs" />
     <Compile Include="Core\EmptyUnitEffector.cs" />
     <Compile Include="Core\UnitFactory.cs" />
+    <Compile Include="Models\CombatHandlers\WarriorCombatHandler.cs" />
+    <Compile Include="Models\CombatHandlers\IceGiantCombatHandler.cs" />
+    <Compile Include="Models\CombatHandlers\MageCombatHandler.cs" />
+    <Compile Include="Models\Spells\Blizzard.cs" />
+    <Compile Include="Models\Spells\Cleave.cs" />
+    <Compile Include="Models\Spells\FireBreath.cs" />
+    <Compile Include="Models\Spells\Spell.cs" />
+    <Compile Include="Models\Spells\Stomp.cs" />
+    <Compile Include="Models\IceGiant.cs" />
+    <Compile Include="Models\Units\Mage.cs" />
+    <Compile Include="Models\Units\Unit.cs" />
+    <Compile Include="Models\Units\Warrior.cs" />
     <Compile Include="Models\UnitType.cs" />
     <Compile Include="WinterIsComingMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,11 +89,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\CombatHandlers\" />
-    <Folder Include="Models\Spells\" />
-    <Folder Include="Models\Units\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

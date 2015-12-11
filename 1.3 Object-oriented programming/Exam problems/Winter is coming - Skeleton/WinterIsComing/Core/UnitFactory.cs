@@ -1,4 +1,7 @@
-﻿namespace WinterIsComing.Core
+﻿using WinterIsComing.Core.Exceptions;
+using WinterIsComing.Models.Units;
+
+namespace WinterIsComing.Core
 {
     using System;
     using Contracts;
@@ -10,9 +13,14 @@
         {
             switch (type)
             {
-                // TODO: Implement units
+                case UnitType.IceGiant:
+                    return new IceGiant(name, x, y);
+                case UnitType.Mage:
+                    return new Mage(name, x, y);
+                case UnitType.Warrior:
+                    return new Warrior(name, x, y);
                 default:
-                    throw new NotImplementedException();
+                    throw new GameException("Ivalid hero name!");
             }
         }
     }

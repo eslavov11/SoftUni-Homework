@@ -7,6 +7,10 @@
     {
         public void ApplyEffect(IEnumerable<IUnit> units)
         {
+            foreach (var unit in units)
+            {
+                unit.HealthPoints += 50;
+            }
         }
     }
 }

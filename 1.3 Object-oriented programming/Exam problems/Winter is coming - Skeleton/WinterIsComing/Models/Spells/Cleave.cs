@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinterIsComing.Models.Spells
 {
-    class Cleave
+    public class Cleave : Spell
     {
+        public override int EnergyCost
+        {
+            get { return 15; } 
+        }
     }
 }

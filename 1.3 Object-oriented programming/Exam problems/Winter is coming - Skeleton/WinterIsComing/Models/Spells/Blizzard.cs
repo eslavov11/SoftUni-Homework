@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinterIsComing.Models.Spells
 {
-    public class FireBreath : Spell
+    public class Blizzard : Spell
     {
         public override int EnergyCost
         {
-            get { return 30; }
+            get { return 40; }
         }
     }
 }

@@ -6,7 +6,7 @@
     using Contracts;
     using Exceptions;
 
-    public sealed class Engine : IEngine
+    public class Engine : IEngine
     {
         private bool isStarted;
         private readonly IInputReader reader;

@@ -17,7 +17,7 @@
             };
 
             IUnitContainer unitMatrix = new MatrixContainer(MatrixRows, MatrixCols);
-            ICommandDispatcher commandDispatcher = new CommandDispatcher();
+            ICommandDispatcher commandDispatcher = new ExtendedCommandDispatcher();
             IUnitEffector unitEffector = new EmptyUnitEffector();
 
             var engine = new Engine(unitMatrix,

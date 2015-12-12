@@ -78,7 +78,7 @@
     <Compile Include="Models\Spells\FireBreath.cs" />
     <Compile Include="Models\Spells\Spell.cs" />
     <Compile Include="Models\Spells\Stomp.cs" />
-    <Compile Include="Models\IceGiant.cs" />
+    <Compile Include="Models\Units\IceGiant.cs" />
     <Compile Include="Models\Units\Mage.cs" />
     <Compile Include="Models\Units\Unit.cs" />
     <Compile Include="Models\Units\Warrior.cs" />

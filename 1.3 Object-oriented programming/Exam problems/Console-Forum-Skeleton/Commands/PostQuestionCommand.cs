@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Net.Sockets;
 using ConsoleForum.Contracts;
 using ConsoleForum.Entities.Posts;
 
@@ -23,8 +20,8 @@ namespace ConsoleForum.Commands
 
             string title = this.Data[1];
             string body = this.Data[2];
-            int id = this.Forum.Questions.OrderByDescending(x => x.Id).FirstOrDefault().Id;
-            this.Forum.Questions.Add(new Question(id, title, body));
+            int id = this.Forum.Questions.Count + 1;
+            this.Forum.Questions.Add(new Question(id, base.Forum.CurrentUser, title, body));
 
             this.Forum.Output.AppendFormat(Messages.PostQuestionSuccess, id).AppendLine();
 

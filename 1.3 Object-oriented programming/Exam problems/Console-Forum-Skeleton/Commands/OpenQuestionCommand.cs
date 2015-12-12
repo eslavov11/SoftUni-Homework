@@ -23,6 +23,7 @@ namespace ConsoleForum.Commands
                 throw new CommandException(Messages.NoQuestion);
             }
 
+            this.Forum.CurrentQuestion = question;
             this.Forum.Output.AppendLine(question.ToString());
         }
     }

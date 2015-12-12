@@ -9,10 +9,11 @@ namespace ConsoleForum.Entities.Posts
 {
     public abstract class Post : IPost
     {
-        protected Post(int id, string body)
+        protected Post(int id, IUser author, string body)
         {
             this.Id = id;
             this.Body = body;
+            this.Author = author;
         }
 
         public int Id { get; set; }

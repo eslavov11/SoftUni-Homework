@@ -18,21 +18,21 @@ namespace ConsoleForum.Commands
 
         public override void Execute()
         {
-            if (this.Forum.CurrentUser == null)
+            var body = this.Data[1];
+            if (!this.Forum.IsLogged)
             {
                 throw new CommandException(Messages.NotLogged);
             }
 
-            if (this.Forum.Questions == null)
+            if (this.Forum.CurrentQuestion == null)
             {
                 throw new CommandException(Messages.NoQuestionOpened);
             }
 
-            string body = this.Data[1];
-            int id = this.Forum.Answers.OrderByDescending(x => x.Id).FirstOrDefault().Id;
-            this.Forum.Answers.Add(new Answer(id,body));
-
-            this.Forum.Output.AppendFormat(Messages.PostAnswerSuccess, id).AppendLine();
+            var answer = new Answer(this.Forum.Answers.Count + 1, this.Forum.CurrentUser, body);
+            this.Forum.Output.AppendLine(string.Format(Messages.PostAnswerSuccess, answer.Id));
+            this.Forum.Answers.Add(answer);
+            this.Forum.CurrentQuestion.Answers.Add(answer);
         }
     }
 }

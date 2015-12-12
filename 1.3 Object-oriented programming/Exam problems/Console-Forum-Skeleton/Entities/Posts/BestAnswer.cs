@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleForum.Contracts;
 
 namespace ConsoleForum.Entities.Posts
 {
@@ -15,7 +16,7 @@ namespace ConsoleForum.Entities.Posts
             $"********************"; ;
         }
 
-        public BestAnswer(int id, string body) : base(id, body)
+        public BestAnswer(int id, IUser author, string body) : base(id, author, body)
         {
         }
     }

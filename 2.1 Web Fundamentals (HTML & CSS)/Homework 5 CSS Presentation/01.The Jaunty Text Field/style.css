@@ -1,0 +1,101 @@
+body {
+    font-family: Verdana;
+}
+
+.outsideDiv {
+    border-left: 4px dotted red;
+    border-top: 2px dashed yellow;
+    border-bottom: 5px double blue;
+    border-right: 6px solid green;
+    width: 600px;
+
+    box-shadow: 15px 15px 30px;
+}
+
+.head {
+    text-align: center;
+    font-size: 27px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 7px;
+}
+
+.insideDiv {
+    border-radius: 50px;
+    border: 2px solid #FF1A1A;
+    box-shadow: 0 0 0 2px #FBFD00, 0 0 0 4px #006F21, 0 0 0 6px #0028AE;
+    margin: 40px 10px 10px 10px;
+    width: 530px;
+    height: 80px;
+}
+
+h4 {
+    text-shadow: 3px 13px 12px;
+    text-align: center;
+}
+
+textarea {
+
+    top: -13px;
+    resize: none;
+    color: black;
+    width: 170px;
+    height: 15px;
+    padding: 2px;
+    text-align: center;
+    background-color: #D8921A;
+    border-bottom: 3px solid #A56401;
+    border-right: 3px solid #A56401;
+    border-top: 3px solid #FCA401;
+    border-left: 3px solid #FCA401;
+	overflow: auto;
+    
+}
+
+.smallCircle {
+    top: 103px;
+    left: 475px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 50%;
+    border: 3px dashed white;
+    box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.6);     
+}
+
+.medCircle {
+    top: 59px;
+    left: 510px;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 50%;
+    border: 3px dashed white;
+    box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.6);     
+}
+
+.bigCircle {
+    top: 13px;
+    left: 550px;
+    width: 90px;
+    height: 45px;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 40%;
+    border: 3px dashed white;
+    box-shadow: 0 0 0 3px rgba(128, 128, 128, 0.6);
+    color: white;
+    text-align: center;    
+}
+
+.not-button {
+    left: 75px;
+    position: relative;
+}
+
+.definitely-not-button {
+    right: -95px;
+    position: relative;
+}
+

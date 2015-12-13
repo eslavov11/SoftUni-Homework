@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+    <form>
+        <h3>Step 1: Your details</h3>
+        <div>
+            <span>Name</span>
+            <input type="text" placeholder="First and last name" />
+        </div>
+        <div>
+            <span>Email</span>
+            <input type="email" placeholder="example@abv.bg" />
+        </div>
+        <div>
+            <span>Phone</span>
+            <input type="text" placeholder="eg. +447700000000" />
+        </div>
+
+        <h3>Step 2: Delivery address</h3>
+        <div>
+            <span>Address</span>
+            <textarea></textarea>
+        </div>
+        <div>
+            <span>Post code</span>
+            <input type="text" />
+        </div>
+        <div>
+            <span>Country</span>
+            <input type="text" />
+        </div>
+
+        <h3>Step 3: Card details</h3>
+        <div>
+            <span>Card type</span>
+            <input class="radio" type="radio" id="visa" name="card" value="Visa"/>
+            <label class="radio" for="visa">Visa</label>
+            <input class="radio" type="radio" id="amex" name="card" value="AmEx"/>
+            <label class="radio" for="amex">AmEx</label>
+            <input class="radio" type="radio" id="master" name="card" value="Master card"/>
+            <label class="radio" for="master">Master card</label>
+        </div>
+        <div>
+            <span>Card number</span>
+            <input type="text" />
+        </div>
+        <div>
+            <span>Security code</span>
+            <input type="text" />
+        </div>
+        <div>
+            <span>Name on card</span>
+            <input type="text" placeholder="exact name as on the card" />
+        </div>
+
+        <p id="buttonDiv">
+            <input type="submit" id="buyButton" value="BUY IT!"/>
+        </p>
+
+    </form>
+</body>
+</html>

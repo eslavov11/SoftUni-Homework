@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Empires.Interfaces;
+using Empires.Models.Resources;
 
 namespace Empires.Core
 {
@@ -10,13 +11,17 @@ namespace Empires.Core
         {
             //Todo IBUildings or Buildings??
             this.Buildings = new List<IBuilding>();
-            this.Resources = new List<IResource>();
+            this.Resources = new Dictionary<ResourceType, int>
+            {
+                { ResourceType.Gold, 0},
+                { ResourceType.Steel, 0}
+            };
             this.Units = new List<IUnit>();
         }
 
         public ICollection<IBuilding> Buildings { get; }
 
-        public ICollection<IResource> Resources { get; }
+        public IDictionary<ResourceType, int> Resources { get; }
 
         public ICollection<IUnit> Units { get; set; } 
     }

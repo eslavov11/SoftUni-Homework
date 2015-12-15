@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Empires.Interfaces;
 using Empires.Models.Resources;
+using Empires.Models.Units;
 
 namespace Empires.Models.Buildings
 {
@@ -14,14 +16,28 @@ namespace Empires.Models.Buildings
         private const int DefaultBarracksTurnsToProduceUnit = 4;
         private const int DefaultBarracksTurnsToProduceResources = 3;
 
-        public override void ProduceUnit()
+        public override IUnit ProduceUnit()
         {
-            throw new NotImplementedException();
+            return base.Turns % DefaultBarracksTurnsToProduceUnit == 0 && this.Turns != 0 ? new Swordsman() : null;
         }
 
-        public override void ProduceResources()
+        public override IResource ProduceResources()
         {
-            throw new NotImplementedException();
+           return base.Turns % DefaultBarracksTurnsToProduceResources == 0 && this.Turns!=0 ? 
+                new Resource(DefaultResouceType, DefaultResouceQuantity) 
+                : null;
+        }
+
+        public override string ToString()
+        {
+            return string.Format(
+                base.ToString(), 
+                this.GetType().Name, 
+                base.Turns,
+                DefaultBarracksTurnsToProduceUnit - base.Turns % DefaultBarracksTurnsToProduceUnit, 
+                "Swordsman",
+                DefaultBarracksTurnsToProduceResources - base.Turns % DefaultBarracksTurnsToProduceResources, 
+                DefaultResouceType);
         }
     }
 }

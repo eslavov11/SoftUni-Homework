@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Empires.Interfaces;
 using Empires.Models.Buildings;
+using Empires.Models.Resources;
+using Empires.Models.Units;
 
 namespace Empires.Core
 {
@@ -27,16 +29,15 @@ namespace Empires.Core
                 case CommandList.Build:
                     this.ExecuteBuildCommand(command.Parameters[0]);
                     break;
-                case CommandList.Skip:
-                    this.ExecuteSkipCommand();
-                    break;
                 case CommandList.Status:
-                    output.AppendLine(this.ExecuteStatusCommand());
+                    output.Append(this.ExecuteStatusCommand());
                     break;
                 default:
                     //throw new invalid command exception
                     break;
             }
+
+            this.ProgressGame();
 
             return output.ToString();
         }
@@ -44,35 +45,34 @@ namespace Empires.Core
         private string ExecuteStatusCommand()
         {
             var statusResult = new StringBuilder();
-            statusResult.AppendLine("Treasures:");
-            statusResult.Append(string.Join(Environment.NewLine, db.Resources));
+            statusResult.AppendLine("Treasury:");
+            statusResult.AppendLine("--Gold: " + this.db.Resources[ResourceType.Gold]);
+            statusResult.AppendLine("--Steel: " + this.db.Resources[ResourceType.Steel]);
 
             statusResult.AppendLine("Buildings:");
+            statusResult.AppendLine(db.Buildings.Any()
+                ? string.Join(Environment.NewLine, db.Buildings)
+                : "N/A");
+
+            statusResult.Append("Units:");
             if (db.Units.Any())
             {
-                statusResult.Append(string.Join(Environment.NewLine, db.Buildings));
+                if (db.Units.Any(u => u is Swordsman))
+                {
+                    statusResult.Append(Environment.NewLine + "--Swordsman: " + this.db.Units.Count(u => u is Swordsman));
+                }
+
+                if (db.Units.Any(u => u is Archer))
+                {
+                    statusResult.Append(Environment.NewLine + "--Archer: " + this.db.Units.Count(u => u is Archer));
+                }
             }
             else
             {
-                statusResult.AppendLine("N/A");
+                statusResult.Append(Environment.NewLine + "N/A");
             }
 
-            statusResult.AppendLine("Units:");
-            if (db.Units.Any())
-            {
-                statusResult.Append(string.Join(Environment.NewLine, db.Units));
-            }
-            else
-            {
-                statusResult.AppendLine("N/A");
-            }
-            
-            return statusResult.ToString();
-        }
-
-        private void ExecuteSkipCommand()
-        {
-            throw new NotImplementedException();
+            return statusResult.ToString().TrimEnd('\r', '\n');
         }
 
         private void ExecuteBuildCommand(string buildingType)
@@ -96,6 +96,16 @@ namespace Empires.Core
             foreach (IBuilding building in db.Buildings)
             {
                 building.Turn();
+                IUnit unit = building.ProduceUnit();
+                if (unit != null)
+                {
+                    db.Units.Add(unit);
+                }
+                IResource resource = building.ProduceResources();
+                if (resource != null)
+                {
+                    db.Resources[resource.ResourceType] += resource.Quantity;
+                }
             }
         }
     }

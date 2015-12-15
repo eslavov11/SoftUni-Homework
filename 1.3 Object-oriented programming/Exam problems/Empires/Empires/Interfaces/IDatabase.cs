@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Empires.Models.Resources;
 
 namespace Empires.Interfaces
 {
@@ -6,7 +7,7 @@ namespace Empires.Interfaces
     {
         ICollection<IBuilding> Buildings { get; }
 
-        ICollection<IResource> Resources { get; }
+        IDictionary<ResourceType, int> Resources { get; }
 
         ICollection<IUnit> Units { get; set; }
     }

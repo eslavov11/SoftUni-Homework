@@ -26,7 +26,7 @@ namespace Empires.Core.Engines
                 ICommand command = new Command(commandLine);
                 string commandOutput = this.commandExecutor.ExecuteCommand(command);
 
-                if (commandOutput != null)
+                if (!string.IsNullOrEmpty(commandOutput))
                 {
                     ui.WriteLine(commandOutput);
                 }

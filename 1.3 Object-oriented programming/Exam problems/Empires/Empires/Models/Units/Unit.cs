@@ -9,6 +9,12 @@ namespace Empires.Models.Units
 {
     public abstract class Unit : IUnit
     {
+        protected Unit(int health, int attackDamage)
+        {
+            this.Health = health;
+            this.AttackDamage = attackDamage;
+        }
+
         public int Health { get; set; }
 
         public int AttackDamage { get; }

@@ -7,7 +7,7 @@ namespace Empires.Interfaces
         int Turns { get; set; }
 
         void Turn();
-        void ProduceUnit();
-        void ProduceResources();
+        IUnit ProduceUnit();
+        IResource ProduceResources();
     }
 }

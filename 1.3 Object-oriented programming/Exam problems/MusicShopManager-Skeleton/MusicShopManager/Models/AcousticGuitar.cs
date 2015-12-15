@@ -24,6 +24,7 @@ namespace MusicShop.Models
         }
 
         public bool CaseIncluded { get; }
+
         public StringMaterial StringMaterial { get; }
 
         public override string ToString()

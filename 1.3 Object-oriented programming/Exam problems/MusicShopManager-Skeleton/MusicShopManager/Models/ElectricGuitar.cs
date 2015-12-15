@@ -27,7 +27,7 @@ namespace MusicShop.Models
             get { return this.numberOfAdapters; }
             set
             {
-                if (value <= 0.0m)
+                if (value <= 0)
                 {
                     throw new ArgumentException("The number of adapters must be positive.");
                 }
@@ -38,7 +38,7 @@ namespace MusicShop.Models
             get { return this.numberOfFrets; }
             set
             {
-                if (value < 0.0m)
+                if (value < 0)
                 {
                     throw new ArgumentException("The number of frets must be positive.");
                 }

@@ -25,7 +25,7 @@ namespace MusicShop.Models
             get { return this.width; }
             set
             {
-                if (value <= 0.0m)
+                if (value <= 0)
                 {
                     throw new ArgumentException("The width must be positive.");
                 }
@@ -37,7 +37,7 @@ namespace MusicShop.Models
             get { return this.height; }
             set
             {
-                if (value <= 0.0m)
+                if (value <= 0)
                 {
                     throw new ArgumentException("The height must be positive.");
                 }

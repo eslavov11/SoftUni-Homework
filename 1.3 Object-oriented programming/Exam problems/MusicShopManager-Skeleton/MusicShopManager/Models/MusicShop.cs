@@ -53,7 +53,7 @@ namespace MusicShop.Models
             output.AppendLine($"===== {this.Name} =====");
             if (!Articles.Any())
             {
-                output.AppendLine("The shop is empty. Come back soon.");
+                output.Append("The shop is empty. Come back soon.");
             }
             else
             {
@@ -88,7 +88,7 @@ namespace MusicShop.Models
             if (this.Articles.Any(a => a is IBassGuitar))
             {
                 output.AppendLine("----- Bass guitars -----");
-                output.AppendLine(string.Join(Environment.NewLine, Articles.OrderBy(x => x.Make).Where(a => a is IBassGuitar)));
+                output.Append(string.Join(Environment.NewLine, Articles.OrderBy(x => x.Make).Where(a => a is IBassGuitar)));
             }
         }
     }

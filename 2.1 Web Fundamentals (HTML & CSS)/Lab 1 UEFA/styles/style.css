@@ -1,0 +1,97 @@
+
+
+#wrapper {
+    background-color: #000080;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 960px;
+    height: 600px;
+}
+
+header {
+    height: 100px;
+}
+
+main {
+    height: 500px;
+    background-color: #0000ff;
+}
+
+#logo img {
+    height: 90px;
+}
+
+#navigation ul {
+    color: white;
+    font-weight: bold;
+    font-family: Verdana;
+    list-style-type: none;
+    margin-top: -50px;
+    margin-left: 100px;
+    padding: 0;
+}
+
+#navigation li {
+    margin-left: 40px;
+    display: inline;
+}
+
+    #navigation li:hover {
+        background-color: white;
+        border-radius: 10px;
+        color: #000080;
+        cursor: pointer;
+    }
+
+#navBottom ul {
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: Verdana;
+    list-style-type: none;
+    margin-top: -130px;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#navBottom li {
+    margin-bottom: 10px;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: -50px;
+    margin-left: 20px;
+    font-size: 10px;
+    color: white;
+}
+
+footer > #twitter {
+    background: url('Resources/images/mini-social-icons.png');
+    width: 42px;
+    height: 42;
+}
+
+    footer > #twitter:hover {
+        background-position: 0 -42px;
+    }
+
+footer > #facebook {
+    background: url('Resources/images/mini-social-icons.png') -42px -1px;
+    width: 75px;
+    height: 75px;
+}
+
+    footer > #facebook:hover {
+        background-position: -42px -155px;
+    }
+
+footer > #googleplus {
+    background: url('Resources/images/mini-social-icons.png') -84px 1px;
+    width: 75px;
+    height: 75px;
+}
+
+    footer > #googleplus:hover {
+        background-position: -120px -120px;
+    }

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>Simple form</title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h2>Enter the system</h2>
+            <span id="subhead">It is necessary to log in to the system</span>
+        </header>
+        <main>
+            <article>
+                <form id="register">
+                    <header>
+                        <h3>
+                            <span id="new">ARE YOU NEW?</span>
+                            <span id="reg">REGISTER</span>
+                        </h3>
+                    </header>
+                    <main>
+                        <input type="text" placeholder="User name"></input>
+                        <input type="email" placeholder="Email"></input>
+                        <input type="password" name="pass" placeholder="Password" pattern=".{6,}" title="Password should be at least 6 characters!" id="password" required onkeypress="checkPasswords()" onchange="checkPasswords()" oninput="checkPasswords()" />
+                        <input type="password" name="confirm-pass" placeholder="Confirm Password" title="Passwords should match!" id="confirm_password" required onkeypress="checkPasswords()" onchange="checkPasswords()" oninput="checkPasswords()" />
+
+                        <input id="registerButton" type="submit" value="Register" />
+                    </main>
+                </form>
+            </article>
+            <article>
+                <form id="login">
+                    <header>
+                        <h3>
+                            <span id="alreadyAStudent">ALREADY A STUDENT? LOGIN</span>
+                        </h3>
+                    </header>
+                    <main>
+                        <input type="text" placeholder="User name"></input>
+                        <input type="password" placeholder="Password"></input>
+                        <input type="checkbox" id="rememberMe" />
+                        <label for="rememberMe">Remember me?</label>
+                        <input id="loginButton" type="submit" value="Login" />
+                        <a id="forgotPassword" href="https://www.google.com">Forgot password?</a>
+                    </main>
+                </form>
+            </article>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿namespace Exam.UserInterface
+﻿namespace Blops.UserInterface
 {
     using Interfaces;
     using System;

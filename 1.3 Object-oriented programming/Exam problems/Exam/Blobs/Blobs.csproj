@@ -43,27 +43,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\AttackBlopException.cs" />
+    <Compile Include="Exceptions\BlopException.cs" />
+    <Compile Include="Exceptions\BlopNotFoundException.cs" />
     <Compile Include="Core\Commands\Command.cs" />
-    <Compile Include="Core\Database.cs" />
-    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\BlobsDatabase.cs" />
+    <Compile Include="Core\BlobsEngine.cs" />
+    <Compile Include="Core\Commands\BlobsCommandExecutor.cs" />
+    <Compile Include="Core\EngineConstants.cs" />
+    <Compile Include="Exceptions\InvalidCommandException.cs" />
+    <Compile Include="GameObjects\Attacks\Attack.cs" />
+    <Compile Include="GameObjects\Attacks\BlobplodeAttack.cs" />
+    <Compile Include="GameObjects\Attacks\PutridFartAttack.cs" />
+    <Compile Include="Interfaces\IAttack.cs" />
+    <Compile Include="Interfaces\IAttacker.cs" />
+    <Compile Include="Interfaces\IBehavior.cs" />
+    <Compile Include="Interfaces\IBlob.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\ICommandExecutor.cs" />
     <Compile Include="Interfaces\IDatabase.cs" />
+    <Compile Include="Interfaces\IDestroyable.cs" />
     <Compile Include="Interfaces\IEngine.cs" />
-    <Compile Include="Interfaces\IFactory.cs" />
     <Compile Include="Interfaces\IReader.cs" />
     <Compile Include="Interfaces\IUserInterface.cs" />
     <Compile Include="Interfaces\IWriter.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="GameObjects\Behaviors\AggressiveBehavior.cs" />
+    <Compile Include="GameObjects\Behaviors\Behavior.cs" />
+    <Compile Include="GameObjects\Behaviors\InflatedBehavior.cs" />
+    <Compile Include="GameObjects\Units\Blob.cs" />
+    <Compile Include="BlobsMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInterface\ConsoleUserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\Factories\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

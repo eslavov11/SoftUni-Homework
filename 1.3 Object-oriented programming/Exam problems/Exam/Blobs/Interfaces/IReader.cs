@@ -1,4 +1,4 @@
-﻿namespace Exam.Interfaces
+﻿namespace Blops.Interfaces
 {
     public interface IReader
     {

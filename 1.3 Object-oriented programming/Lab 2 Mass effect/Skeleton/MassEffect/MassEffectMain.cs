@@ -1,9 +1,9 @@
 ﻿namespace MassEffect
 {
-    using MassEffect.Engine;
-    using MassEffect.GameObjects;
-    using MassEffect.GameObjects.Locations;
-    using MassEffect.Interfaces;
+    using Engine;
+    using GameObjects;
+    using GameObjects.Locations;
+    using Interfaces;
 
     public class MassEffectMain
     {

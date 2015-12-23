@@ -96,7 +96,8 @@ namespace Blops.Models
                throw new AttackBlopException($"Cannot perform attack, blop {targetBlob.Name} is dead");
             }
 
-            if (BehaviorShouldBeTriggered(this.Health, this.InitialHealth) && !this.BehaviorIsTriggered)
+            if (this.BehaviorShouldBeTriggered(CalculateHealthToSubstract(), this.InitialHealth) && 
+                !this.BehaviorIsTriggered)
             {
                 this.Behavior.Trigger(this);
 
@@ -105,17 +106,16 @@ namespace Blops.Models
                 this.BehaviorTriggeredInBattle = true;
             }
 
-            if (BehaviorShouldBeTriggered(
-                (targetBlob.Health - (int)(this.Damage * this.Attack.AttackIncreaseRate)),
-                targetBlob.InitialHealth) &&
-                !targetBlob.BehaviorIsTriggered)
-            {
-                targetBlob.Behavior.Trigger(targetBlob);
+            //if (BehaviorShouldBeTriggered(targetBlob.Health - (int)(this.Damage * this.Attack.AttackIncreaseRate),
+            //    targetBlob.InitialHealth) &&
+            //    !targetBlob.BehaviorIsTriggered)
+            //{
+            //    targetBlob.Behavior.Trigger(targetBlob);
 
-                targetBlob.BehaviorIsTriggered = true;
+            //    targetBlob.BehaviorIsTriggered = true;
 
-               targetBlob.BehaviorTriggeredInBattle = true;
-            }
+            //   targetBlob.BehaviorTriggeredInBattle = true;
+            //}
 
             targetBlob.Health -= (int)(this.Damage * this.Attack.AttackIncreaseRate);
             this.Health = CalculateHealthToSubstract();

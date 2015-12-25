@@ -1,0 +1,159 @@
+body {
+	background: lightblue;
+}
+
+#wrapper {
+	width: 60%;
+	margin: 0 auto;
+}
+
+body header a {
+	text-decoration: none;
+}
+body > #wrapper > header {
+	margin-bottom: 0px;
+}
+
+#wrapper header nav {
+        position: relative;
+        top: -55px;
+    }
+
+
+body header span {
+	color: #fff;	
+}
+
+body header ul {
+	float: right;
+}
+
+body header ul:after {
+	clear: both;
+}
+body header li {
+	display: inline-block;
+	background-color: #fff;
+	width: 90px;
+	height: 20px;
+	border: 1px solid black;
+	text-align: center;
+	padding-top: 5px;
+	margin: 0 5px;
+}
+
+#wrapper section {
+	margin-top: -55px;
+	width: 75%;
+}
+
+#wrapper > header > h1 {
+        border-bottom: 2px solid black;
+        padding-bottom: 20px;
+    }
+
+#wrapper section article {
+	border: 1px solid black;
+	background: lightgray;
+	margin: 10px 0;
+	padding: 0 10px;
+	display: inline-block;
+}
+
+#wrapper section article p {
+	text-indent: 30px;
+}
+
+section {
+	display: inline-block;
+}
+
+.news {
+	display: inline-block;
+	width: 13%;
+	border: 1px solid black;
+	background: lightgray;
+	margin: -45px 10px;
+	padding: 0 10px;
+	position: absolute;
+}
+
+.news li {
+	display: inline-block;
+}
+
+.news ul {
+	padding: 0;
+}
+
+.news a {
+	text-decoration: none;
+	color: #000;
+}
+
+footer {
+	border: 1px solid black;
+	background: lightgray;
+}
+
+footer  {
+	text-align: center;
+	font-size: 13px;
+}
+
+footer > h2 {
+	margin-bottom: 0;
+}
+
+@media only screen and (max-width: 960px){
+	#wrapper {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 780px){
+	body > #wrapper > section {
+		width: 100%;
+		display: block;
+	}
+
+	body > #wrapper > aside {
+		display: block;
+		width: 100%;
+		margin: 0;
+		position: static;
+		margin-bottom: 10px;
+	}
+}
+
+@media only screen and (max-width: 640px){
+
+img {
+	margin: 0 auto;
+	display: block;
+}
+
+#wrapper > header > h1 > a > span{
+	display: block;
+	text-align: center;
+}
+
+#wrapper > header > nav > ul {
+		display: block;
+		float: none;
+		margin: 40px auto 0;
+		position: relative;
+		padding: 0;
+}
+
+	#wrapper > header > nav > ul > li {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+		height: 25px;
+	}
+
+	#wrapper > section > article {
+		width: 100%;
+	}
+}

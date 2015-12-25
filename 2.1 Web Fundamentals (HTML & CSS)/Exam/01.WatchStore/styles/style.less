@@ -1,0 +1,90 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Lemon;
+    src: url(../fonts/Lemon-Regular.ttf);
+}
+
+body {
+    font-family: 'Lemon';
+
+    #wrapper {
+        background-color: #602C76;
+        width: 1000px;
+        position: absolute;
+
+        section {
+            margin: 30px auto 40px;
+            background-color: #FFAE31;
+            width: 900px;
+            border-radius: 15px;
+
+            header {
+                h1 {
+                    text-align: center;
+                    font-size: 36px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            article {
+                background-color: #601F55;
+                color: #fff;
+                width: 220px;
+                margin: 0 10px 30px;
+                display: inline-block;
+                border-radius: 20px 5px;
+
+                &:first-child {
+                    margin-left: 100px;
+                }
+
+                h3 {
+                    margin-top: 10px;
+                    text-align: center;
+                    font-size: 22px;
+                }
+
+                h5 {
+                    color: #FFAE31;
+                    text-align: center;
+                }
+
+                img {
+                    width: 80%;
+                    border: 5px solid grey;
+                    border-radius: 50%;
+                    margin-left: 15px;
+
+                    &:hover {
+                        border-color: rgba(255, 0, 0, 0.6);
+                    }
+                }
+
+                ul {
+                    list-style-type: none;
+
+                    li {
+                        margin: 5px 15px;
+                    }
+                }
+
+                button {
+                    width: 90%;
+                    margin: 10px 8px;
+                    border-radius: 10px;
+                    color: #602C76;
+                    font-family: 'Lemon';
+                    cursor: pointer;
+
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

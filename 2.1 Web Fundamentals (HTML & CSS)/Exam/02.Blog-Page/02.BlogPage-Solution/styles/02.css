@@ -1,0 +1,198 @@
+﻿html{    
+    font-family: Verdana, Arial, sans-serif;
+    font-size:100%;     
+    color: #000;
+
+}
+/*
+blue color #2c8897
+*/
+body{
+    width: 1020px;
+    margin: 0 auto;
+}
+#top-header{
+    width:100%;
+    min-height:100px;
+    background: #fbbf61;
+}
+#logo-area{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 42px;
+    text-shadow: 1px 1px #999;
+    text-transform: uppercase;
+    padding: 1.7rem 2rem;
+}
+#head-bar{
+    min-height: 60px;
+    background-color: #40312a;
+    display: flex;
+    justify-content:space-between;
+    border-top: 1px solid #b2988d;
+}
+#head-bar nav, #search-area{
+    padding: 0 2rem;
+    display: inline-block;
+    margin: auto 0;
+}
+#head-bar nav ul li{
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 100;
+    margin-right: 1rem;
+}
+#head-bar nav ul li a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#head-bar nav ul li a:hover{
+    color:#2c8897;
+}
+
+input[type="search"]{
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    background-color:#2c8897 ;
+    color: #fff;
+    width:190px;
+}
+h5{
+    display: inline;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    margin-right: 0.4rem;
+}
+button{
+    background: url(../images/search-icon.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border:none;
+    margin-left: 0.5rem;
+}
+
+main, aside{
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+    padding: 2rem;
+    height: 100%;
+}
+
+main{
+    width:62%;
+    background-color: #f8eedf;
+    padding-right: 1rem;
+    min-height: 720px;
+}
+aside{
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    width: 38%;
+    background-color: #eddec7;
+    min-height: 720px;
+}
+h2{
+    font-size: 22px;
+    font-family: Cambria;
+    color: #2c8897;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+article{
+    margin-top: 2rem;
+}
+h3.entry-title{
+    font-family: 'Nunito', sans-serif;
+    color: #40312a;
+    font-size: 1.4rem;
+}
+time, span {
+    color: #ce953c;
+    font-size: 0.7rem;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1;
+}
+time{
+    padding-right: 0.5rem;
+    border-right: 1px solid #ce953c;
+}
+figure{
+    width:550px;
+    height: 138px;
+    margin: 1rem 0;
+}
+.image-one{
+    background: url(../images/article-pic-01.png) no-repeat;
+}
+.image-two{
+    background: url(../images/article-pic-02.png) no-repeat;
+}
+figcaption{
+    padding: 0.4rem;
+    width:100%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    position: relative;
+    top:106px;
+    font-size: 0.9rem;
+}
+div.entry-content{
+    width:550px;
+    font-size: 0.85rem;
+    line-height: 1.2rem;
+}
+a.entry-fulltext{
+    color:#247184;
+    text-decoration: none;
+}
+
+section.box-blue{
+    background-color: #2c8a9a;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+h4{
+    padding: 1rem;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+}
+section.box-blue ul li{
+    padding: 1rem;
+    border-top: 1px solid #38a4b6;
+}
+section.box-blue ul li:hover{
+    background-color: #38a4b6;
+    cursor: hand;
+}
+section.box-blue ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+section.box-blue ul li a:hover{
+    text-decoration: underline;
+}
+
+figure.image{
+    background: url(../images/pic3-WhoWeAre.jpg) no-repeat;
+    width: 320px;
+    height: 100px;
+}
+
+footer{
+    float: left;
+    width: 100%;
+    min-height: 65px;
+    background-color:#2c8897;
+    font-family: Cambria;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #38a4b6;
+}

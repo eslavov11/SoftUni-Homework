@@ -1,0 +1,54 @@
+﻿body {
+  background-image: url('../background/background.jpg');
+  background-size: cover;
+  padding: 240px 20% 2% 20%;
+  color: burlywood;
+  font-family: Helvetica, sans-serif; }
+  body span {
+    color: burlywood; }
+  body section {
+	text-align: center;
+    margin: auto auto;
+    width: 600px;
+    height: 350px; }
+    body section h1 {
+      color: white;
+      border-bottom: 2px solid burlywood; }
+    body section article {
+      vertical-align: top;
+      width: 260px;
+      height: 50px;
+      margin: 0 15px;
+      background-color: rgba(111, 12, 12, 0.75);
+      padding: 5px 10px;
+      display: inline-block;
+      border-radius: 10px;
+	  height: 220px;
+      overflow: hidden;
+      cursor: default; }
+      body section article form {
+        color: white; }
+        body section article form .input-group {
+          cursor: pointer;
+          margin: 5px;
+          width: 230px;
+          height: 100%;
+          text-align: center;
+          background-color: rgba(0, 254, 153, 0.5);
+          border-radius: 5px;
+          line-height: 30px; }
+          body section article form .input-group:hover {
+            background-color: #4A5A08;
+			}
+          body section article form .input-group:focus {
+            outline: none;
+            box-shadow: none; }
+        body section article form .input-group-addon {
+          background-color: rgba(111, 12, 12, 0.67);
+          border: none; }
+      body section article h3 {
+        margin: 5px 5px 15px 5px;
+        text-align: center;
+        color: burlywood; }
+
+/*# sourceMappingURL=Problem3-LoginForm.css.map */

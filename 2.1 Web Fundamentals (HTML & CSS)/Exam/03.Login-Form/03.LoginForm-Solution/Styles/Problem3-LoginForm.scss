@@ -1,0 +1,73 @@
+﻿body {
+    background-image: url('../background/background.jpg');
+    background-size: cover;
+    padding: 240px 20% 2% 20%;
+    color: burlywood;
+    font-family: Helvetica, sans-serif;
+
+    span {
+        color: burlywood;
+    }
+
+    section {
+        margin: auto auto;
+        width: 530px;
+        height: 350px;
+        h1{
+            color:white;
+            border-bottom: 1px solid burlywood;
+        }
+        article {
+            vertical-align: top;
+            width: 260px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: rgba(111, 12, 12, 0.67);
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.5s;
+            cursor: default;
+
+            &:hover {
+                height: 220px;
+            }
+
+            form {
+                color: white;
+
+                .input-group {
+                    cursor: pointer;
+                    margin: 5px;
+                    width: 230px;
+                    height: 100%;
+                    text-align: center;
+                    background-color: rgba(0, 254, 153, 0.50);
+                    border-radius: 5px;
+                    line-height: 30px;
+
+                    &:hover {
+                        background-color: rgba(111, 12, 12, 0.67);
+                    }
+
+                    &:focus {
+                        outline:none;
+                        box-shadow: none;
+                    }
+                }
+
+                .input-group-addon {
+                    background-color: rgba(111, 12, 12, 0.67);
+                    border: none;
+                }
+            }
+
+            h3 {
+                margin: 5px 5px 15px 5px;
+                text-align: center;
+                color: burlywood;
+            }
+        }
+    }
+}

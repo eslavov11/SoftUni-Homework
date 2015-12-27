@@ -1,0 +1,94 @@
+﻿body {
+    font-family: Tahoma, Helvetica, sans-serif;
+    background-size: initial;
+    background: url('../resources/backgroundImage.jpg') no-repeat center center fixed;
+
+    #wrapper {
+
+        h1 {
+            padding-top: 20px;
+            font-size: 45px;
+            color: #fff;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            border-bottom: 1px solid darkorange;
+            text-align: center;
+        }
+
+        section {
+            margin-left: 120px;
+            margin-top: 30px;
+
+            form {
+                width: 530px;
+                height: 350px;
+                background-color: rgba(111, 12, 12, 0.75);
+                display: inline-block;
+                border-radius: 15px;
+                margin-right: 30px;
+
+                h3 {
+                    text-align: center;
+                    color: darkorange;
+                    font-size: 30px;
+                }
+
+                fieldset {
+                    border: none;
+                    width: 80%;
+                    margin: 0 auto;
+                    padding: 0;
+                    margin-bottom: 10px;
+
+                    div {
+                        display: inline-block;
+                        background-color: #5B3825;
+                        height: 40px;
+                        width: 40px;
+                        position: absolute;
+                        border-radius: 5px 0 0 5px;
+                        padding-bottom: 2px;
+
+                        img {
+                            margin: 12px;
+                        }
+                    }
+
+                    .button-icon {
+                        position: absolute;
+                        margin-left: 142px;
+                        margin-top: 10px;
+                    }
+
+                    input[type='text'], input[type='password'] {
+                        width: 80%;
+                        margin-left: 40px;
+                        border-radius: 0 5px 5px 0;
+                        padding-left: 10px;
+                    }
+
+                    input {
+                        border-radius: 5px;
+                        width: 92%;
+                        border: none;
+                        height: 40px;
+                    }
+
+                    input[type='submit'], input[type='button'] {
+                        cursor: pointer;
+                        background-color: #399363;
+
+                        &:hover {
+                            background-color: #4A5A08;
+                        }
+                    }
+                }
+
+                .input:hover > div {
+                    background-color: #622709;
+                }
+            }
+        }
+    }
+}

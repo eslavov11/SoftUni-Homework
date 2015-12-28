@@ -4,7 +4,7 @@
 	<title>Responsive Cars</title>
 	<!--<link rel="stylesheet" href="css/responsive.css">-->
 	<link rel="stylesheet" href="css/responsive.css">
-
+    <link rel="stylesheet" href="css/new-responsive.css">
     
 </head>
 <body>
@@ -23,11 +23,15 @@
 					</ul>
 				</div>
 				
-				<div class="minimenu">
-						<div>Home</div>
-						<div>Blog</div>
-						<div>Gallery</div>
-						<div>About</div>
+				<div class="minimenu"><div>MENU</div>
+					<select onchange="location=this.value">
+						<option></option>
+						<option value="index.html">Home</option>
+						<option value="blog.html">Blog</option>
+						<option value="gallery.html">Gallery</option>
+						<option value="single.html">About</option>
+						<option value="single.html">Contact</option>
+					</select>
 				</div>
 			</div>
 		</nav>

@@ -1,0 +1,91 @@
+﻿body {
+    font-family: 'Vollkorn', serif;
+    color: #99A2AB;
+
+    #wrapper {
+        width: 1000px;
+        margin: 0 auto;
+
+        header {
+            h1 {
+                font-size: 40px;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            height: 500px;
+
+            section {
+                width: 300px;
+                display: inline-block;
+                background-color: #F6F7F9;
+                position: relative;
+
+                &:hover > header,
+                button {
+                    background-color: #67D2E4; 
+                }
+
+                &:hover > header {
+                    color: #fff; 
+                }
+
+                &:hover > .price {
+                    color: #67D2E4; 
+                }
+
+                header {
+                    text-align: center;
+                    padding: 20px;
+                    font-size: 30px;
+                    background-color: #EBEEF3;
+                }
+
+                .price {
+                    text-align: center;
+                    padding-top: 20px;
+                    font-size: 60px;
+                    cursor: pointer;
+                }
+
+                ul {
+                    font-family: Tahoma, sans-serif;
+                    font-size: 16px;
+                    list-style-type: none;
+                    padding: 0;
+
+                    li {
+                        margin-bottom: 25px;
+                        text-align: center;
+                    }
+                }
+
+                .price:hover {
+                    color: #67D2E4;
+                }
+
+                button {
+                    background-color: #CAD5D9;
+                    color: #fff;
+                    border: none;
+                    height: 50px;
+                    width: 80%;
+                    margin-left: 26px;
+                    border-radius: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: 20px;
+                }
+
+                button:hover {
+                    cursor: pointer;
+                    background-color: #67D2E4;
+                }
+            }
+        }
+    }
+}

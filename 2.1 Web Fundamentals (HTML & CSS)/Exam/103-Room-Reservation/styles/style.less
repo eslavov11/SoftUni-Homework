@@ -1,0 +1,114 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+input[type='submit'] {
+    background-color: #19A4F4;
+    color: #fff;
+}
+
+body {
+    font-family: Tahoma, Helvetica, sans-serifTahoma, Helvetica, sans-serif;
+    font-size: 13px;
+
+    #wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #EBEBEB;
+
+        header {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #F1F1F1;
+            height: 60px;
+            border-bottom: 1px dashed grey;
+
+            h1 {
+                font-size: 28px;
+                font-weight: 100;
+                margin-left: 30px;
+                padding: 0 10px;
+                color: #19A4F4;
+            }
+        }
+
+        main {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 10px;
+
+            section {
+
+                h2 {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                article {
+                    display: inline-block;
+                    width: 65%;
+                }
+
+                p {
+                    display: inline-block;
+                }
+
+                #search {
+                    padding-top: 20px;
+                    vertical-align: top;
+                    display: inline-block;
+
+                    label {
+                        display: block;
+                        font-weight: bold;
+                    }
+
+                    input {
+                        height: 25px;
+                    }
+
+                    button {
+                        background-image: url('search-icon.png');
+                        background-size: 20px 20px;
+                        background-repeat: no-repeat;
+                        border: none;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        margin-top: -23px;
+                        margin-left: 145px;
+                    }
+                }
+
+                #details {
+                    width: auto;
+                    margin-right: 50px;
+
+                    input {
+                        display: block;
+                        margin-bottom: 20px;
+                        height: 30px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+
+            .fill-in {
+                border-bottom: 1px dashed grey;
+                border-top: 1px dashed grey;
+
+                article {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

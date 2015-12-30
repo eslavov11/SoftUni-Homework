@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Problem 3</title>
+    <meta charset="utf-8" />
+    <link href="styles/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Room Reservation</h1>
+        </header>
+        <main>
+            <form action="/" method="post">
+                <section>
+                    <article>
+                        <h2>Basic information</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at nibh varius
+                            odio sollicitudin blandit nec eu elit. Suspendisse ac risus nunc, quis elementum
+                            lorem. Pellentesque vehicula egestas eros nec commodo.
+                        </p>
+                    </article>
+
+
+                    <div id="search">
+                        <label>Search</label>
+                        <input type="search" />
+                        <button></button>
+                    </div>
+
+                </section>
+
+                <section class="fill-in">
+                    <article id="details">
+                        <h2>Personal details</h2>
+                        <input type="text" placeholder="First name"/>
+                        <input type="text" placeholder="Last name"/>
+                        <input type="email" placeholder="Email"/>
+                    </article>
+
+                    <article>
+                        <h2>Request a reservation</h2>
+
+                        <div>
+                            <label>Select a room:</label>
+                            <select>
+                                <option>Room 1</option>
+                                <option>Room 2</option>
+                                <option>Room 3</option>
+                            </select>
+
+                            <label>Number of rooms:</label>
+                            <input type="number" min="0" max="10"/>
+                        </div>
+
+                        <div>
+                            <label>Check-in:</label>
+                            <input type="date" id="date"/>
+
+                            <label>Check-out:</label>
+                            <input type="date" id="dateout"/>
+                        </div>
+
+
+                    </article>
+                </section>
+
+                <div>
+                    <input type="submit" value="Book Now" />
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

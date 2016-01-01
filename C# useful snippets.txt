@@ -2,7 +2,7 @@ how to comment code
 -----
 comment = Ctrl+K, Ctrl+C
 uncomment = Ctrl+K, Ctrl+U
-===============================================
+================================================
 how to convert to decimal with .00
 -----
 Console.WriteLine("{0:0.00 leva}", demo); //this

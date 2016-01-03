@@ -1,0 +1,73 @@
+@media only screen and (max-width: 1199px) {
+
+    #arkham-knight-logo > img {
+        display: none;
+    }
+
+    body #wrapper header ul #right-padded {
+        width: 100%;
+        float: none;
+        display: flex;
+        margin-left: 2%;
+        margin-right: 2%;
+        justify-content: space-around;
+    }
+
+    body #wrapper header ul {
+        width: 100%;
+    }
+
+        body #wrapper header ul li {
+            margin: 0;
+            width: 100%;
+            font-size: 2em;
+        }
+
+    #wrapper > main > section.section-main-info {
+        width: 100%;
+    }
+
+    #wrapper > main > aside.section-secondary-info {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        #wrapper > main > aside.section-secondary-info section {
+            display: inline-block;
+            width: 48%;
+        }
+
+    #wrapper {
+        background-image: url(Logo.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    body #wrapper main nav {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    body #wrapper main nav ul {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    body #wrapper main nav ul li:nth-child(1) h2{
+        margin: 0;
+        margin-top: -13px;
+    }
+
+    body #wrapper main nav ul li{
+        margin: 0;
+        font-size: 4vmin;
+    }
+}
+
+@media only screen and (max-width: 569px) {
+}

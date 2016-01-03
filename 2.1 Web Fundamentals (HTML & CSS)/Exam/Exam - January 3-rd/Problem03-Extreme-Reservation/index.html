@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Problem03-Extreme-Reservation</title>
+    <meta charset="utf-8" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <form action="/" method="post">
+            <header>
+                <ul>
+                    <li>
+                        <img src="Resources/Images/paraglider-icon.png" alt="paragliding icon" />
+                        <a href="#">Paragliding</a>
+                    </li>
+                    <li>
+                        <img src="Resources/Images/sky-diver.png" alt="skydiving icon" />
+                        <a href="#">Skydiving</a>
+                    </li>
+                    <li>
+                        <img src="Resources/Images/climbing.png" alt="climbing icon" />
+                        <a href="#">Climbing</a>
+                    </li>
+                    <li>
+                        <img src="Resources/Images/about-us.png" alt="about us icon" />
+                        <a href="#">About Us</a>
+                    </li>
+                </ul>
+            </header>
+
+            <main>
+                <fieldset class="outer">
+                    <legend>Personal Info</legend>
+                    <div>
+                        <img src="Resources/Images/user1.png" />
+                        <input type="text" placeholder="Enter your full name" />
+                    </div>
+                    <div>
+                        <img src="Resources/Images/email.png" />
+                        <input type="email" placeholder="Enter a valid e-mail" />
+                    </div>
+                    <div>
+                        <img src="Resources/Images/phone.png" />
+                        <input type="tel" placeholder="Enter a phone number" />
+                    </div>
+                </fieldset>
+
+                <fieldset class="outer">
+                    <legend>Flight Info</legend>
+                    <fieldset id="radio">
+                        <legend>Are flying for first time?</legend>
+                        <input type="radio" name="flying" id="yes" />
+                        <label for="yes">Yes</label>
+
+                        <input type="radio" name="flying" id="no" />
+                        <label for="no">No</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Choose Destination</legend>
+                        <select>
+                            <optgroup label="Bulgaria">
+                                <option value="value">Dobrostan</option>
+                                <option value="value">Sopot</option>
+                                <option value="value">Sofia</option>
+                                <option value="value">Bourgas</option>
+                            </optgroup>
+                            <optgroup label="Rest of the world">
+                                <option value="value">Nepal</option>
+                                <option value="value">Turkey</option>
+                                <option value="value">France</option>
+                            </optgroup>
+</select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Choose Date</legend>
+                        <input type="date" />
+                    </fieldset>
+
+                </fieldset>
+            </main>
+
+            <footer>
+                <input type="submit" value="Send" />
+                <input type="reset" value="Clear" />
+            </footer>
+        </form>
+    </div>
+</body>
+</html>

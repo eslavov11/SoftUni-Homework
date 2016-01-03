@@ -1,0 +1,94 @@
+﻿@media only screen and (max-width: 1200px) {
+    #wrapper {
+        width: 100%;
+    }
+
+    main, header, footer {
+        width: 90%;
+    }
+
+    #wrapper > main > section {
+        width: 100%;
+        margin-left: 0;
+        /*margin-left: 3%;*/
+    }
+
+        #wrapper > main > section > div {
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    main > aside {
+        width: 100%;
+        margin-left: 0;
+        /*margin-left: 3%;*/
+    }
+
+        main > aside > article {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+    #wrapper > header > nav > ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #wrapper > header > nav > ul > li {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 730px) {
+    #wrapper > header > nav > ul {
+        display: inline-block;
+        width: 100%;
+        margin-top: 0;
+    } 
+
+    #wrapper > header {
+        margin-bottom: 200px;
+    }
+    
+    #wrapper > header > nav > ul > li {
+        width: 100%;
+    }
+
+    #wrapper > main > section > div {
+        margin-bottom: 130px;
+    }
+
+    #wrapper > main > section > div > div {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #BACD8B;
+    }
+    #wrapper > main > section > div > article {
+        background-color: #fff;
+        margin-top: 20px;
+    }
+
+     #wrapper > main > section > div > article > h3 {
+         text-align: center;
+         margin-top: 180px;
+     }
+
+     #wrapper > main > section > div {
+         margin-bottom: 150px;
+     }
+
+     #wrapper > main > section {
+         margin-top: 0;
+     }
+
+     #wrapper > main > aside {
+         margin-top: 0;
+     }
+
+     #wrapper > main > aside > article > h1,
+     #wrapper > main > aside > article > h2 {
+         text-align: center;
+     }
+}

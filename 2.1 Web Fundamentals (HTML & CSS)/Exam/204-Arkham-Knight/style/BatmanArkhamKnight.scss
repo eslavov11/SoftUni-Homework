@@ -1,0 +1,182 @@
+﻿$border: 1px solid white;
+$font-Color: #f5bda6;
+$shadow: #3c0000 0 0 200px;
+
+@font-face {
+    font-family: 'GothamNightsBoldItalic';
+    src: url('../Fonts/Gotham Nights Bold Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GothamNightsBold';
+    src: url('../Fonts/Gotham Nights Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GothamNightsItalic';
+    src: url('../Fonts/Gotham Nights Italic.otf') format('opentype');
+}
+
+a {
+    color: $font-Color;
+}
+/*1366px normal resolution*/
+body {
+    margin: 0;
+    padding: 0 20px;
+    background-color: #130707;
+
+    #wrapper {
+        margin: 0 auto;
+        color: $font-Color;
+        padding: 10px;
+
+        header {
+            width: 1290px;
+            box-shadow: $shadow;
+
+            ul {
+                margin: 0;
+                padding: 10px 0 5px 0;
+                height: 185px;
+
+                #arkham-knight-logo {
+                    float: left;
+                }
+
+                #right-padded {
+                    float: right;
+                    margin: 60px 50px;
+                }
+
+                li {
+                    width: 180px;
+                    text-align: center;
+                    border-radius: 5px;
+                    list-style: none;
+                    display: inline-block;
+                    font-family: GothamNightsBold;
+                    font-size: 40px;
+                    margin: 5px 20px;
+                    transition: 0.8s;
+
+                    img {
+                        width: 300px;
+                    }
+
+                    &:hover {
+                        background-color: black;
+                    }
+                }
+            }
+        }
+
+        main {
+            width: 1280px;
+
+            .union {
+                box-shadow: $shadow;
+                margin: 10px 0;
+
+                section {
+                    width: 48%;
+                }
+            }
+
+            .section-main-info {
+                display: inline-block;
+                width: 920px;
+
+                section {
+                    margin: 5px;
+                    display: inline-block;
+
+                    h2 {
+                        font-family: GothamNightsBold;
+                        font-size: 30px;
+                    }
+
+                    img {
+                        width: 360px;
+                    }
+
+                    article {
+                        display: inline-block;
+                        width: 320px;
+                        font-family: GothamNightsBoldItalic;
+                        font-size: 21px;
+                    }
+                }
+            }
+
+            .section-secondary-info {
+                position: relative;
+                bottom: 60px;
+                display: inline-block;
+                width: 340px;
+                padding: 5px;
+
+                header {
+                    font-family: GothamNightsBold;
+                    font-size: 24px;
+                    width: 340px;
+                }
+
+                section {
+                    font-family: GothamNightsBold;
+                }
+            }
+
+            nav {
+                padding: 0 10%;
+
+                ul {
+                    margin: 0 auto;
+
+                    li {
+                        display: inline-block;
+                        font-family: GothamNightsBold;
+                        font-size: 30px;
+                        margin: -30px 20px;
+                        transition: 1s;
+
+                        &:hover {
+                            color: #580d0d;
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-family: GothamNightsItalic;
+            font-size: 10px;
+        }
+    }
+}
+
+#wrapper > main > section > .union > section > article {
+    width: 100%;
+}
+
+#wrapper > header > ul > li:nth-child(1) {
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.00) !important;
+    }
+}
+
+#arkham-knight-logo {
+    float: left;
+}
+
+#wrapper > main > section > div:nth-child(2) > section:nth-child(2) > h2 > a {
+    color: darkred;
+}
+/*******************************1200 small resolution****************/
+/*****************************Implement missing layout***************************/
+
+/*******************************560 xsmall resolution*****************************/
+/*****************************Implement missing layout***************************/

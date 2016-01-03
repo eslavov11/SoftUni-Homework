@@ -1,0 +1,194 @@
+﻿input:focus, select:focus {
+    outline: 0;
+}
+
+body {
+    background: url(../Resources/Images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #2169AD;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+
+    #wrapper {
+        width: 800px;
+        height: 530px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255,0.3);
+        border-radius: 40px;
+
+        form {
+            width: 742px;
+
+            header {
+                margin-top: 20px;
+                margin-left: 60px;
+
+                ul {
+                    list-style-type: none;
+                    padding-top: 30px;
+                    padding-left: 0;
+
+                    li {
+                        display: inline-block;
+                        cursor: pointer;
+                        border-radius: 15px;
+                        margin: 0 6px;
+                        padding: 3px;
+
+                        &:hover {
+                            background-color: #75ABD2;
+                        }
+
+                        img {
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: inherit;
+                            font-weight: 700;
+                            vertical-align: top;
+                            position: relative;
+                            top: 10px;
+                        }
+
+                        &:nth-child(1) {
+                            background-color: #75ABD2;
+                        }
+                    }
+                }
+            }
+
+            main {
+                margin-left: 60px;
+
+                fieldset.outer {
+                    width: 300px;
+                    height: 330px;
+                    display: inline-block;
+                    vertical-align: top;
+                    border-radius: 15px;
+                    border-color: #2169AD;
+
+                    legend {
+                        text-align: center;
+                    }
+
+                    div:nth-child(2) {
+                        margin-top: 50px;
+                    }
+
+                    div {
+                        background-color: rgba(255,255,255,0.5);
+                        border: 1px solid #2169AD;
+                        border-radius: 15px;
+                        height: 35px;
+                        margin-bottom: 20px;
+                        padding-top: 8px;
+                        padding-left: 10px;
+
+                        input {
+                            background-color: transparent;
+                            border: none;
+                            color: inherit;
+                            font-weight: 500;
+                            font-size: 22px;
+                            width: 90%;
+
+                            &::-webkit-input-placeholder {
+                                color: rgba(33,105,173, 0.5);
+                                font-weight: 500;
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    fieldset {
+                        border: none;
+                        padding-left: 0;
+                        padding-right: 0;
+
+                        &:nth-child(2) > legend {
+                            padding-top: 40px;
+                        }
+
+                        select, input[type='date'] {
+                            background-color: rgba(255,255,255,0.5);
+                            border: 1px solid #2169AD;
+                            border-radius: 15px;
+                            height: 35px;
+                            width: 100%;
+                            font-size: 22px;
+                            color: inherit;
+                        }
+
+                        select {
+                            height: 45px;
+
+                            option, optgroup {
+                                background-color: #C0E1EA;
+                            }
+                        }
+
+                        input[type='date'] {
+                            padding-left: 30px;
+                            width: 90%;
+                        }
+                    }
+
+                    #yes {
+                        margin-left: 90px;
+                    }
+                }
+            }
+        }
+
+        footer {
+            margin-top: 15px;
+
+            input {
+                height: 45px;
+                width: 90px;
+                background-color: transparent;
+                border-radius: 15px;
+                font-size: 22px;
+                font-weight: bold;
+                float: right;
+                cursor: pointer;
+
+                &:after {
+                    clear: both;
+                }
+
+                &[type='reset'] {
+                    border: 2px solid #B30000;
+                    color: #B30000;
+                    margin-right: 5px;
+
+                    &:hover {
+                        background-color: #B30000;
+                        color: #fff;
+                    }
+                }
+
+                &[type='submit'] {
+                    border: 2px solid #01B400;
+                    color: #01B400;
+
+                    &:hover {
+                        background-color: #01B400;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*
+o	Input fields and Destination: 22px.
+o	Destination options font-size: 14px.
+o	“Send” and “Reset”: 24px.
+
+*/

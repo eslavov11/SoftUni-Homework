@@ -1,0 +1,178 @@
+﻿@font-face {
+    font-family: 'GothamNightsBoldItalic';
+    src: url('../Fonts/Gotham Nights Bold Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GothamNightsBold';
+    src: url('../Fonts/Gotham Nights Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GothamNightsItalic';
+    src: url('../Fonts/Gotham Nights Italic.otf') format('opentype');
+}
+
+a {
+    color: #f5bda6;
+}
+
+/*1366px normal resolution*/
+body {
+    margin: 0;
+    padding: 0 20px;
+    background-color: #130707;
+}
+
+    body #wrapper {
+        margin: 0 auto;
+        color: #f5bda6;
+        padding: 10px;
+    }
+
+        body #wrapper header {
+            max-width: 1290px;
+            box-shadow: #3c0000 0 0 200px;
+        }
+
+            body #wrapper header ul {
+                margin: 0;
+                padding: 10px 0 5px 0;
+                height: 185px;
+            }
+
+                body #wrapper header ul #arkham-knight-logo {
+                    float: left;
+                }
+
+                body #wrapper header ul #right-padded {
+                    float: right;
+                    margin: 60px 50px;
+                }
+
+                body #wrapper header ul li {
+                    width: 180px;
+                    text-align: center;
+                    border-radius: 5px;
+                    list-style: none;
+                    display: inline-block;
+                    font-family: GothamNightsBold;
+                    font-size: 40px;
+                    margin: 5px 20px;
+                    transition: 0.8s;
+                }
+
+                    body #wrapper header ul li img {
+                        width: 300px;
+                    }
+
+                    body #wrapper header ul li:hover {
+                        background-color: black;
+                    }
+
+        body #wrapper main {
+            max-width: 1280px;
+        }
+
+            body #wrapper main .union {
+                box-shadow: #3c0000 0 0 200px;
+                margin: 10px 0;
+            }
+
+                body #wrapper main .union section {
+                    width: 48%;
+                }
+
+            body #wrapper main .section-main-info {
+                display: inline-block;
+                width: 920px;
+            }
+
+                body #wrapper main .section-main-info section {
+                    margin: 5px;
+                    display: inline-block;
+                }
+
+                    body #wrapper main .section-main-info section h2 {
+                        font-family: GothamNightsBold;
+                        font-size: 30px;
+                    }
+
+                    body #wrapper main .section-main-info section img {
+                        width: 360px;
+                    }
+
+                    body #wrapper main .section-main-info section article {
+                        display: inline-block;
+                        width: 320px;
+                        font-family: GothamNightsBoldItalic;
+                        font-size: 21px;
+                    }
+
+            body #wrapper main .section-secondary-info {
+                position: relative;
+                bottom: 60px;
+                display: inline-block;
+                width: 340px;
+                padding: 5px;
+            }
+
+                body #wrapper main .section-secondary-info header {
+                    font-family: GothamNightsBold;
+                    font-size: 24px;
+                    width: 340px;
+                }
+
+                body #wrapper main .section-secondary-info section {
+                    font-family: GothamNightsBold;
+                }
+
+            body #wrapper main nav {
+                padding: 0 10%;
+            }
+
+                body #wrapper main nav ul {
+                    margin: 0 auto;
+                }
+
+                    body #wrapper main nav ul li {
+                        display: inline-block;
+                        font-family: GothamNightsBold;
+                        font-size: 30px;
+                        margin: -30px 20px;
+                        transition: 1s;
+                    }
+
+                        body #wrapper main nav ul li:hover {
+                            color: #580d0d;
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+
+        body #wrapper footer {
+            text-align: center;
+            font-family: GothamNightsItalic;
+            font-size: 10px;
+        }
+
+#wrapper > main > section > .union > section > article {
+    width: 100%;
+}
+
+#wrapper > header > ul > li:nth-child(1):hover {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#arkham-knight-logo {
+    float: left;
+}
+
+#wrapper > main > section > div:nth-child(2) > section:nth-child(2) > h2 > a {
+    color: darkred;
+}
+
+/*******************************1200 small resolution****************/
+/*****************************Implement missing layout***************************/
+
+/*******************************560 xsmall resolution*****************************/
+/*****************************Implement missing layout***************************/

@@ -1,6 +1,6 @@
 using System;
 
-class Nakov
+class CrossingFigures
 {
     static void Main()
     {

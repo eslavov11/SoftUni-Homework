@@ -1,4 +1,4 @@
-﻿namespace Blops.Models.Behavior
+﻿namespace Blobs.GameObjects.Behaviors
 {
     using Interfaces;
 
@@ -7,10 +7,6 @@
         protected Behavior()
         {
         }
-
-        //public string BehaviorName { get; private set; }
-
-       // public IBlob Blob { get; private set; }
 
         public abstract void Trigger(IBlob blob);
 

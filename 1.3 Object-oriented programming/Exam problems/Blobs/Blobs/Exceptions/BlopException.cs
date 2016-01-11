@@ -1,4 +1,4 @@
-﻿namespace Blops.Exceptions
+﻿namespace Blobs.Exceptions
 {
     using System;
 

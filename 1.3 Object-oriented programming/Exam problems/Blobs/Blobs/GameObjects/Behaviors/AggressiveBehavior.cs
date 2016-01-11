@@ -1,8 +1,8 @@
-﻿namespace Blops.Models.Behavior
+﻿namespace Blobs.GameObjects.Behaviors
 {
     using Interfaces;
 
-    public class AggressiveBehavior : Behavior
+    public class AggressiveBehavior : GameObjects.Behaviors.Behavior
     {
         private const int DefaultAggressiveBehaviorDamageRate = 2;
         private const int DefaultAggressiveBehaviorDamageTurnSubtraction = 5;

@@ -1,5 +1,8 @@
-﻿namespace Blops.Interfaces
+﻿namespace Blobs.Interfaces
 {
+    /// <summary>
+    /// Holds all properties and methods for a blob.
+    /// </summary>
     public interface IBlob : IAttacker, IDestroyable
     {
         string Name { get; }

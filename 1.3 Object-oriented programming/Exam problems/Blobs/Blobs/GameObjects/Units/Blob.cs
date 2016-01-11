@@ -1,9 +1,7 @@
-﻿using System.CodeDom;
-using Blops.Exceptions;
-
-namespace Blops.Models
+﻿namespace Blobs.Models
 {
     using Interfaces;
+    using Exceptions;
 
     public class Blob : IBlob
     {
@@ -134,7 +132,7 @@ namespace Blops.Models
         private int CalculateHealthToSubstract()
         {
             int healthToSubtract = (int) (this.Health/this.Attack.HealthLossRate);
-            return this.Health%2 == 0 ? healthToSubtract : healthToSubtract + 1;
+            return this.Health % 2 == 0 ? healthToSubtract : healthToSubtract + 1;
         }
 
         private bool BehaviorShouldBeTriggered(int blopHealth, int blopInitHealth)

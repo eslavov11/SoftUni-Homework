@@ -1,4 +1,4 @@
-﻿namespace Blops.GameObjects.Attacks
+﻿namespace Blobs.GameObjects.Attacks
 {
     using Interfaces;
 

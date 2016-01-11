@@ -1,7 +1,7 @@
 ﻿namespace Blobs
 {
-    using Blops.Interfaces;
-    using Blops.Core;
+    using Interfaces;
+    using Core;
 
     public class BlobsMain
     {

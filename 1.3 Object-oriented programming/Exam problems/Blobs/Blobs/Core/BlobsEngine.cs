@@ -1,4 +1,4 @@
-﻿namespace Blops.Core
+﻿namespace Blobs.Core
 {
     using Interfaces;
     using Commands;

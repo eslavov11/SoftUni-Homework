@@ -1,4 +1,6 @@
-﻿namespace Blops.Core.Commands
+﻿using Blobs.GameObjects.Behaviors;
+
+namespace Blobs.Core.Commands
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +8,7 @@
     using Interfaces;
     using GameObjects.Attacks;
     using Models;
-    using Models.Behavior;
+    using GameObjects.Behaviors;
     using System.Linq;
     using Exceptions;
 

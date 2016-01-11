@@ -7,8 +7,8 @@
     <ProjectGuid>{B24C5D31-9AAF-4533-B35C-E473C9598FFD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exam</RootNamespace>
-    <AssemblyName>Exam</AssemblyName>
+    <RootNamespace>Blobs</RootNamespace>
+    <AssemblyName>Blobs</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -1,4 +1,4 @@
-﻿namespace Blops.Models.Behavior
+﻿namespace Blobs.GameObjects.Behaviors
 {
     using Interfaces;
 

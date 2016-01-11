@@ -1,4 +1,4 @@
-﻿namespace Blops.UserInterface
+﻿namespace Blobs.UserInterface
 {
     using Interfaces;
     using System;

@@ -1,4 +1,4 @@
-﻿namespace Blops.Core
+﻿namespace Blobs.Core
 {
     internal static class EngineConstants
     {
@@ -10,6 +10,5 @@
         internal const string ExitCommand = "drop";
         internal const string ReportEventsCommand = "report-events";
         #endregion
-        
     }
 }

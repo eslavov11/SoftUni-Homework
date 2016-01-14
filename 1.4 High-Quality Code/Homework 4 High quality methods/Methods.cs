@@ -1,19 +1,28 @@
 ﻿namespace Methods
 {
     using System;
+    using Interfaces;
+    using UI;
 
     public class Methods
     {
+        private static IUserInterface userInterface;
+
+        private Methods()
+        {
+            userInterface = new ConsoleUserInterface();
+        }
+
         public static double CalcTriangleArea(double a, double b, double c)
         {
             if (a <= 0 || b <= 0 || c <= 0)
             {
-                Console.Error.WriteLine("Sides should be positive.");
-                return -1;
+                throw new ArgumentOutOfRangeException("Sides should be positive.");
             }
 
             double s = (a + b + c) / 2;
             double area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+
             return area;
         }
 
@@ -40,7 +49,7 @@
         {
             if (elements == null || elements.Length == 0)
             {
-                return -1;
+                throw new ArgumentNullException("Invalid elements length.");
             }
 
             for (int i = 1; i < elements.Length; i++)
@@ -58,17 +67,17 @@
         {
             if (format == "f")
             {
-                Console.WriteLine("{0:f2}", number);
+                userInterface.WriteLine("{0:f2}", number);
             }
 
             if (format == "%")
             {
-                Console.WriteLine("{0:p0}", number);
+                userInterface.WriteLine("{0:p0}", number);
             }
 
             if (format == "r")
             {
-                Console.WriteLine("{0,8}", number);
+                userInterface.WriteLine("{0,8}", number);
             }
         }
 
@@ -89,20 +98,20 @@
 
         public static void Main()
         {
-            Console.WriteLine(CalcTriangleArea(3, 4, 5));
-            
-            Console.WriteLine(NumberToDigit(5));
-            
-            Console.WriteLine(FindMax(5, -1, 3, 2, 14, 2, 3));
+            userInterface.WriteLine(CalcTriangleArea(3, 4, 5));
+
+            userInterface.WriteLine(NumberToDigit(5));
+
+            userInterface.WriteLine(FindMax(5, -1, 3, 2, 14, 2, 3));
             
             PrintAsNumber(1.3, "f");
             PrintAsNumber(0.75, "%");
             PrintAsNumber(2.30, "r");
 
             bool horizontal, vertical;
-            Console.WriteLine(CalcDistance(3, -1, 3, 2.5, out horizontal, out vertical));
-            Console.WriteLine("Horizontal? " + horizontal);
-            Console.WriteLine("Vertical? " + vertical);
+            userInterface.WriteLine(CalcDistance(3, -1, 3, 2.5, out horizontal, out vertical));
+            userInterface.WriteLine("Horizontal? " + horizontal);
+            userInterface.WriteLine("Vertical? " + vertical);
 
             Student peter = new Student
                                 {
@@ -118,7 +127,7 @@
                                      OtherInfo = "From Vidin, gamer, high results, born at 03.11.1993"
                                  };
 
-            Console.WriteLine(
+            userInterface.WriteLine(
                 "{0} older than {1} -> {2}",
                 peter.FirstName, 
                 stella.FirstName,

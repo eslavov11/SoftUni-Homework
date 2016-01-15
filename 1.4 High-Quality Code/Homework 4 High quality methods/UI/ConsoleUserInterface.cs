@@ -10,7 +10,12 @@
             return Console.ReadLine();
         }
 
-        public void WriteLine(object args)
+        public void WriteLine(string args)
+        {
+            Console.WriteLine(args);
+        }
+
+        public void WriteLine(double args)
         {
             Console.WriteLine(args);
         }

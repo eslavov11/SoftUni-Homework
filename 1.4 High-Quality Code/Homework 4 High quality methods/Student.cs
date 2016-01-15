@@ -4,18 +4,77 @@
 
     public class Student
     {
-        public string FirstName { get; set; }
+        private string firstName;
+        private string lastName;
+        private string otherInfo;
 
-        public string LastName { get; set; }
+        public Student(string firstName, string lastName, string otherInfo)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.OtherInfo = otherInfo;
+        }
 
-        public string OtherInfo { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName;
+            }
 
-        public bool IsOlderThan(Student other)
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("Student first name is empty.");
+                }
+
+                this.firstName = value;
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("Student last name is empty.");
+                }
+
+                this.lastName = value;
+            }
+        }
+
+        public string OtherInfo
+        {
+            get
+            {
+                return this.otherInfo;
+            }
+
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("Student \"other info\" is empty.");
+                }
+
+                this.otherInfo = value;
+            }
+        }
+
+        public bool IsOlderThan(string otherInfo)
         {
             DateTime firstDate =
                 DateTime.Parse(this.OtherInfo.Substring(this.OtherInfo.Length - 10));
             DateTime secondDate =
-                DateTime.Parse(other.OtherInfo.Substring(other.OtherInfo.Length - 10));
+                DateTime.Parse(otherInfo.Substring(otherInfo.Length - 10));
             return firstDate > secondDate;
         }
     }

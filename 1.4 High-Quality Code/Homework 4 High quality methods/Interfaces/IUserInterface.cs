@@ -4,7 +4,9 @@
     {
         string ReadLine();
 
-        void WriteLine(object args);
+        void WriteLine(string args);
+
+        void WriteLine(double args);
 
         void WriteLine(string format, params object[] args);
     }

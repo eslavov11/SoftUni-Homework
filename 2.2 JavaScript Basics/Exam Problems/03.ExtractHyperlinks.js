@@ -22,7 +22,3 @@ function main(input) {
         }
     } while(matchReg);
 }
-
-
-main(
-['<a href="http://softuni.bg" class="new"></a>']);

@@ -15,28 +15,34 @@
             this.Radius = radius;
         }
 
-        public double CalcPerimeter()
-        {
-            double perimeter = 2 * Math.PI * this.Radius;
-            return perimeter;
-        }
-
-        public double CalcSurface()
-        {
-            double surface = Math.PI * this.Radius * this.Radius;
-            return surface;
-        }
-
-        public virtual double Radius
+        public double Radius
         {
             get
             {
                 return this.radius;
             }
+
             set
             {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException("radius", "Radius must be positive.");
+                }
+
                 this.radius = value;
             }
+        }
+
+        public override double CalcPerimeter()
+        {
+            double perimeter = 2 * Math.PI * this.Radius;
+            return perimeter;
+        }
+
+        public override double CalcSurface()
+        {
+            double surface = Math.PI * this.Radius * this.Radius;
+            return surface;
         }
     }
 }

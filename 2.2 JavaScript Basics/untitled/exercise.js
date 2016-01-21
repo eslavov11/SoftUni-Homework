@@ -1,73 +1,55 @@
 /**
- * Created by Ed on 16-Jan-16.
+ * Created by Ed on 20-Jan-16.
  */
 function main(input) {
-    var database = [],
-        noSorted = true;
-    console.log(input[0]);
-    console.log(input[1]);
+    var pattern = /<tr><td>.*?<\/td><td>([0-9\-\.]*)<\/td><td>([0-9\-\.]*)<\/td><td>([0-9\-\.]*)<\/td><\/tr>/,
+        output = 'no data';
 
     for (var i = 2; i < input.length-1; i++) {
-        database.push(input[i]);
+        var nums = pattern.exec(input[i]),
+            tempSum = undefined;
+        var num1 = Number(nums[1]);
+        var num2 = Number(nums[2]);
+        var num3 = Number(nums[3]);
+
+        if (isNaN(num1) && isNaN(num2) && isNaN(num3)) continue;
+        tempSum = 0;
+        if (!isNaN(num1))
+            tempSum += num1;
+        if (!isNaN(num2))
+            tempSum += num2;
+        if (!isNaN(num3))
+            tempSum += num3;
+
+        if (output.sum >= tempSum) continue;
+
+        output = {
+          sum: tempSum,
+            n1: nums[1],
+            n2: nums[2],
+            n3: nums[3]
+        };
     }
 
-    do {
-        noSorted = true;
-
-        for (var i = 0; i < database.length - 1; i++) {
-            var num = (/<tr><td>.*?<\/td><td>(.*?)<\/td><td>.*?<\/td><\/tr>/g).exec(database[i]);
-            var num2 = (/<tr><td>.*?<\/td><td>(.*?)<\/td><td>.*?<\/td><\/tr>/g).exec(database[i+1]);
-
-            if (Number(num[1]) > Number(num2[1])) {
-                var oldValue = database[i];
-                database[i] = database[i+1];
-                database[i+1] = oldValue;
-                noSorted = false;
-            }
-        }
-    } while (!noSorted);
-
-    function sortObject(o) {
-        var sorted = {},
-            key, a = [];
-
-        for (key in o) {
-            if (o.hasOwnProperty(Number(key))) {
-                a.push(Number(key));
-            }
-        }
-
-        a = a.sort(function(e1, e2) {
-            return Number(e1) > Number(e2);
-        });
-
-        for (key = 0; key < a.length; key++) {
-            sorted[a[Number(key)]] = o[a[Number(key)]];
-        }
-        return sorted;
+    if (typeof output === 'object') {
+        var arr = [];
+        if (!isNaN(output.n1)) arr.push(output.n1);
+        if (!isNaN(output.n2)) arr.push(output.n2);
+        if (!isNaN(output.n3)) arr.push(output.n3);
+        console.log(output.sum + ' = ' + arr.join(' + '));
+    } else {
+        console.log(output);
     }
 
-    database = sortObject(database);
-
-    for (var el in database) {
-        console.log(database[el]);
-    }
-    //for (var i = 2; i < database.length-1; i++) {
-    //    var num = (/<tr><td>(.*?)<\/td><td>.*?<\/td><td>.*?<\/td><\/tr>/g).exec(database);
-    //    database[Number(num[1])] = input[i];
-    //
-    //}
-
-    console.log(input[input.length-1]);
 }
 
 main([
-'<table>',
-'<tr><th>Product</th><th>Price</th><th>Votes</th></tr>',
-'<tr><td>Vodka Finlandia 1 l</td><td>19.35</td><td>+12</td></tr>',
-'<tr><td>Ariana Radler 0.5 l</td><td>1.19</td><td>+33</td></tr>',
-'<tr><td>Laptop HP 250 G2</td><td>629</td><td>+1</td></tr>',
-'<tr><td>Kamenitza Grapefruit 1 l</td><td>1.85</td><td>+7</td></tr>',
-'<tr><td>Ariana Grapefruit 1.5 l</td><td>1.85</td><td>+7</td></tr>',
-'<tr><td>Coffee Davidoff 250 gr.</td><td>11.99</td><td>+11</td></tr>',
-'</table>']);
+    '<table>',
+    '<tr><th>Town</th><th>Store1</th><th>Store2</th><th>Store3</th></tr>',
+    '<tr><td>Rousse</td><td>-</td><td>50000.0</td><td>-</td></tr>',
+    '<tr><td>Bourgas</td><td>25000</td><td>25000</td><td>-</td></tr>',
+    '<tr><td>Plovdiv</td><td>17.2</td><td>12.3</td><td>6.4</td></tr>',
+    '<tr><td>Bourgas</td><td>-</td><td>24.3</td><td>-</td></tr>',
+    '</table>'
+
+]);

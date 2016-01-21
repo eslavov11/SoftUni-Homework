@@ -1,0 +1,49 @@
+//Round float to two decimal places
+.toFixed(2);
+
+//For rounding two decimal places at most -> 8.1 - 8.1 , 8.146 -> 8.15
+
+Math.round(num * 100) / 100
+
+//order object by key function
+
+function sortObject(o) {
+        var sorted = {},
+            key, a = [];
+
+        for (key in o) {
+            if (o.hasOwnProperty(key)) {
+                a.push(key);
+            }
+        }
+
+        a.sort();
+
+        for (key = 0; key < a.length; key++) {
+            sorted[a[key]] = o[a[key]];
+        }
+        return sorted;
+    }
+	
+//remove duplicates from array function
+
+Array.prototype.removeDuplicates = function (){
+        var temp= new Array();
+        this.sort();
+        for(i=0;i<this.length;i++){
+            if(this[i]==this[i+1]) {continue}
+            temp[temp.length]=this[i];
+        }
+        return temp;
+    };
+
+//calculate sum of array elements
+
+function calculateArrSum(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        return sum;
+    }	

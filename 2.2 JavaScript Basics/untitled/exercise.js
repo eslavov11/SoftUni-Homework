@@ -2,54 +2,119 @@
  * Created by Ed on 20-Jan-16.
  */
 function main(input) {
-    var pattern = /<tr><td>.*?<\/td><td>([0-9\-\.]*)<\/td><td>([0-9\-\.]*)<\/td><td>([0-9\-\.]*)<\/td><\/tr>/,
-        output = 'no data';
+    var output = {};
 
-    for (var i = 2; i < input.length-1; i++) {
-        var nums = pattern.exec(input[i]),
-            tempSum = undefined;
-        var num1 = Number(nums[1]);
-        var num2 = Number(nums[2]);
-        var num3 = Number(nums[3]);
+    for (var lineKey in input) {
+        var tokens = input[lineKey].split('|');
+        var student = tokens[0].trim(),
+            course = tokens[1].trim(),
+            grade = Number(tokens[2].trim()),
+            visits = Number(tokens[3].trim());
 
-        if (isNaN(num1) && isNaN(num2) && isNaN(num3)) continue;
-        tempSum = 0;
-        if (!isNaN(num1))
-            tempSum += num1;
-        if (!isNaN(num2))
-            tempSum += num2;
-        if (!isNaN(num3))
-            tempSum += num3;
+        if(!output[course]) {
+            output[course] = {
+              'grades': [],
+              'visits': [],
+              'students': []
+            };
+        }
 
-        if (output.sum >= tempSum) continue;
-
-        output = {
-          sum: tempSum,
-            n1: nums[1],
-            n2: nums[2],
-            n3: nums[3]
-        };
+        output[course].grades.push(grade);
+        output[course].visits.push(visits);
+        output[course].students.push(student);
     }
 
-    if (typeof output === 'object') {
-        var arr = [];
-        if (!isNaN(output.n1)) arr.push(output.n1);
-        if (!isNaN(output.n2)) arr.push(output.n2);
-        if (!isNaN(output.n3)) arr.push(output.n3);
-        console.log(output.sum + ' = ' + arr.join(' + '));
-    } else {
-        console.log(output);
+
+    Array.prototype.removeDuplicates = function (){
+        var temp= new Array();
+        this.sort();
+        for(i=0;i<this.length;i++){
+            if(this[i]==this[i+1]) {continue}
+            temp[temp.length]=this[i];
+        }
+        return temp;
+    };
+
+    output = sortObject(output);
+
+    for(var elem in output) {
+        output[elem].students.sort();
+        output[elem].students = output[elem].students.removeDuplicates();
     }
 
+    function calculateArrSum(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        return sum;
+    }
+
+    var result = {};
+    for(var elem in output) {
+        result[elem] = {
+            'avgGrade': [],
+            'avgVisits': [],
+            'students': []};
+
+        result[elem].avgGrade = Math.round((calculateArrSum(output[elem].grades) / output[elem].grades.length) * 100) / 100;
+        result[elem].avgVisits = Math.round((calculateArrSum(output[elem].visits) / output[elem].visits.length) * 100) / 100;
+        result[elem].students = output[elem].students;
+    };
+
+    console.log(JSON.stringify(result));
+
+    function sortObject(o) {
+        var sorted = {},
+            key, a = [];
+
+        for (key in o) {
+            if (o.hasOwnProperty(key)) {
+                a.push(key);
+            }
+        }
+
+        a.sort();
+
+        for (key = 0; key < a.length; key++) {
+            sorted[a[key]] = o[a[key]];
+        }
+        return sorted;
+    }
 }
 
 main([
-    '<table>',
-    '<tr><th>Town</th><th>Store1</th><th>Store2</th><th>Store3</th></tr>',
-    '<tr><td>Rousse</td><td>-</td><td>50000.0</td><td>-</td></tr>',
-    '<tr><td>Bourgas</td><td>25000</td><td>25000</td><td>-</td></tr>',
-    '<tr><td>Plovdiv</td><td>17.2</td><td>12.3</td><td>6.4</td></tr>',
-    '<tr><td>Bourgas</td><td>-</td><td>24.3</td><td>-</td></tr>',
-    '</table>'
-
+    'Peter Nikolov | PHP  | 5.50 | 8',
+    'Maria Ivanova | Java | 5.83 | 7',
+    'Ivan Petrov   | PHP  | 3.00 | 2',
+    'Ivan Petrov   | C#   | 3.00 | 2',
+    'Peter Nikolov | C#   | 5.50 | 8',
+    'Maria Ivanova | C#   | 5.83 | 7',
+    'Ivan Petrov   | C#   | 4.12 | 5',
+    'Ivan Petrov   | PHP  | 3.10 | 2',
+    'Peter Nikolov | Java | 6.00 | 9'
 ]);
+
+var a = {
+    "C#":
+    {
+        "avgGrade": 4.61,
+        "avgVisits": 5.5,
+        "students": ["Ivan Petrov","Maria Ivanova","Peter     Nikolov"]
+    },
+
+    "Java":
+    {
+        "avgGrade": 5.92,
+        "avgVisits": 8,
+        "students": ["Maria Ivanova","Peter     Nikolov"]
+    },
+
+    "PHP":
+    {
+        "avgGrade": 3.87,
+        "avgVisits": 4,
+        "students": ["Ivan Petrov","Peter   Nikolov"]
+    }
+};

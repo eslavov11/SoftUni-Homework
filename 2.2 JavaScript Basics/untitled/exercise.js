@@ -2,119 +2,60 @@
  * Created by Ed on 20-Jan-16.
  */
 function main(input) {
-    var output = {};
+    var pattern = /<p.*?>(.*?)<\/p>/g,
+        paragraph,
+        result = "";
 
-    for (var lineKey in input) {
-        var tokens = input[lineKey].split('|');
-        var student = tokens[0].trim(),
-            course = tokens[1].trim(),
-            grade = Number(tokens[2].trim()),
-            visits = Number(tokens[3].trim());
-
-        if(!output[course]) {
-            output[course] = {
-              'grades': [],
-              'visits': [],
-              'students': []
-            };
-        }
-
-        output[course].grades.push(grade);
-        output[course].visits.push(visits);
-        output[course].students.push(student);
+    while (paragraph = pattern.exec(input)) {
+        result += paragraph[1];
     }
 
-
-    Array.prototype.removeDuplicates = function (){
-        var temp= new Array();
-        this.sort();
-        for(i=0;i<this.length;i++){
-            if(this[i]==this[i+1]) {continue}
-            temp[temp.length]=this[i];
+    result = result.split('');
+    for (var i = 0; i < result.length; i++) {
+        if (/[^A-Za-z0-9 ]/.test(result[i])) {
+            result[i] = ' ';
+        } else if(/[A-Za-z]/.test(result[i])) {
+            var letter = result[i].charAt(0);
+            result[i] = transformLetter(letter);
         }
-        return temp;
-    };
-
-    output = sortObject(output);
-
-    for(var elem in output) {
-        output[elem].students.sort();
-        output[elem].students = output[elem].students.removeDuplicates();
     }
+    result = result.join('');
+    result = result.replace(/\s+/g, ' ');
+    console.log(result);
 
-    function calculateArrSum(arr) {
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++) {
-            sum += arr[i];
-        }
 
-        return sum;
-    }
-
-    var result = {};
-    for(var elem in output) {
-        result[elem] = {
-            'avgGrade': [],
-            'avgVisits': [],
-            'students': []};
-
-        result[elem].avgGrade = Math.round((calculateArrSum(output[elem].grades) / output[elem].grades.length) * 100) / 100;
-        result[elem].avgVisits = Math.round((calculateArrSum(output[elem].visits) / output[elem].visits.length) * 100) / 100;
-        result[elem].students = output[elem].students;
-    };
-
-    console.log(JSON.stringify(result));
-
-    function sortObject(o) {
-        var sorted = {},
-            key, a = [];
-
-        for (key in o) {
-            if (o.hasOwnProperty(key)) {
-                a.push(key);
+    function transformLetter(letter) {
+        if (letter.charCodeAt(0) === letter.toUpperCase().charCodeAt(0)) {
+            if (letter.charCodeAt(0) < 'N'.charCodeAt(0)) {
+                letter = letter.charCodeAt(0) + 13;
+            } else {
+                letter = letter.charCodeAt(0) - 13;
+            }
+        } else {
+            if (letter.charCodeAt(0) < 'n'.charCodeAt(0)) {
+                letter = letter.charCodeAt(0) + 13;
+            } else {
+                letter = letter.charCodeAt(0) - 13;
             }
         }
 
-        a.sort();
-
-        for (key = 0; key < a.length; key++) {
-            sorted[a[key]] = o[a[key]];
-        }
-        return sorted;
+        return  String.fromCharCode(letter);
     }
+
 }
 
-main([
-    'Peter Nikolov | PHP  | 5.50 | 8',
-    'Maria Ivanova | Java | 5.83 | 7',
-    'Ivan Petrov   | PHP  | 3.00 | 2',
-    'Ivan Petrov   | C#   | 3.00 | 2',
-    'Peter Nikolov | C#   | 5.50 | 8',
-    'Maria Ivanova | C#   | 5.83 | 7',
-    'Ivan Petrov   | C#   | 4.12 | 5',
-    'Ivan Petrov   | PHP  | 3.10 | 2',
-    'Peter Nikolov | Java | 6.00 | 9'
-]);
+main('<html><head><title></title></head><body><h1>hello</h1><p>znahny!@#%&&&&****</p><div><button>dsad</button></div><p>grkg^^^^%%%)))([]12</p></body></html>');
 
-var a = {
-    "C#":
-    {
-        "avgGrade": 4.61,
-        "avgVisits": 5.5,
-        "students": ["Ivan Petrov","Maria Ivanova","Peter     Nikolov"]
-    },
+//main([
+//'mine bobovdol - gold: 10',
+//'mine - diamonds: 5',
+//'mine colas - wood: 10',
+//'mine myMine - silver:  14',
+//'mine silver:14 - silver: 14',
+//]
+//);
 
-    "Java":
-    {
-        "avgGrade": 5.92,
-        "avgVisits": 8,
-        "students": ["Maria Ivanova","Peter     Nikolov"]
-    },
-
-    "PHP":
-    {
-        "avgGrade": 3.87,
-        "avgVisits": 4,
-        "students": ["Ivan Petrov","Peter   Nikolov"]
-    }
-};
+//main(
+//    ["Captain Obvious was walking down the street. As the captain was walking a person came and told him: You are Captain Obvious! He replied: Thank you CAPTAIN OBVIOUS you are the man!",
+//        "The captain was walking and he was obvious. He did not know what was going to happen to you in the future. Was he curious? We do not know."]
+//);

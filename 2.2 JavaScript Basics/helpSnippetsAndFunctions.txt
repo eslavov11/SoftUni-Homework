@@ -2,91 +2,125 @@
 .toFixed(2);
 
 //For rounding two decimal places at most -> 8.1 - 8.1 , 8.146 -> 8.15
-
 Math.round(num * 100) / 100
 
+//regex catch while can
+var pattern = /<p.*?>(.*?)<\/p>/g,
+	paragraph,
+	result = "";
+
+while (paragraph = pattern.exec(input)) {
+	result += paragraph[1];
+}
 
 // OrderByDescending.ThenBy.ThenBy
+//?? Ref 04.Student protocol
+for (var elem in protocol) {
+	protocol[elem].sort(function(a, b) {
 
-    if(a.result < b.result){ //OrderByDescending
-		return 1;
-	}
-	else if(a.result > b.result){
-		return -1;
-	}
-	else { // ThenBy
-		if(a.makeUpExams > b.makeUpExams) {
+		if(a.result<b.result){
 			return 1;
 		}
-		else if(a.makeUpExams < b.makeUpExams) {
+		else if(a.result>b.result){
 			return -1;
 		}
-		else { // ThenBy
-			return a.name.localeCompare(b.name); // returns 1, 0 or -1
+		else {
+			if(a.makeUpExams>b.makeUpExams) {
+				return 1;
+			}
+			else if(a.makeUpExams<b.makeUpExams) {
+				return -1;
+			}
+			else {
+				return a.name.localeCompare(b.name);
+			}
+		}
+	});
+}
+
+// order object by value's property which is also object
+// e.g. data = { name: { luggage : {kg: 5.....}} }
+// orders by luggage  ??Ref 04.All that luggage
+var outputNameSort = {};
+Object.keys(result).forEach(function(key) {
+	outputNameSort[key]={};
+	var sortedInnerKeys = Object.keys(result[key]).sort();
+
+	sortedInnerKeys.forEach(function (innerkey) {
+		outputNameSort[key][innerkey] = result[key][innerkey];
+	})
+});
+result = outputNameSort;
+
+// order object by value's property value which is also object within an object within an object
+// e.g. data = { name: { luggage : {kg: 5.....}} }
+// orders by kg ascending
+var outputKgSort = {};
+Object.keys(result).forEach(function(key) {
+	outputKgSort[key]={};
+	var a = Object.keys(result[key]).sort(function (a,b) {
+		return result[key][a].kg- result[key][b].kg;
+	});
+	a.forEach(function (value) {
+		outputKgSort[key][value] = result[key][value];
+	})
+});
+result = outputKgSort;
+
+//order object by key
+function sortObject(o) {
+	var sorted = {},
+		key, a = [];
+
+	for (key in o) {
+		if (o.hasOwnProperty(key)) {
+			a.push(key);
 		}
 	}
 
+	a.sort();
 
-//order object by key function
-
-function sortObject(o) {
-        var sorted = {},
-            key, a = [];
-
-        for (key in o) {
-            if (o.hasOwnProperty(key)) {
-                a.push(key);
-            }
-        }
-
-        a.sort();
-
-        for (key = 0; key < a.length; key++) {
-            sorted[a[key]] = o[a[key]];
-        }
-        return sorted;
-    }
+	for (key = 0; key < a.length; key++) {
+		sorted[a[key]] = o[a[key]];
+	}
+	return sorted;
+}
 	
 // example: [I, was , the, I, was] returns ([I, was, the], [2, 2, 1])
-	
 function returnArraysWithElementsAndOccurancesCount(arr) {
-        var a = [], b = [], prev;
+	var a = [], b = [], prev;
 
-        arr.sort();
-        for ( var i = 0; i < arr.length; i++ ) {
-            if ( arr[i] !== prev ) {
-                a.push(arr[i]);
-                b.push(1);
-            } else {
-                b[b.length-1]++;
-            }
-            prev = arr[i];
-        }
+	arr.sort();
+	for ( var i = 0; i < arr.length; i++ ) {
+		if ( arr[i] !== prev ) {
+			a.push(arr[i]);
+			b.push(1);
+		} else {
+			b[b.length-1]++;
+		}
+		prev = arr[i];
+	}
 
-        return [a, b];
-    }
-	
-	
+	return [a, b];
+}
 	
 //remove duplicates from array function
-
 Array.prototype.removeDuplicates = function (){
-        var temp= new Array();
-        this.sort();
-        for(i=0;i<this.length;i++){
-            if(this[i]==this[i+1]) {continue}
-            temp[temp.length]=this[i];
-        }
-        return temp;
-    };
+	var temp= new Array();
+	this.sort();
+	for(i=0;i<this.length;i++){
+		if(this[i]==this[i+1]) {continue}
+		temp[temp.length]=this[i];
+	}
+	return temp;
+};
 
 //calculate sum of array elements
-
 function calculateArrSum(arr) {
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++) {
-            sum += arr[i];
-        }
+	var sum = 0;
+	for (var i = 0; i < arr.length; i++) {
+		sum += arr[i];
+	}
 
-        return sum;
-    }	
+	return sum;
+}	

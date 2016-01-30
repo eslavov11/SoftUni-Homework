@@ -85,6 +85,19 @@ function sortObject(o) {
 	}
 	return sorted;
 }
+
+***********************************************
+// sorts array of objects some value e.g. name:
+ function sortArrayOfObjectsByValue(a,b) {
+	if (a.name < b.name)
+		return -1;
+	else if (a.name > b.name)
+		return 1;
+	else
+		return 0;
+}
+objects.sort(sortArrayOfObjectsByValue);
+****************************************
 	
 // example: [I, was , the, I, was] returns ([I, was, the], [2, 2, 1])
 function returnArraysWithElementsAndOccurancesCount(arr) {
@@ -102,7 +115,25 @@ function returnArraysWithElementsAndOccurancesCount(arr) {
 	}
 
 	return [a, b];
+}s
+***************************
+//Replace occurances in string(in the example matrix) and do other actions too 
+//Ref 03. Goshko the rabbit
+garden[rowPos][colPos] = garden[rowPos][colPos].replace(/\{([&*!#])\}/g, function(match, group) {
+	gosho[group] += 1;
+	return '@';
+});	
+***************************
+
+// find if object property value exists in array of objectts
+function arrayObjectIndexOf(myArray, searchTerm, property) {
+	for(var i = 0, len = myArray.length; i < len; i++) {
+		if (myArray[i][property] === searchTerm) return i;
+	}
+	return -1;
 }
+arrayObjectIndexOf(arr, "stevie", "hello"); // 1
+	
 	
 //remove duplicates from array function
 Array.prototype.removeDuplicates = function (){

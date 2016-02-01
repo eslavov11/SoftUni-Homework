@@ -1,4 +1,4 @@
-﻿namespace BangaloreUniversityLearningSystem.Views.CourseViews
+﻿namespace BangaloreUniversityLearningSystem.Views.Courses
 {
     using System.Text;
     using Models;
@@ -10,7 +10,7 @@
         {
         }
 
-        internal override void BuildViewResult(StringBuilder viewResult)
+        protected override void BuildViewResult(StringBuilder viewResult)
         {
             var course = this.Model as Course;
             viewResult.AppendFormat("Student successfully enrolled in course {0}.", course.Name).AppendLine();

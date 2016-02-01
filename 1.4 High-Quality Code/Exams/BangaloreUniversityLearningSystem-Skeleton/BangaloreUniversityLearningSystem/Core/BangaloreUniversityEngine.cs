@@ -10,36 +10,43 @@
 
     public class BangaloreUniversityEngine : IEngine
     {
+        private readonly IBangaloreUniversityDate database;
+        private User user;
+        private string commandLine;
+
+        public BangaloreUniversityEngine()
+        {
+            this.database = new BangaloreUniversityDate();
+            this.user = null;
+        }
+
         public void Run()
         {
-            var db = new BangaloreUniversityDate();
-            User u = null;
-            while (true)
-            {
-                string str = Console.ReadLine();
-                if (str == null)
-                {
-                    break;
-                }
+            this.commandLine = Console.ReadLine();
 
-                var route = new Route(str);
+            while (this.commandLine != null)
+            {
+                var route = new Route(this.commandLine);
                 var controllerType =
                     Assembly.GetExecutingAssembly()
-                        .GetTypes()
-                        .FirstOrDefault(type => type.Name == route.ControllerName);
-                var ctrl = Activator.CreateInstance(controllerType, db, u) as Controller;
-                var act = controllerType.GetMethod(route.ActionName);
-                object[] @params = MapParameters(route, act);
+                    .GetTypes()
+                    .FirstOrDefault(type => type.Name == route.ControllerName);
+                var controller = Activator
+                    .CreateInstance(controllerType, this.database, this.user) as Controller;
+                var action = controllerType.GetMethod(route.ActionName);
+                object[] commandParams = MapParameters(route, action);
                 try
                 {
-                    var view = act.Invoke(ctrl, @params) as IView;
+                    var view = action.Invoke(controller, commandParams) as IView;
                     Console.WriteLine(view.Display());
-                    u = ctrl.User;
+                    this.user = controller.User;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.InnerException.Message);
                 }
+
+                this.commandLine = Console.ReadLine();
             }
         }
 
@@ -52,10 +59,8 @@
                         {
                             return int.Parse(route.Parameters[p.Name]);
                         }
-                        else
-                        {
-                            return route.Parameters[p.Name];
-                        }
+
+                        return route.Parameters[p.Name];
                     }).ToArray();
         }
     }

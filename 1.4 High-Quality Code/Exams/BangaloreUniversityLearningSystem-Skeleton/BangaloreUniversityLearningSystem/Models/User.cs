@@ -32,9 +32,9 @@
                 throw new ArgumentException(message);
             }
 
-            if (password.Length < 5)
+            if (password.Length < 6)
             {
-                string message = string.Format("The username must be at least 5 symbols long.");
+                string message = string.Format("The password must be at least 6 symbols long.");
                 throw new ArgumentException(message);
             }
 

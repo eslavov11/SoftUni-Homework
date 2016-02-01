@@ -8,8 +8,7 @@
 
         public Lecture(string name)
         {
-            // TODO
-            this.Name = this.Name;
+            this.Name = name;
         }
 
         public string Name

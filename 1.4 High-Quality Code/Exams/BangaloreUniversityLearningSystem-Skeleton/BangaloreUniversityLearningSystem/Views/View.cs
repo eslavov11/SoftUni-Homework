@@ -10,7 +10,7 @@
             this.Model = model;
         }
 
-        public object Model { get; private set; }
+        public object Model { get; }
 
         public string Display()
         {
@@ -19,8 +19,6 @@
             return viewResult.ToString().Trim();
         }
 
-        internal virtual void BuildViewResult(StringBuilder viewResult)
-        {
-        }
+        protected abstract void BuildViewResult(StringBuilder viewResult);
     }
 }

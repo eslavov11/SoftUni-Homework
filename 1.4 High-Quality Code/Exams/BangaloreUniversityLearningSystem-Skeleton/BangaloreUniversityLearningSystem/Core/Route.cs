@@ -38,8 +38,8 @@
                 {
                     string[] name_value = pair.Split('=');
                     this.Parameters.Add(
-                        WebUtility.UrlDecode(name_value[1]),
-                        WebUtility.UrlDecode(name_value[0]));
+                        WebUtility.UrlDecode(name_value[0]),
+                        WebUtility.UrlDecode(name_value[1]));
                 }
             }
         }

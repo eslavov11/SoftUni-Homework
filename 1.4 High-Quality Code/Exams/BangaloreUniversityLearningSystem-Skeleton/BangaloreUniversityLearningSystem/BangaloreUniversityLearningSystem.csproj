@@ -45,20 +45,35 @@
   <ItemGroup>
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Data\UserRepository.cs" />
-    <Compile Include="Everything.cs" />
-    <Compile Include="Controller.cs" />
+    <Compile Include="Enums\Role.cs" />
+    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Core\BangaloreUniversityEngine.cs" />
-    <Compile Include="Route.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRoute.cs" />
+    <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="Interfaces\IBangaloreUniversityDate.cs" />
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Lecture.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Core\Route.cs" />
     <Compile Include="Data\BangaloreUniversityDate.cs" />
     <Compile Include="Data\Repository.cs" />
-    <Compile Include="View.cs" />
-    <Compile Include="Interfaces.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Utilities\Constants.cs" />
+    <Compile Include="Views\Courses\AddLecture.cs" />
+    <Compile Include="Views\Courses\Enroll.cs" />
+    <Compile Include="Views\Courses\All.cs" />
+    <Compile Include="Views\Courses\Details.cs" />
+    <Compile Include="Views\Courses\Create.cs" />
+    <Compile Include="Views\Users\Logout.cs" />
+    <Compile Include="Views\Users\Register.cs" />
+    <Compile Include="Views\Users\Login.cs" />
+    <Compile Include="Views\View.cs" />
+    <Compile Include="BangaloreUniversityMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\HashUtilities.cs" />
     <Compile Include="Utilities\UserRoleUtilities.cs" />
-    <Compile Include="Views\Views.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

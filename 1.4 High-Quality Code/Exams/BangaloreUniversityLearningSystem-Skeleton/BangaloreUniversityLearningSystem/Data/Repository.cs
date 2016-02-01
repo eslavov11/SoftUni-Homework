@@ -46,9 +46,9 @@
             return item;
         }
 
-        public virtual void Add(T item)
+        public virtual void Add(T user)
         {
-            this.Items.Add(item);
+            this.Items.Add(user);
         }
     }
 }

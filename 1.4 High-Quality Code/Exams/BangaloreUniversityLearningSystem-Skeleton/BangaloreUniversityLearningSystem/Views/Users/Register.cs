@@ -1,4 +1,4 @@
-﻿namespace BangaloreUniversityLearningSystem.Views.UserViews
+﻿namespace BangaloreUniversityLearningSystem.Views.Users
 {
     using System.Text;
     using Models;
@@ -10,7 +10,7 @@
         {
         }
 
-        internal override void BuildViewResult(StringBuilder viewResult)
+        protected override void BuildViewResult(StringBuilder viewResult)
         {
             viewResult.AppendFormat(
                 "User {0} registered successfully.",

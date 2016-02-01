@@ -11,12 +11,14 @@
         {
             if (string.IsNullOrEmpty(name) || name.Length < 5)
             {
-                string message = string.Format("The course name must be at least 5 symbols long.");
+                string message = string.Format(
+                    "The course name must be at least 5 symbols long.");
                 throw new ArgumentException(message);
             }
 
             this.Name = name;
             this.Lectures = new List<Lecture>();
+            this.Students = new List<User>();
         }
 
         public string Name { get; set; }

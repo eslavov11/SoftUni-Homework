@@ -17,32 +17,47 @@
 
         public IView All()
         {
-            return this.View(this.Data.Courses.GetAll().OrderBy(c => c.Name)
+            var sortedView = this.View(this.Data.Courses.GetAll().OrderBy(c => c.Name)
                 .ThenByDescending(c => c.Students.Count));
+
+            return sortedView;
         }
 
         public IView Details(int courseId)
         {
-            // TODO: Implement me
-            throw new NotImplementedException();
-        }
-
-        public IView Enroll(int id)
-        {
             this.EnsureAuthorization(Role.Student, Role.Lecturer);
-            var c = this.Data.Courses.Get(id);
-            if (c == null)
+            var course = this.Data.Courses.Get(courseId);
+            if (course == null)
             {
-                throw new ArgumentException(string.Format("There is no course with ID {0}.", id));
+                throw new ArgumentException(string.Format(
+                    "There is no course with ID {0}.", courseId));
             }
 
-            if (this.User.Courses.Contains(c))
+            if (!this.User.Courses.Contains(course))
+            {
+                throw new ArgumentException("You are not enrolled in this course.");
+            }
+
+            return this.View(course);
+        }
+
+        public IView Enroll(int courseId)
+        {
+            this.EnsureAuthorization(Role.Student, Role.Lecturer);
+            var course = this.Data.Courses.Get(courseId);
+            if (course == null)
+            {
+                throw new ArgumentException(string.Format(
+                    "There is no course with ID {0}.", courseId));
+            }
+
+            if (this.User.Courses.Contains(course))
             {
                 throw new ArgumentException("You are already enrolled in this course.");
             }
 
-            c.AddStudent(this.User);
-            return this.View(c);
+            course.AddStudent(this.User);
+            return this.View(course);
         }
 
         public IView Create(string name)
@@ -52,15 +67,16 @@
                 throw new ArgumentException("There is no currently logged in user.");
             }
 
-            if (this.User.IsInRole(Role.Lecturer))
+            if (!this.User.IsInRole(Role.Lecturer))
             {
-                throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+                throw new DivideByZeroException(
+                    "The current user is not authorized to perform this operation.");
             }
 
-            var c = new Course(name);
-            this.Data.Courses.Add(c);
+            var course = new Course(name);
+            this.Data.Courses.Add(course);
 
-            return this.View(c);
+            return this.View(course);
         }
 
         public IView AddLecture(int courseId, string lectureName)
@@ -78,7 +94,7 @@
             }
 
             Course course = this.CourseGetter(courseId);
-            course.AddLecture(new Lecture("lectureName"));
+            course.AddLecture(new Lecture(lectureName));
 
             return this.View(course);
         }

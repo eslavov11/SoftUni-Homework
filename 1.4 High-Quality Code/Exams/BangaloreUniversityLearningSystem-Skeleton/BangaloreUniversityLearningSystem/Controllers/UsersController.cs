@@ -69,7 +69,7 @@
 
             if (!this.User.IsInRole(Role.Lecturer) && !this.User.IsInRole(Role.Student))
             {
-                throw new DivideByZeroException("The current user is not authorized to perform this operation.");
+                throw new ArgumentException("The current user is not authorized to perform this operation.");
             }
 
             var user = this.User;

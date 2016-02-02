@@ -49,7 +49,7 @@
             {
                 if (!roles.Any(role => this.User.IsInRole(role)))
                 {
-                    throw new DivideByZeroException(
+                    throw new ArgumentException(
                         "The current user is not authorized to perform this operation.");
                 }
             }

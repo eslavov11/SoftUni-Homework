@@ -69,7 +69,7 @@
 
             if (!this.User.IsInRole(Role.Lecturer))
             {
-                throw new DivideByZeroException(
+                throw new ArgumentException(
                     "The current user is not authorized to perform this operation.");
             }
 
@@ -89,7 +89,7 @@
 
             if (!this.User.IsInRole(Role.Lecturer))
             {
-                throw new DivideByZeroException(
+                throw new ArgumentException(
                     "The current user is not authorized to perform this operation.");
             }
 

@@ -1,8 +1,7 @@
-namespace ChepelareHotelBookingSystem.Views.Venues
+namespace ChepelareHotelBookingSystem.Views.Rooms
 {
     using System.Text;
-
-    using ChepelareHotelBookingSystem.Infrastructure;
+    using Infrastructure;
     using Models;
 
     public class Book : View

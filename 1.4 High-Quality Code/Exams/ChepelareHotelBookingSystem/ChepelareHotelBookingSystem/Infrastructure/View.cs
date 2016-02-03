@@ -6,9 +6,9 @@
 
     public abstract class View : IView
     {
-        public View(object model)
+        protected View(object model)
         {
-            this.Model = this.Model;
+            this.Model = model;
         }
 
         public object Model { get; private set; }

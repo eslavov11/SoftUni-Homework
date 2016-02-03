@@ -5,6 +5,8 @@
     using ChepelareHotelBookingSystem.Enums;
     using ChepelareHotelBookingSystem.Infrastructure;
     using ChepelareHotelBookingSystem.Interfaces;
+    using ChepelareHotelBookingSystem.Views.Shared;
+
     using Models;
 
     public class VenuesController : Controller
@@ -20,13 +22,14 @@
             return this.View(venues);
         }
 
-        public IView Details(int venueId)
+        public IView Details(int id)
         {
             this.Authorize(Roles.User, Roles.VenueAdmin);
-            var venue = this.Data.RepositoryWithVenues.Get(venueId);
+            var venue = this.Data.RepositoryWithVenues.Get(id);
             if (venue == null)
             {
-                return this.NotFound(string.Format("The venue with ID {0} does not exist.", venueId));
+                return this.NotFound(
+                    string.Format("The venue with ID {0} does not exist.", id));
             }
 
             return this.View(venue);
@@ -34,8 +37,14 @@
 
         public IView Rooms(int id)
         {
-            // TODO: Implement me
-            throw new NotImplementedException();
+            var venue = this.Data.RepositoryWithVenues.Get(id);
+
+            if (venue == null)
+            {
+                return new Error(string.Format("The venue with ID {0} does not exist.", id));
+            }
+
+            return this.View(venue);
         }
 
         public IView Add(string name, string address, string description)

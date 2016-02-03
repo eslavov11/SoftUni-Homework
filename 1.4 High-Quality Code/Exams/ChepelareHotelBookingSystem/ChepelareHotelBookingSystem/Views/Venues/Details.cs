@@ -21,14 +21,17 @@ namespace ChepelareHotelBookingSystem.Views.Venues
                 .AppendFormat("Description: {0}", venue.Description).AppendLine();
             if (!venue.Rooms.Any())
             {
-                viewResult.AppendFormat("No rooms are currently available");
+                viewResult.AppendFormat("No rooms are currently available.");
             }
             else
             {
                 viewResult.AppendLine("Available rooms:");
                 foreach (var room in venue.Rooms)
                 {
-                    viewResult.AppendFormat(" * {0} places (${1:F2} per day)", room.Places, room.PricePerDay).AppendLine();
+                    viewResult.AppendFormat(
+                        " * {0} places (${1:F2} per day)",
+                        room.Places,
+                        room.PricePerDay).AppendLine();
                 }
             }
         }

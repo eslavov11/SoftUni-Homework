@@ -4,18 +4,16 @@
     using System.Diagnostics;
     using System.Linq;
     using System.Reflection;
-
-    using ChepelareHotelBookingSystem.Enums;
-
+    using Enums;
     using Identity;
     using Interfaces;
     using Models;
     using Utilities;
     using Views.Shared;
 
-    public class Controller
+    public abstract class Controller
     {
-        internal Controller(IHotelBookingSystemData data, User user)
+        protected Controller(IHotelBookingSystemData data, User user)
         {
             this.Data = data;
             this.CurrentUser = user;
@@ -36,12 +34,12 @@
         protected IView View(object model)
         {
             string fullNamespace = this.GetType().Namespace;
-            int firstSeparatorIndex = fullNamespace.IndexOf(Constants.NamesapceSeparator);
+            int firstSeparatorIndex = fullNamespace.IndexOf(Constants.NamespaceSeparator);
             string baseNamespace = fullNamespace.Substring(0, firstSeparatorIndex);
             string controllerName = this.GetType().Name.Replace(Constants.ControllerSuffix, string.Empty);
             string actionName = new StackTrace().GetFrame(1).GetMethod().Name;
             string fullPath = string.Join(
-                Constants.NamesapceSeparator,
+                Constants.NamespaceSeparator,
                 new[] { baseNamespace, Constants.ViewsFolder, controllerName, actionName });
             var viewType = Assembly
                 .GetExecutingAssembly()

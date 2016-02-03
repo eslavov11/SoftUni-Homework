@@ -25,7 +25,7 @@ namespace ChepelareHotelBookingSystem.Views.Venues
             {
                 foreach (var room in venue.Rooms)
                 {
-                    viewResult.AppendFormat(" *[0] {1} places, ${2:F2} per day", room.Id, room.Places, room.PricePerDay).AppendLine();
+                    viewResult.AppendFormat(" *[{0}] {1} places, ${2:F2} per day", room.Id, room.Places, room.PricePerDay).AppendLine();
                     if (!room.AvailableDates.Any())
                     {
                         viewResult.AppendLine("This room is not currently available.");
@@ -35,7 +35,10 @@ namespace ChepelareHotelBookingSystem.Views.Venues
                         viewResult.AppendLine("Available dates:");
                         foreach (var datePair in room.AvailableDates.OrderBy(datePair => datePair.EndDate))
                         {
-                            viewResult.AppendFormat(" - {0:dd.MM.yyyy} - {1:dd.MM.yyyy}", datePair.EndDate, datePair.StartDate).AppendLine();
+                            viewResult.AppendFormat(
+                                " - {0:dd.MM.yyyy} - {1:dd.MM.yyyy}",
+                                datePair.StartDate,
+                                datePair.EndDate).AppendLine();
                         }
                     }
                 }

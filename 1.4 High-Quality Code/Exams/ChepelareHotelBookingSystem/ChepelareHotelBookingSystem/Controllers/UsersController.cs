@@ -20,7 +20,7 @@
         {
             if (password != confirmPassword)
             {
-                throw new ArgumentException("The provided passwords match.");
+                throw new ArgumentException("The provided passwords do not match.");
             }
 
             this.EnsureNoLoggedInUser();
@@ -73,12 +73,10 @@
 
         private void EnsureNoLoggedInUser()
         {
-            foreach (var user in this.Data.RepositoryWithUsers.GetAll())
+            // PERFORMANCE: UNNECESSARY FOREACH LOOP
+            if (this.HasCurrentUser)
             {
-                if (string.IsNullOrEmpty(user.Username) || (this.CurrentUser != null && this.CurrentUser.Username == user.Username))
-                {
-                    throw new ArgumentException("There is already a logged in user.");
-                }
+                throw new ArgumentException("There is already a logged in user.");
             }
         }
     }

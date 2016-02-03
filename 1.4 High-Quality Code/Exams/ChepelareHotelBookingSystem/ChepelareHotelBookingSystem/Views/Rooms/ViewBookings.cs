@@ -4,7 +4,7 @@ namespace ChepelareHotelBookingSystem.Views.Rooms
     using System.Linq;
     using System.Text;
 
-    using ChepelareHotelBookingSystem.Infrastructure;
+    using Infrastructure;
     using Models;
 
     public class ViewBookings : View
@@ -24,15 +24,16 @@ namespace ChepelareHotelBookingSystem.Views.Rooms
             else
             {
                 viewResult.AppendLine("Room bookings:");
+
+                // PERFORMANCE: loop was outside of the else and was executed ieven if there were no books.
+                foreach (var booking in bookings)
+                {
+                    viewResult.AppendFormat("* {0:dd.MM.yyyy} - {1:dd.MM.yyyy} (${2:F2})", booking.StartBookDate, booking.EndBookDate, booking.TotalPrice).AppendLine();
+                }
+
+                viewResult.AppendFormat("Total booking price: ${0:F2}", bookings.Sum(b => b.TotalPrice)).AppendLine();
             }
 
-            // TODO is this loop needed?
-            foreach (var booking in bookings)
-            {
-                viewResult.AppendFormat("* {0:dd.MM.yyyy} - {1:dd.MM.yyyy} (${2:F2})", booking.StartBookDate, booking.EndBookDate, booking.TotalPrice).AppendLine();
-            }
-
-            viewResult.AppendFormat("Total booking price: ${0:F2}", bookings.Sum(b => b.TotalPrice)).AppendLine();
         }
     }
 }

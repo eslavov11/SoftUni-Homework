@@ -19,7 +19,7 @@
         {
             this.Authorize(Roles.VenueAdmin);
             var venue = this.Data.RepositoryWithVenues.Get(venueId);
-            if (venue != null)
+            if (venue == null)
             {
                 return this.NotFound(string.Format("The venue with ID {0} does not exist.", venueId));
             }
@@ -36,10 +36,11 @@
             var room = this.Data.RepositoryWithRooms.Get(roomId);
             if (room == null)
             {
-                return this.NotFound(string.Format("The room with ID {0} does not exist.", roomId));
+                return this.NotFound(
+                    string.Format("The room with ID {0} does not exist.", roomId));
             }
 
-            if (startDate < endDate)
+            if (startDate > endDate)
             {
                 throw new ArgumentException("The date range is invalid.");
             }
@@ -100,13 +101,19 @@
             var periodBeforeBooking = startDate - availablePeriod.StartDate;
             if (periodBeforeBooking > TimeSpan.Zero)
             {
-                room.AvailableDates.Add(new AvailableDate(availablePeriod.StartDate, availablePeriod.StartDate.Add(periodBeforeBooking)));
+                room.AvailableDates.Add(
+                    new AvailableDate(
+                        availablePeriod.StartDate,
+                        availablePeriod.StartDate.Add(periodBeforeBooking)));
             }
 
             var periodAfterBooking = availablePeriod.EndDate - endDate;
             if (periodAfterBooking > TimeSpan.Zero)
             {
-                room.AvailableDates.Add(new AvailableDate(availablePeriod.EndDate.Subtract(periodAfterBooking), availablePeriod.EndDate));
+                room.AvailableDates.Add(
+                    new AvailableDate(
+                        availablePeriod.EndDate.Subtract(periodAfterBooking),
+                        availablePeriod.EndDate));
             }
         }
     }

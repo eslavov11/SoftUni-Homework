@@ -15,6 +15,7 @@
             this.Address = address;
             this.Description = description;
             this.Owner = owner;
+            this.Rooms = new List<Room>();
         }
 
         public int Id { get; set; }

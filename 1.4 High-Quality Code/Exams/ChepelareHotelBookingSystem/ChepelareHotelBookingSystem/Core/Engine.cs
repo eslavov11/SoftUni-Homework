@@ -64,6 +64,10 @@
                     {
                         return DateTime.ParseExact(executionEndpoint.Parameters[p.Name], Constants.DateFormat, CultureInfo.InvariantCulture);
                     }
+                    else if (p.ParameterType == typeof(decimal))
+                    {
+                        return decimal.Parse(executionEndpoint.Parameters[p.Name]);
+                    }
                     else
                     {
                         return executionEndpoint.Parameters[p.Name];

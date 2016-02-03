@@ -33,7 +33,6 @@ namespace ChepelareHotelBookingSystem.Views.Rooms
 
                 viewResult.AppendFormat("Total booking price: ${0:F2}", bookings.Sum(b => b.TotalPrice)).AppendLine();
             }
-
         }
     }
 }

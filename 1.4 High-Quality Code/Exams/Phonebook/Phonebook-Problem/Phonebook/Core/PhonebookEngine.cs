@@ -12,7 +12,7 @@
     public class PhonebookEngine
     {
         private const string DefaultNumberCode = "+359";
-        private readonly IPhonebookRepository phonebookData; // new REPNew(); // this works!
+        private readonly IPhonebookRepository phonebookData;
         private readonly StringBuilder input;
 
         public PhonebookEngine(IPhonebookRepository phonebookData)

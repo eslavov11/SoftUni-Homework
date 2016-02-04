@@ -47,8 +47,7 @@
     <Compile Include="Models\Entry.cs" />
     <Compile Include="Interfaces\IPhonebookRepository.cs" />
     <Compile Include="Core\PhonebookEngine.cs" />
-    <Compile Include="Data\REP.cs" />
-    <Compile Include="Data\REPNew.cs" />
+    <Compile Include="Data\PhonebookRepository.cs" />
     <Compile Include="PhonebookMain.cs" />
   </ItemGroup>
   <ItemGroup>

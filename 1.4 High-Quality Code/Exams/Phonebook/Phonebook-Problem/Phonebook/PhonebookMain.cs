@@ -8,8 +8,8 @@
     {
         public static void Main()
         {
-            IPhonebookRepository phonebook = new REP();
-            IPhonebookRepository phonebookData = new REPNew();
+            IPhonebookRepository phonebook = new PhonebookRepository();
+            IPhonebookRepository phonebookData = new PhonebookRepository();
             var engine = new PhonebookEngine(phonebook);
             engine.Run();
         }

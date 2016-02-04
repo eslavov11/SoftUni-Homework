@@ -9,7 +9,7 @@ namespace Phonebook.Data
 
     using Wintellect.PowerCollections;
 
-    public class REP : IPhonebookRepository
+    public class PhonebookRepository : IPhonebookRepository
     {
         private readonly OrderedSet<Entry> entries = new OrderedSet<Entry>();
         private readonly Dictionary<string, Entry> entriesByName = new Dictionary<string, Entry>();

@@ -7,8 +7,8 @@
     <ProjectGuid>{DDD7E7BC-80BB-4029-ABDD-36542AEC38E2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>buhtig</RootNamespace>
-    <AssemblyName>buhtig</AssemblyName>
+    <RootNamespace>BuhtigIssueTracker</RootNamespace>
+    <AssemblyName>BuhtigIssueTracker</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,17 +44,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="moreStuff.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="if.cs" />
-    <Compile Include="Innenleben.cs" />
+    <Compile Include="Interfaces\IReader.cs" />
+    <Compile Include="Interfaces\IWriter.cs" />
+    <Compile Include="Interfaces\IUserInterface.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Execution\CommandExecutor.cs" />
+    <Compile Include="Execution\Endpoint.cs" />
+    <Compile Include="Execution\IssueTrackerEngine.cs" />
+    <Compile Include="Interfaces\IEndpoint.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="Interfaces\IIssueTracker.cs" />
+    <Compile Include="Enums\IssuePriority.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Execution\IssueTracker.cs" />
+    <Compile Include="IssueTrackerMain.cs" />
+    <Compile Include="Interfaces\IBuhtigIssueTrackerData.cs" />
+    <Compile Include="Data\BuhtigIssueTrackerData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stuff.cs" />
+    <Compile Include="Models\Issue.cs" />
+    <Compile Include="UserInterface\ConsoleUserInterface.cs" />
+    <Compile Include="Utility\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -225,14 +225,15 @@
             }
 
             // BOTTLENECK
-            var found = this.data.VehiclesBySectorAndPlace.Values.ToList();
-            var res = found;
-            foreach (var f in found)
-            {
-                res = res.Where(v => v.Owner == owner).ToList();
-            }
+            //var found = this.data.VehiclesBySectorAndPlace.Values.ToList();
+            //var res = found;
 
-            return string.Join(Environment.NewLine, this.Input(res));
+            //res = res.Where(v => v.Owner == owner).ToList();
+
+            var found =
+                this.data.TimesByVehicles.Where(x => x.Key.Owner == owner).OrderBy(x => x.Value).ThenBy(x => x.Key.LicensePlate).Select(x => x.Key);
+
+            return string.Join(Environment.NewLine, this.Input(found));
 
         }
 

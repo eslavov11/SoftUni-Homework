@@ -1,6 +1,7 @@
 ﻿namespace VehicleParkSystem.Execution
 {
     using System;
+    using System.Text;
 
     using VehicleParkSystem.Interfaces;
 
@@ -20,9 +21,16 @@
 
         public void Run()
         {
+            //var result = new StringBuilder();
+
             while (true)
             {
                 string commandLine = Console.ReadLine();
+                //if (commandLine == "zz")
+                //{
+                //    break;;
+                //}
+
                 if (commandLine == null)
                 {
                     break;
@@ -39,12 +47,16 @@
                     var command = new CommandExecutor.Command(commandLine);
                     string commandResult = this.commandExecutor.Execute(command);
                     Console.WriteLine(commandResult);
+                    //result.AppendLine(commandResult);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
+                    //result.AppendLine(ex.Message);
                 }
             }
+
+            //Console.WriteLine(result);
         }
     }
 }

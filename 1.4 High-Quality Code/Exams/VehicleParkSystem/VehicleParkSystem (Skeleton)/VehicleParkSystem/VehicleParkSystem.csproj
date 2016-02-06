@@ -7,8 +7,8 @@
     <ProjectGuid>{7C79AD6D-4F3B-40A4-B9BF-8E9C9D4913FF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>vp_himineu</RootNamespace>
-    <AssemblyName>vp_himineu</AssemblyName>
+    <RootNamespace>VehicleParkSystem</RootNamespace>
+    <AssemblyName>VehicleParkSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,18 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="carroças.cs" />
-    <Compile Include="comandos.cs" />
-    <Compile Include="Contratos.cs" />
-    <Compile Include="Important.cs" />
+    <Compile Include="Models\Truck.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Execution\CommandExecutor.cs" />
+    <Compile Include="Interfaces\IUserInterface.cs" />
+    <Compile Include="Data\VehicleParkSystemData.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="Interfaces\IVehicle.cs" />
+    <Compile Include="Interfaces\IVehiclePark.cs" />
+    <Compile Include="Layout.cs" />
+    <Compile Include="Models\Motorbike.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vp_vp.cs" />
-    <Compile Include="Mecanismo.cs" />
-    <Compile Include="vp.cs" />
+    <Compile Include="Execution\VehiclePark.cs" />
+    <Compile Include="Execution\VehicleParkSystemEngine.cs" />
+    <Compile Include="VehicleParkSystemMain.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utility\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

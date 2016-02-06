@@ -3,7 +3,7 @@
     using Data;
     using Models;
 
-    public interface IBangaloreUniversityDate
+    public interface IBangaloreUniversityData
     {
         UsersRepository Users { get; }
 

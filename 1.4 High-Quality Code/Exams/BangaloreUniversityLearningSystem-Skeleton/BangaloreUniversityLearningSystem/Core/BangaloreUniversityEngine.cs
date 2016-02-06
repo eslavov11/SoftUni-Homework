@@ -10,13 +10,13 @@
 
     public class BangaloreUniversityEngine : IEngine
     {
-        private readonly IBangaloreUniversityDate database;
+        private readonly IBangaloreUniversityData database;
         private User user;
         private string commandLine;
 
         public BangaloreUniversityEngine()
         {
-            this.database = new BangaloreUniversityDate();
+            this.database = new BangaloreUniversityData();
             this.user = null;
         }
 

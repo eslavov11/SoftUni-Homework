@@ -18,7 +18,7 @@ namespace BangaloreUniversity.Tests
         {
             // Arrange
             User user = null;
-            var database = new BangaloreUniversityDate();
+            var database = new BangaloreUniversityData();
             var controller = new UsersController(database, user);
 
             // Act
@@ -33,7 +33,7 @@ namespace BangaloreUniversity.Tests
         {
             // Arrange
             User user = new User("gosho", "123456", Role.Guest);
-            var database = new BangaloreUniversityDate();
+            var database = new BangaloreUniversityData();
             var controller = new UsersController(database, user);
 
             // Act
@@ -47,7 +47,7 @@ namespace BangaloreUniversity.Tests
         {
             // Arrange
             User user = new User("gosho", "123456", Role.Lecturer);
-            var database = new BangaloreUniversityDate();
+            var database = new BangaloreUniversityData();
             var controller = new UsersController(database, user);
 
             // Act

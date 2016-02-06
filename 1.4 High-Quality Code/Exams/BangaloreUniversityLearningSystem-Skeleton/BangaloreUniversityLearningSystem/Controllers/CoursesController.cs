@@ -9,7 +9,7 @@
 
     public class CoursesController : Controller
     {
-        public CoursesController(IBangaloreUniversityDate data, User user)
+        public CoursesController(IBangaloreUniversityData data, User user)
         {
             this.Data = data;
             this.User = user;

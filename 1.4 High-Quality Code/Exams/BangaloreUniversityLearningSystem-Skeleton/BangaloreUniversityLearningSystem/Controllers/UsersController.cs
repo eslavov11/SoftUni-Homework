@@ -8,7 +8,7 @@
 
     public class UsersController : Controller
     {
-        public UsersController(IBangaloreUniversityDate data, User user)
+        public UsersController(IBangaloreUniversityData data, User user)
         {
             this.Data = data;
             this.User = user;

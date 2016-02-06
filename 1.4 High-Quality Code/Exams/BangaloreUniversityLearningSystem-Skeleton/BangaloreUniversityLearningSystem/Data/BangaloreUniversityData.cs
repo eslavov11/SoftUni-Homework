@@ -3,9 +3,9 @@
     using Interfaces;
     using Models;
 
-    public class BangaloreUniversityDate : IBangaloreUniversityDate
+    public class BangaloreUniversityData : IBangaloreUniversityData
     {
-        public BangaloreUniversityDate()
+        public BangaloreUniversityData()
         {
             this.Users = new UsersRepository();
             this.Courses = new Repository<Course>();

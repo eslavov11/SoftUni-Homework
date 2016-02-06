@@ -21,7 +21,7 @@
             }
         }
 
-        protected IBangaloreUniversityDate Data { get; set; }
+        protected IBangaloreUniversityData Data { get; set; }
 
         protected IView View(object model)
         {

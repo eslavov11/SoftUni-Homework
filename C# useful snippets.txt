@@ -16,6 +16,7 @@ List<string> listIt = input.Split(' ').ToList();
 CREATE NEW STRING FOR THE LOOP (Problem number 4 from
  
 exams)
+
 ----
 string stars = new string('*', 10);
 =================================================

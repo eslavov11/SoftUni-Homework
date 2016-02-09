@@ -18,6 +18,7 @@ list all elements in array
 int[] arr = { 1 , 2 , 3 };
 arr.ToList().ForEach(a => Console.WriteLine(a));
 ==================================================
+
 find if a number is float/decimal/double or not
 --------
 if (item % 1 == 0)

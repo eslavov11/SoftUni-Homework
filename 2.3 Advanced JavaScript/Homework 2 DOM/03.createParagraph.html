@@ -1,11 +1,28 @@
 <html>
     <body>
         <div id="wrapper">
-
         </div>
     </body>
 
     <script>
-        document.getElementById(id).appendChild()
+        function createParagraph(id, text) {
+            document.body.style.background = 'green';
+            var paragraph = document.createElement('P');
+            paragraph.innerText = text;
+            document.getElementById(id).appendChild(paragraph);
+        }
+
+        createParagraph('wrapper', "Sometext 1");
+        createParagraph('wrapper', "Sometext 2");
+        createParagraph('wrapper', "Sometext 3");
+
+        function  createLink(id, name, link) {
+            var hyperLink = document.createElement('a');
+            hyperLink.href = link;
+            hyperLink.innerText = name;
+            document.getElementById(id).appendChild(hyperLink);
+        }
+
+        createLink('wrapper', 'C# basics book' , 'http://www.introprogramming.info/');
     </script>
 </html>

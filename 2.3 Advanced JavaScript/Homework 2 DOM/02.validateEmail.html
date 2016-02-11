@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <input id="email" type="text" name="" id="">
+        <div id="outputEmail" style="height: 20px;"></div>
+        <button onclick="validateEmail()">Click me</button>
+    </body>
+
+    <script>
+        function validateEmail() {
+
+            if (/.+@.*\..*/.test(document.getElementById('email').innerText)) {
+                document.getElementById('outputEmail').style.background = "lightgreen";
+            } else document.getElementById('outputEmail').style.background = "red";
+
+            document.getElementById('outputEmail').innerText = document.getElementById('email').innerText;
+
+        }
+    </script>
+</html>

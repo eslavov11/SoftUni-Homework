@@ -13,7 +13,7 @@ var CLOSE_BUTTON_TEXT = '×',
     };
 
 var createPopupView = function(popup) {
-    var popupData = popup._popupData,
+    var popupData = popup,
         positionClass = POSITIONS[popupData.position],
         typeClass = POPUP_TYPES[popupData.type],
         autoHide = popupData.autoHide || false,
@@ -31,16 +31,16 @@ var createPopupView = function(popup) {
 
     attachClasses();
 
-    if (close === true) {
+    if (close) {
         button.innerText = CLOSE_BUTTON_TEXT;
         button.setAttribute('type', 'button');
         button.className += "poppy-close-button";
         popupNode.appendChild(button);
     }
 
-    containerNode.appendChild(popupNode);
     popupNode.appendChild(titleNode);
     popupNode.appendChild(messageNode);
+    containerNode.appendChild(popupNode);
 
     return containerNode;
 
@@ -52,4 +52,4 @@ var createPopupView = function(popup) {
         messageNode.className += "poppy-message";
         messageNode.innerText = message;
     }
-}
+};

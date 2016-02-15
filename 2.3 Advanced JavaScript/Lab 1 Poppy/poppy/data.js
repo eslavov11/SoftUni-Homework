@@ -1,70 +1,67 @@
 ;
-var poppy = poppy || {};
-(function(scope) {
-    'use strict';
+'use strict';
+Object.prototype.extends = function(parent) {
+    this.prototype = Object.create(parent.prototype);
+    this.prototype.constructor = this;
+};
 
-    Object.prototype.extends = function(parent) {
-        this.prototype = Object.create(parent.prototype);
-        this.prototype.constructor = this;
+var Popup = (function() {
+    function Popup(type, title, message, autoHide, timeout, closeButton, position) {
+        if (this.constructor === Popup) {
+            throw new Error("Cannot instantiate an abstract class.");
+        }
+
+        this.type = type;
+        this.title = title;
+        this.message = message;
+        this.autoHide = autoHide;
+        this.timeout = timeout;
+        this.closeButton = closeButton;
+        this.position = position;
+    }
+
+    Popup.prototype.callback = function() {
     };
 
-    var Popup = (function() {
-        function Popup(title, message, autoHide, timeout, closeButton) {
-            if (this.constructor === Popup) {
-                throw new Error("Cannot instantiate an abstract class.");
-            }
+    return Popup;
+})();
 
-            this.title = title;
-            this.message = message;
-            this.autoHide = autoHide;
-            this.timeout = timeout;
-            this.closeButton = closeButton;
-        }
+var Success = (function() {
+    function Success(type, title, message) {
+        Popup.call(this, type, title, message, true, 300, false, 'bottomLeft');
+    }
 
-        Popup.prototype.callback = function() {
-        };
+    Success.extends(Popup);
 
-        return Popup;
-    })();
+    return Success;
+})();
 
-    var Success = (function() {
-        function Success(title, message) {
-            Popup.call(this, title, message, true, 0, false)
-        }
+var Info = (function() {
+    function Info(type, title, message) {
+        Popup.call(this, type, title, message, false, 50, true, 'topLeft');
+    }
 
-        Success.extends(Popup);
+    Info.extends(Popup);
 
-        return Success;
-    })();
+    return Info;
+})();
 
-    var Info = (function() {
-        function Info(title, message) {
-            Popup.call(this, title, message, false, 0, true)
-        }
+var Error = (function() {
+    function Error(type, title, message) {
+        Popup.call(this, type, title, message, false, 10, false, 'topRight');
+    }
 
-        Info.extends(Popup);
+    Error.extends(Popup);
 
-        return Info;
-    })();
+    return Error;
+})();
 
-    var Error = (function() {
-        function Error(title, message) {
-            Popup.call(this, title, message, false, 0, false)
-        }
+var Warning = (function() {
+    function Warning(type, title, message) {
+        Popup.call(this, type, title, message, false, 10, false, 'bottomRight');
+    }
 
-        Error.extends(Popup);
+    Warning.extends(Popup);
 
-        return Error;
-    })();
-
-    var Warning = (function() {
-        function Warning(title, message) {
-            Popup.call(this, title, message, false, 0, false)
-        }
-
-        Warning.extends(Popup);
-
-        return Warning;
-    })();
-
-})(poppy);
+    return Warning;
+})();

@@ -1,0 +1,26 @@
+insert(type=vacation;name=Nova Godina v Bansko;start-date=30-Dec-2014;end-date=1-Dec-2014;price=349.99;location=Bansko;accommodation=hotel)
+insert(type=vacation;name=Koleda Pamporovo 2014;end-date=23-Dec-2014;start-date=24-Dec-2014;price=120.50;location=Pamporovo;accommodation=hut)
+insert(type=excursion;name=Evropeiski praznici;start-date=21-Dec-2014;end-date=3-Dec-2014;price=1780.99;transport=bus)
+insert(type=cruise;name=Dunavski Kruiz;start-date=9-Nov-2014;end-date=15-Nov-2014;price=699.00;start-dock=Silistra)
+
+insert(type=destination;location=Budapest;landmark=Chain Bridge)
+insert(type=destination;location=Vienna;landmark=The Staatsoper)
+
+add-destination(name=Evropeiski praznici;location=Vienna;landmark=The Staatsoper)
+add-destination(name=Evropeiski praznici;location=Budapest;landmark=Chain Bridge)
+add-destination(name=Dunavski Kruiz;location=Budapest;landmark=Chain Bridge)
+
+filter(type=all;price-min=0;price-max=2000)
+
+delete(type=excursion;name=Nova Godina v Bansko)
+delete(type=destination;location=Budapest;landmark=Chain Bridge)
+
+filter(type=all;price-min=0;price-max=2000)
+
+remove-destination(location=Vienna;landmark=The Staatsoper;name=Evropeiski praznici)
+
+filter(type=excursion;price-min=1500;price-max=1800)
+
+filter(type=vacation;price-max=300;price-min=50)
+
+filter(type=all;price-max=10000;price-min=5000)

@@ -1,0 +1,28 @@
+Vacation created.
+Vacation created.
+Excursion created.
+Cruise created.
+Destination created.
+Destination created.
+Added destination to Evropeiski praznici.
+Added destination to Evropeiski praznici.
+Added destination to Dunavski Kruiz.
+ * Cruise: name=Dunavski Kruiz,start-date=9-Nov-2014,end-date=15-Nov-2014,price=699.00,transport=cruise liner
+ ** Destinations: Destination: location=Budapest,landmark=Chain Bridge
+ * Excursion: name=Evropeiski praznici,start-date=21-Dec-2014,end-date=3-Dec-2014,price=1780.99,transport=bus
+ ** Destinations: Destination: location=Vienna,landmark=The Staatsoper;Destination: location=Budapest,landmark=Chain Bridge
+ * Vacation: name=Koleda Pamporovo 2014,start-date=24-Dec-2014,end-date=23-Dec-2014,price=120.50,location=Pamporovo,accommodation=hut
+ * Vacation: name=Nova Godina v Bansko,start-date=30-Dec-2014,end-date=1-Dec-2014,price=349.99,location=Bansko,accommodation=hotel
+Vacation deleted.
+Destination deleted.
+ * Cruise: name=Dunavski Kruiz,start-date=9-Nov-2014,end-date=15-Nov-2014,price=699.00,transport=cruise liner
+ ** Destinations: -
+ * Excursion: name=Evropeiski praznici,start-date=21-Dec-2014,end-date=3-Dec-2014,price=1780.99,transport=bus
+ ** Destinations: Destination: location=Vienna,landmark=The Staatsoper
+ * Vacation: name=Koleda Pamporovo 2014,start-date=24-Dec-2014,end-date=23-Dec-2014,price=120.50,location=Pamporovo,accommodation=hut
+Removed destination from Evropeiski praznici.
+ * Excursion: name=Evropeiski praznici,start-date=21-Dec-2014,end-date=3-Dec-2014,price=1780.99,transport=bus
+ ** Destinations: -
+ * Vacation: name=Koleda Pamporovo 2014,start-date=24-Dec-2014,end-date=23-Dec-2014,price=120.50,location=Pamporovo,accommodation=hut
+No results.
+

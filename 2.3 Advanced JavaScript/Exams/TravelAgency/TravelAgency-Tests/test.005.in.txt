@@ -1,0 +1,21 @@
+insert(type=cruise;name=Kruiz;price=500;start-date=22-Sep-2014;end-date=23-Dec-2014;start-dock=Venice)
+insert(type=cruise;name=Kraizer;price=1520;end-date=23-Oct-2014;start-dock=Venice;start-date=5-Feb-2014)
+
+insert(type=destination;location=Chicago;landmark=Niagara Falls)
+insert(type=destination;location=New York;landmark=Statue of Liberty)
+insert(type=destination;location=California;landmark=Yosemite)
+
+add-destination(name=Kruiz;location=Chicago;landmark=Niagara Falls)
+add-destination(name=Kraizer;location=Chicago;landmark=Niagara Falls)
+add-destination(name=Kraizer;location=New York;landmark=Statue of Liberty)
+add-destination(landmark=Yosemite;name=Kraizer;location=California)
+
+list
+
+delete(type=destination;location=Chicago;landmark=Niagara Falls)
+
+list
+
+remove-destination(name=Kraizer;location=New York;landmark=Statue of Liberty)
+
+list

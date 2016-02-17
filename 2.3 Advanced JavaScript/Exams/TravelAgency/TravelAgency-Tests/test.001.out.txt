@@ -1,0 +1,5 @@
+Vacation created.
+Vacation created.
+ * Vacation: name=Vakanciq,start-date=22-Sep-2014,end-date=23-Sep-2014,price=500.00,location=Vitosha
+ * Vacation: name=Vakanciqta,start-date=22-Nov-2014,end-date=23-Nov-2014,price=500.00,location=Vitosha,accommodation=hotel
+

@@ -1,0 +1,13 @@
+No results.
+Vacation created.
+Vacation created.
+Vacation created.
+Destination created.
+Destination created.
+ * Vacation: name=Morence,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.10,location=Varna
+ * Vacation: name=Morencd,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.10,location=Burgas
+ * Vacation: name=More,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.00,location=Sozopol,accommodation=hotel
+ * Vacation: name=More,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.00,location=Sozopol,accommodation=hotel
+ * Vacation: name=Morencd,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.10,location=Burgas
+ * Vacation: name=Morence,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.10,location=Varna
+

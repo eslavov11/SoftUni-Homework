@@ -1,0 +1,19 @@
+insert(type=cruise;name=Kruiz;price=500;start-date=22-Sep-2014;end-date=23-Sep-2014;start-dock=Venice)
+insert(type=cruise;name=Kraizer;price=1520;end-date=23-Oct-2014;start-dock=Venice;start-date=5-Feb-2014)
+insert(type=excursion;name=Bahamas;price=0;start-date=3-May-2014;end-date=23-May-2014;transport=boat)
+insert(type=excursion;name=Rodopi;price=0;start-date=3-May-2014;end-date=23-May-2014;transport=boat)
+insert(type=vacation;name=More;price=400;start-date=10-Nov-2014;end-date=15-Nov-2014;location=Sozopol;accommodation=hotel)
+
+insert(type=destination;location=Varna;landmark=Delfinarium)
+insert(type=destination;location=Bahamas;landmark=Coral rifts)
+
+add-destination(name=Bahamas;location=Bahamas;landmark=Coral rifts)
+add-destination(name=Bahamas;location=Varna;landmark=Delfinarium)
+add-destination(name=Kraizer;location=Bahamas;landmark=Coral rifts)
+add-destination(name=Kruiz;location=Bahamas;landmark=Coral rifts)
+
+list
+
+filter(type=all;price-min=250;price-max=1000)
+filter(type=excursion;price-min=0;price-max=2000)
+filter(type=excursion;price-min=3000;price-max=4000)

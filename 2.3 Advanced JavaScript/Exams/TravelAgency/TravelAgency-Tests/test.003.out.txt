@@ -1,0 +1,7 @@
+Cruise created.
+Cruise created.
+ * Cruise: name=Kruiz,start-date=11-Sep-2014,end-date=23-Sep-2014,price=500.00,transport=cruise liner
+ ** Destinations: -
+ * Cruise: name=Kruiz do Vladivostok,start-date=23-Mar-2016,end-date=9-Apr-2016,price=620.00,transport=cruise liner
+ ** Destinations: -
+

@@ -1,0 +1,13 @@
+Excursion created.
+Destination created.
+Destination created.
+Destination created.
+Added destination to Ekskurziq.
+Added destination to Ekskurziq.
+Added destination to Ekskurziq.
+ * Excursion: name=Ekskurziq,start-date=22-Feb-2014,end-date=23-Mar-2014,price=500.00,transport=bus
+ ** Destinations: Destination: location=Chicago,landmark=Niagara Falls;Destination: location=New York,landmark=Statue of Liberty;Destination: location=California,landmark=Yosemite
+Removed destination from Ekskurziq.
+ * Excursion: name=Ekskurziq,start-date=22-Feb-2014,end-date=23-Mar-2014,price=500.00,transport=bus
+ ** Destinations: Destination: location=New York,landmark=Statue of Liberty;Destination: location=California,landmark=Yosemite
+

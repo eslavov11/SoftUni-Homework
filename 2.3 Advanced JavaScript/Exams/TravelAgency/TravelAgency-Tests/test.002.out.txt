@@ -1,0 +1,4 @@
+Excursion created.
+ * Excursion: name=Ekskurziq,start-date=22-Sep-2014,end-date=23-Sep-2014,price=500.00,transport=bus
+ ** Destinations: -
+

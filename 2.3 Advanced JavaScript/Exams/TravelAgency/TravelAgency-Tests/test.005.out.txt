@@ -1,0 +1,24 @@
+Cruise created.
+Cruise created.
+Destination created.
+Destination created.
+Destination created.
+Added destination to Kruiz.
+Added destination to Kraizer.
+Added destination to Kraizer.
+Added destination to Kraizer.
+ * Cruise: name=Kruiz,start-date=22-Sep-2014,end-date=23-Dec-2014,price=500.00,transport=cruise liner
+ ** Destinations: Destination: location=Chicago,landmark=Niagara Falls
+ * Cruise: name=Kraizer,start-date=5-Feb-2014,end-date=23-Oct-2014,price=1520.00,transport=cruise liner
+ ** Destinations: Destination: location=Chicago,landmark=Niagara Falls;Destination: location=New York,landmark=Statue of Liberty;Destination: location=California,landmark=Yosemite
+Destination deleted.
+ * Cruise: name=Kruiz,start-date=22-Sep-2014,end-date=23-Dec-2014,price=500.00,transport=cruise liner
+ ** Destinations: -
+ * Cruise: name=Kraizer,start-date=5-Feb-2014,end-date=23-Oct-2014,price=1520.00,transport=cruise liner
+ ** Destinations: Destination: location=New York,landmark=Statue of Liberty;Destination: location=California,landmark=Yosemite
+Removed destination from Kraizer.
+ * Cruise: name=Kruiz,start-date=22-Sep-2014,end-date=23-Dec-2014,price=500.00,transport=cruise liner
+ ** Destinations: -
+ * Cruise: name=Kraizer,start-date=5-Feb-2014,end-date=23-Oct-2014,price=1520.00,transport=cruise liner
+ ** Destinations: Destination: location=California,landmark=Yosemite
+

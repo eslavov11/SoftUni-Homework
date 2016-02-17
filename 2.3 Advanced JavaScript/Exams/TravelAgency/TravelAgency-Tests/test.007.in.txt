@@ -1,0 +1,12 @@
+filter(type=cruise;price-max=500;price-min=200)
+
+insert(type=vacation;name=Morence;price=400.10;start-date=10-Nov-2015;end-date=15-Nov-2015;location=Varna)
+insert(type=vacation;name=Morencd;price=400.10;start-date=10-Nov-2015;end-date=15-Nov-2015;location=Burgas)
+insert(type=vacation;name=More;price=400;start-date=10-Nov-2015;end-date=15-Nov-2015;location=Sozopol;accommodation=hotel)
+
+insert(type=destination;location=Varna;landmark=Delfinarium)
+insert(type=destination;location=Bahamas;landmark=Coral rifts)
+
+list
+
+filter(type=vacation;price-min=400;price-max=500)

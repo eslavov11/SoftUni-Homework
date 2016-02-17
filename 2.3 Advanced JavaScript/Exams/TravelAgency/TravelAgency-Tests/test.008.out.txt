@@ -1,0 +1,15 @@
+No results.
+Excursion created.
+Vacation created.
+Cruise created.
+Destination created.
+Destination created.
+Added destination to Morence.
+Added destination to Morence.
+ * Excursion: name=Morence,start-date=10-Nov-2015,end-date=15-Nov-2015,price=500.10,transport=cater
+ ** Destinations: Destination: location=Varna,landmark=Delfinarium;Destination: location=Bahamas,landmark=Coral rifts
+ * Vacation: name=Morencd,start-date=10-Nov-2015,end-date=15-Nov-2015,price=450.10,location=Burgas
+ * Cruise: name=More,start-date=10-Nov-2015,end-date=15-Nov-2015,price=400.00,transport=cruise liner
+ ** Destinations: -
+No results.
+

@@ -1,0 +1,15 @@
+filter(type=cruise;price-max=500;price-min=200)
+
+insert(type=excursion;name=Morence;price=500.10;start-date=10-Nov-2015;end-date=15-Nov-2015;transport=cater)
+insert(type=vacation;name=Morencd;price=450.10;start-date=10-Nov-2015;end-date=15-Nov-2015;location=Burgas)
+insert(type=cruise;name=More;price=400;start-date=10-Nov-2015;end-date=15-Nov-2015)
+
+insert(type=destination;location=Varna;landmark=Delfinarium)
+insert(type=destination;location=Bahamas;landmark=Coral rifts)
+
+add-destination(name=Morence;location=Varna;landmark=Delfinarium)
+add-destination(name=Morence;location=Bahamas;landmark=Coral rifts)
+
+list
+
+filter(type=excursion;price-min=200;price-max=460)

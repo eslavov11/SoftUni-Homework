@@ -1,0 +1,15 @@
+insert(type=excursion;name=Ekskurziq;price=500;start-date=22-Feb-2014;end-date=23-Mar-2014;transport=bus)
+
+insert(type=destination;location=Chicago;landmark=Niagara Falls)
+insert(type=destination;location=New York;landmark=Statue of Liberty)
+insert(type=destination;location=California;landmark=Yosemite)
+
+add-destination(name=Ekskurziq;location=Chicago;landmark=Niagara Falls)
+add-destination(name=Ekskurziq;location=New York;landmark=Statue of Liberty)
+add-destination(name=Ekskurziq;location=California;landmark=Yosemite)
+
+list
+
+remove-destination(name=Ekskurziq;location=Chicago;landmark=Niagara Falls)
+
+list

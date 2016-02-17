@@ -1,0 +1,29 @@
+Cruise created.
+Cruise created.
+Excursion created.
+Excursion created.
+Vacation created.
+Destination created.
+Destination created.
+Added destination to Bahamas.
+Added destination to Bahamas.
+Added destination to Kraizer.
+Added destination to Kruiz.
+ * Cruise: name=Kruiz,start-date=22-Sep-2014,end-date=23-Sep-2014,price=500.00,transport=cruise liner
+ ** Destinations: Destination: location=Bahamas,landmark=Coral rifts
+ * Cruise: name=Kraizer,start-date=5-Feb-2014,end-date=23-Oct-2014,price=1520.00,transport=cruise liner
+ ** Destinations: Destination: location=Bahamas,landmark=Coral rifts
+ * Excursion: name=Bahamas,start-date=3-May-2014,end-date=23-May-2014,price=0.00,transport=boat
+ ** Destinations: Destination: location=Bahamas,landmark=Coral rifts;Destination: location=Varna,landmark=Delfinarium
+ * Excursion: name=Rodopi,start-date=3-May-2014,end-date=23-May-2014,price=0.00,transport=boat
+ ** Destinations: -
+ * Vacation: name=More,start-date=10-Nov-2014,end-date=15-Nov-2014,price=400.00,location=Sozopol,accommodation=hotel
+ * Cruise: name=Kruiz,start-date=22-Sep-2014,end-date=23-Sep-2014,price=500.00,transport=cruise liner
+ ** Destinations: Destination: location=Bahamas,landmark=Coral rifts
+ * Vacation: name=More,start-date=10-Nov-2014,end-date=15-Nov-2014,price=400.00,location=Sozopol,accommodation=hotel
+ * Excursion: name=Bahamas,start-date=3-May-2014,end-date=23-May-2014,price=0.00,transport=boat
+ ** Destinations: Destination: location=Bahamas,landmark=Coral rifts;Destination: location=Varna,landmark=Delfinarium
+ * Excursion: name=Rodopi,start-date=3-May-2014,end-date=23-May-2014,price=0.00,transport=boat
+ ** Destinations: -
+No results.
+

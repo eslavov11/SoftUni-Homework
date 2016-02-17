@@ -1,0 +1,3 @@
+insert(type=vacation;name=Vakanciq;price=500;start-date=22-Sep-2014;end-date=23-Sep-2014;location=Vitosha)
+insert(type=vacation;name=Vakanciqta;price=500;start-date=22-Nov-2014;end-date=23-Nov-2014;accommodation=hotel;location=Vitosha)
+list

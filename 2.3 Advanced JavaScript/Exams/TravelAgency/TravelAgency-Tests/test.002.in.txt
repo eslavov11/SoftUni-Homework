@@ -1,0 +1,2 @@
+insert(type=excursion;name=Ekskurziq;price=500;start-date=22-Sep-2014;end-date=23-Sep-2014;transport=bus)
+list

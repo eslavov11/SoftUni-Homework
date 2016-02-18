@@ -34,10 +34,10 @@
         }
     };
 
-    Movie.prototype.deleteReviewById = function(indexOfReviewToDelete) {
-        if (indexOfReviewToDelete > -1) {
-            this._reviews.splice(indexOfReviewToDelete, 1);
-        }
+    Movie.prototype.deleteReviewById = function(id) {
+        this._reviews = this._reviews.filter(function (review) {
+            return review._id !== id;
+        });
     };
 
     Movie.prototype.getReviews = function() {

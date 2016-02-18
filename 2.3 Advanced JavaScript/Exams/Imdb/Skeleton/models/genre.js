@@ -22,10 +22,10 @@
         }
     };
 
-    Genre.prototype.deleteMovieById = function(indexOfElementToDelete) {
-        if (indexOfElementToDelete > -1) {
-            this._movies.splice(indexOfElementToDelete, 1);
-        }
+    Genre.prototype.deleteMovieById = function(id) {
+        this._movies = this._movies.filter(function (movie) {
+            return movie._id !== id;
+        });
     };
 
     Genre.prototype.getMovies = function() {

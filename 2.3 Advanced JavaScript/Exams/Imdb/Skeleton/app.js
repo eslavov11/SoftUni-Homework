@@ -7,5 +7,5 @@
 	imdb.loadHtml('#genres', genres);
 
 	// For testing
-	console.log(genres);
+	//console.log(genres);
 }(imdb));

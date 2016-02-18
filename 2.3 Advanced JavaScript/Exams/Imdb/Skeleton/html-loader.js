@@ -23,13 +23,78 @@ var imdb = imdb || {};
 				moviesHtml = loadMovies(genre.getMovies());
 				moviesContainer.innerHTML = moviesHtml.outerHTML;
 				moviesContainer.setAttribute('data-genre-id', genreId);
+
+				var movieNodes = Array.prototype.slice.call(moviesContainer.firstElementChild.childNodes);
+
+
+				movieNodes.forEach(function (movieLi) {
+					var movies = genre.getMovies(),
+						movieId = movieLi.getAttribute('data-id'),
+						movie = movies.filter(function (movie) {
+							return Number(movie._id) === Number(movieId);
+						})[0];
+
+					movieLi.addEventListener('click', function (ev) {
+						detailsContainer.innerHTML = '';
+						console.log(5555);
+						detailsContainer.appendChild(addActors(movie));
+						detailsContainer.appendChild(addReviews(movie));
+					})
+				});
 			}
 		});
 
-		// Task 2 - Add event listener for movies boxes
+
 
 		// Task 3 - Add event listener for delete button (delete movie button or delete review button)
 	}
+
+	function addActors(movie) {
+		var actorsDiv = document.createElement('div');
+		actorsDiv.innerHTML += '<h2>Actors</h2>';
+		var ul = document.createElement('ul');
+		movie._actors.forEach(function (actor) {
+			var li = document.createElement('li');
+			var actorName = document.createElement('h3');
+			actorName.innerHTML = actor.name;
+			var bio = document.createElement('p');
+			bio.innerHTML = '<strong>Bio:</strong>' +  actor.bio;
+			var born = document.createElement('p');
+			born.innerHTML = '<strong>Born:</strong>' +  actor.born;
+			li.appendChild(actorName);
+			li.appendChild(bio);
+			li.appendChild(born);
+			ul.appendChild(li);
+		});
+
+		actorsDiv.appendChild(ul);
+
+		return actorsDiv;
+	}
+
+	function addReviews(movie) {
+		var reviewsDiv = document.createElement('div');
+		reviewsDiv.innerHTML += '<h2>Reviews</h2>';
+		var ul = document.createElement('ul');
+		movie._reviews.forEach(function (review) {
+			var li = document.createElement('li');
+			var reviewName = document.createElement('h3');
+			reviewName.innerHTML = review.name;
+			var bio = document.createElement('p');
+			bio.innerHTML = 'Bio:' +  review.bio;
+			var born = document.createElement('p');
+			born.innerHTML = 'Born:' +  review.date;
+			li.appendChild(reviewName);
+			li.appendChild(bio);
+			li.appendChild(born);
+			ul.appendChild(li);
+		});
+
+		reviewsDiv.appendChild(ul);
+
+		return reviewsDiv;
+	}
+
 
 	function loadGenres(genres) {
 		var genresUl = document.createElement('ul');

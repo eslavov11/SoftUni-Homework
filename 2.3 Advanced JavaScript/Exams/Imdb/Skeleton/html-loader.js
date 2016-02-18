@@ -43,17 +43,13 @@ var imdb = imdb || {};
 				});
 			}
 		});
-
-
-
-		// Task 3 - Add event listener for delete button (delete movie button or delete review button)
 	}
 
 	function addActors(movie) {
 		var actorsDiv = document.createElement('div');
 		actorsDiv.innerHTML += '<h2>Actors</h2>';
 		var ul = document.createElement('ul');
-		movie._actors.forEach(function (actor) {
+		movie.getActors().forEach(function (actor) {
 			var li = document.createElement('li');
 			var actorName = document.createElement('h3');
 			actorName.innerHTML = actor.name;
@@ -76,7 +72,7 @@ var imdb = imdb || {};
 		var reviewsDiv = document.createElement('div');
 		reviewsDiv.innerHTML += '<h2>Reviews</h2>';
 		var ul = document.createElement('ul');
-		movie._reviews.forEach(function (review) {
+		movie.getReviews().forEach(function (review) {
 			var li = document.createElement('li');
 			var reviewName = document.createElement('h3');
 			reviewName.innerHTML = review.name;
@@ -84,9 +80,17 @@ var imdb = imdb || {};
 			bio.innerHTML = 'Bio:' +  review.bio;
 			var born = document.createElement('p');
 			born.innerHTML = 'Born:' +  review.date;
+			var deleteButton = document.createElement('button');
+			deleteButton.innerHTML = 'Delete review';
+			deleteButton.addEventListener('click', function (ev) {
+				movie.deleteReviewById(review._id);
+				ul.removeChild(li);
+			});
+
 			li.appendChild(reviewName);
 			li.appendChild(bio);
 			li.appendChild(born);
+			li.appendChild(deleteButton);
 			ul.appendChild(li);
 		});
 
@@ -121,7 +125,16 @@ var imdb = imdb || {};
 			liMovie.innerHTML += '<div>Rating: ' + movie.rating + '</div>';
 			liMovie.innerHTML += '<div>Actors: ' + movie._actors.length + '</div>';
 			liMovie.innerHTML += '<div>Reviews: ' + movie._reviews.length + '</div>';
-			
+			var deleteButton = document.createElement('button');
+			deleteButton.innerHTML = 'Delete movie2';
+			deleteButton.addEventListener('click', function () {
+				//genre.deleteMovieById(movie._id);
+				console.log(666666);
+
+				//moviesUl.removeChild(liMovie);
+			});
+
+			liMovie.appendChild(deleteButton);
 			moviesUl.appendChild(liMovie);
 		});
 

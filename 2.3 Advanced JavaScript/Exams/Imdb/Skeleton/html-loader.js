@@ -41,6 +41,20 @@ var imdb = imdb || {};
 						detailsContainer.appendChild(addReviews(movie));
 					})
 				});
+
+				var deleteButtons = Array.prototype.slice.call(moviesContainer.getElementsByClassName('delete-button'));
+				console.log(moviesContainer.firstElementChild);
+				deleteButtons.forEach(function (button) {
+					button.addEventListener('click', function () {
+						var movieToDelete = genre.getMovies().filter(function (movie) {
+							return  Number(movie._id) === Number(button.parentNode.getAttribute('data-id'));
+						})[0];
+						console.log(button.getAttribute('data-id'));
+						genre.deleteMovie(movieToDelete);
+						//console.log(666666);
+						moviesContainer.firstElementChild.removeChild(button.parentNode);
+					});
+				})
 			}
 		});
 	}
@@ -126,14 +140,8 @@ var imdb = imdb || {};
 			liMovie.innerHTML += '<div>Actors: ' + movie._actors.length + '</div>';
 			liMovie.innerHTML += '<div>Reviews: ' + movie._reviews.length + '</div>';
 			var deleteButton = document.createElement('button');
-			deleteButton.innerHTML = 'Delete movie2';
-			deleteButton.addEventListener('click', function () {
-				//genre.deleteMovieById(movie._id);
-				console.log(666666);
-
-				//moviesUl.removeChild(liMovie);
-			});
-
+			deleteButton.innerHTML = 'Delete movie';
+			deleteButton.className = 'delete-button';
 			liMovie.appendChild(deleteButton);
 			moviesUl.appendChild(liMovie);
 		});

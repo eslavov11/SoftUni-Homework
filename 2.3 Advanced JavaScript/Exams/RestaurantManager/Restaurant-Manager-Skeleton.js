@@ -1,41 +1,370 @@
+
+
+
 function processRestaurantManagerCommands(commands) {
     'use strict';
 
+    var Types = {
+        Boolean: typeof true,
+        Number: typeof 0,
+        String: typeof "",
+        Object: typeof {},
+        Undefined: typeof undefined,
+        Function: typeof function () { }
+    };
+
+    Object.prototype.extend = function (parent) {
+        if (!Object.create) {
+            Object.prototype.create = function (proto) {
+                function F() {}
+                F.prototype = proto;
+                return new F;
+            }
+        };
+
+        this.prototype = Object.create(parent.prototype);
+        this.prototype.constructor = this;
+    }
+
+    Object.prototype.isString = function () {
+        return typeof(this) === Types.String;
+    }
+
     var RestaurantEngine = (function () {
+        var globalConstants = {
+            UNIT_GRAMS: 'g',
+            UNIT_MILLILITERS: 'ml'
+        };
+
         var _restaurants, _recipes;
+
 
         function initialize() {
             _restaurants = [];
             _recipes = [];
         }
 
-        var Restaurant = function () {
-            // TODO: Not implemented
-        }
+        var Restaurant = (function () {
+            function Restaurant(name, location) {
+                this.setName(name);
+                this.setLocation(location);
+                this._recipes = [];
+            }
 
-        var Recipe = function () {
-            // TODO: Not implemented
-        }
+            Restaurant.prototype.getName = function getName() {
+                return this._name;
+            }
 
-        var Drink = function () {
-            // TODO: Not implemented
-        }
+            Restaurant.prototype.setName = function setName(name) {
+                var isString = name.isString()
+                if (!name || !isString) {
+                    throw new Error('Name can not be null or empty!');
+                }
 
-        var Meal = function () {
-            // TODO: Not implemented
-        }
+                this._name = name;
+            }
 
-        var Dessert = function () {
-            // TODO: Not implemented
-        }
+            Restaurant.prototype.getLocation = function getLocation() {
+                return this._location;
+            }
 
-        var MainCourse = function () {
-            // TODO: Not implemented
-        }
+            Restaurant.prototype.setLocation = function setLocation(location) {
+                if (!location || !location.isString()) {
+                    throw new Error('Location can not be null or empty!');
+                }
 
-        var Salad = function () {
-            // TODO: Not implemented
-        }
+                this._location = location;
+            }
+
+            Restaurant.prototype.addRecipe = function (recipe) {
+                if (!(recipe instanceof Recipe)) {
+                    throw new TypeError('Parameter should be instance of Recipe.');
+                }
+
+                this._recipes.push(recipe);
+            }
+
+            Restaurant.prototype.removeRecipe = function (recipe) {
+                if (!(recipe instanceof Recipe)) {
+                    throw new TypeError('Parameter should be instance of Recipe.');
+                }
+
+                var index = this._recipes.indexOf(recipe);
+                this._recipes.splice(index, 1);
+            }
+
+            var formatRecipes = function () {
+                var drinks,
+                    salads,
+                    mainCourses,
+                    desserts;
+                drinks = getRecipesByType.call(this, Drink);
+                salads = getRecipesByType.call(this, Salad);
+                mainCourses = getRecipesByType.call(this, MainCourse);
+                desserts = getRecipesByType.call(this, Dessert);
+
+                var result = '';
+                if (drinks.length) {
+                    result += '~~~~~ DRINKS ~~~~~' + '\n';
+
+                    drinks.forEach(function (drink) {
+                        result += drink.toString();
+                    });
+                }
+                if (salads.length) {
+                    result += '~~~~~ SALADS ~~~~~' + '\n';
+
+                    salads.forEach(function (salad) {
+                        result += salad.toString();
+                    });
+                }
+
+                if (mainCourses.length) {
+                    result += '~~~~~ MAIN COURSES ~~~~~' + '\n';
+
+                    mainCourses.forEach(function (mainCourse) {
+                        result += mainCourse.toString();
+                    });
+                }
+                if (desserts.length) {
+                    result += '~~~~~ DESSERTS ~~~~~' + '\n';
+
+                    desserts.forEach(function (dessert) {
+                        result += dessert.toString();
+                    });
+                }
+
+                return result;
+            }
+
+            var getRecipesByType = function (type) {
+                return this._recipes.filter(function (recipe) {
+                    return recipe instanceof type;
+                });
+            }
+
+            Restaurant.prototype.printRestaurantMenu = function () {
+                var result = '***** ' + this.getName() + ' - ' + this.getLocation() + ' *****' + '\n';
+                if (this._recipes.length <= 0) {
+                    result += 'No recipes... yet' + '\n';
+                } else {
+                    result += formatRecipes.call(this);
+                }
+
+                return result;
+            }
+
+            return Restaurant;
+        }());
+
+        var Recipe = (function () {
+            function Recipe(name, price, calories, quantity, time, unit) {
+                if (this.constructor === Recipe) {
+                    throw new Error('Recipe can not be instantiated!');
+                }
+
+                this.setName(name);
+                this.setPrice(price);
+                this.setCalories(calories);
+                this.setQuantity(quantity);
+                this.setTime(time);
+                this._unit = unit;
+            }
+
+            Recipe.prototype.getUnit = function () {
+                return this._unit;
+            }
+
+            Recipe.prototype.getTime = function () {
+                return this._time;
+            }
+
+            Recipe.prototype.setTime = function (time) {
+                if (time <= 0) {
+                    throw new Error('The time must be positive.');
+                };
+
+                this._time = time;
+            }
+
+
+            Recipe.prototype.getQuantity = function () {
+                return this._quantity;
+            }
+
+            Recipe.prototype.setQuantity = function (quantity) {
+                if (quantity <= 0) {
+                    throw new Error('The quantity must be positive.');
+                };
+
+                this._quantity = quantity;
+            }
+
+
+            Recipe.prototype.getCalories = function () {
+                return this._calories;
+            }
+
+            Recipe.prototype.setCalories = function (calories) {
+                if (calories <= 0) {
+                    throw new Error('The calories must be positive.');
+                };
+
+                this._calories = calories;
+            }
+
+
+            Recipe.prototype.getPrice = function () {
+                return this._price;
+            }
+
+            Recipe.prototype.setPrice = function (price) {
+                if (price <= 0) {
+                    throw new Error('The price must be positive.');
+                };
+
+                this._price = price;
+            }
+
+
+            Recipe.prototype.getName = function () {
+                return this._name;
+            }
+
+            Recipe.prototype.setName = function (name) {
+                if (!name || !name.isString()) {
+                    throw new Error('The querystring.encode(obj, sep, eq, name); is required.');
+                };
+
+                this._name = name;
+            }
+
+            Recipe.prototype.toString = function () {
+                var result = '==  ' + this.getName() + ' == $' + this.getPrice().toFixed(2) + '\n' +
+                    'Per serving: ' + this.getQuantity() + ' ' + this.getUnit() + ', ' + this.getCalories() + ' kcal' +  '\n' +
+                    'Ready in ' + this.getTime() + ' minutes' + '\n';
+
+                return result;
+            }
+
+            return Recipe;
+        }())
+
+        var Meal = (function () {
+            function Meal(name, price, calories, quantity, time, isVegan) {
+                if (this.constructor === Meal) {
+                    throw new Error('Meal can not be instantiated!');
+                }
+
+                Recipe.call(this, name, price, calories, quantity, time, globalConstants.UNIT_GRAMS);
+                this._isVegan = isVegan;
+            }
+
+            Meal.extend(Recipe);
+
+            Meal.prototype.toggleVegan = function () {
+                this._isVegan = !this._isVegan;
+            }
+
+            Meal.prototype.toString = function () {
+                var result = this._isVegan ? '[VEGAN] ' : '';
+                result += Recipe.prototype.toString.call(this);
+                return result;
+            }
+
+            return Meal;
+        }())
+
+        var Drink = (function () {
+            function Drink(name, price, calories, quantity, time, isCarbonated) {
+                Recipe.call(this, name, price, calories, quantity, time, globalConstants.UNIT_MILLILITERS);
+
+                this._isCarbonated = isCarbonated;
+            }
+
+            Drink.extend(Recipe);
+
+            Drink.prototype.setCalories = function (calories) {
+                if (calories > 100) {
+                    throw new Error('Calories can not be greater than 100');
+                }
+                this._calories = calories;
+            }
+
+            Drink.prototype.setTime = function (time) {
+                if (time > 20) {
+                    throw new Error('Time can not be greater than 20');
+                }
+                this._time = time;
+            }
+
+            Drink.prototype.toString = function () {
+                var result = Recipe.prototype.toString.call(this);
+                result += 'Carbonated: ' + (this._isCarbonated ? 'yes' : 'no') + '\n';
+
+                return result;
+            }
+
+            return Drink;
+        }());
+
+        var Salad = (function () {
+            function Salad(name, price, calories, quantity, time, containsPasta) {
+                Meal.call(this, name, price, calories, quantity, time, true);
+                this._containsPasta = containsPasta;
+            }
+
+            Salad.extend(Meal);
+
+            Salad.prototype.toString = function () {
+                var result = Meal.prototype.toString.call(this);
+                result += 'Contains pasta: ' + (this._containsPasta ? 'yes' : 'no') + '\n';
+
+                return result;
+            }
+
+            return Salad;
+        }());
+
+        var MainCourse = (function () {
+            function MainCourse(name, price, calories, quantity, time, isVegan, type) {
+                Meal.call(this, name, price, calories, quantity, time, isVegan);
+                this._type = type;
+            }
+
+            MainCourse.extend(Meal);
+
+            MainCourse.prototype.toString = function () {
+                var result = Meal.prototype.toString.call(this);
+                result += 'Type: ' + this._type + '\n';
+
+                return result;
+            }
+
+            return MainCourse;
+        }());
+
+        var Dessert = (function () {
+            function Dessert(name, price, calories, quantity, time, isVegan) {
+                Meal.call(this, name, price, calories, quantity, time, isVegan);
+                this._withSugar = true;
+            }
+
+            Dessert.extend(Meal);
+
+            Dessert.prototype.toggleSugar = function () {
+                this._withSugar = !this._withSugar;
+            }
+
+            Dessert.prototype.toString = function () {
+                var result = this._withSugar ? '' : '[NO SUGAR] ';
+                result += Meal.prototype.toString.call(this);
+
+                return result;
+            }
+
+            return Dessert;
+        }());
 
         var Command = (function () {
 
@@ -249,23 +578,3 @@ function processRestaurantManagerCommands(commands) {
 
     return results.trim();
 }
-
-// ------------------------------------------------------------
-// Read the input from the console as array and process it
-// Remove all below code before submitting to the judge system!
-// ------------------------------------------------------------
-
-(function() {
-    var arr = [];
-    if (typeof (require) == 'function') {
-        // We are in node.js --> read the console input and process it
-        require('readline').createInterface({
-            input: process.stdin,
-            output: process.stdout
-        }).on('line', function(line) {
-            arr.push(line);
-        }).on('close', function() {
-            console.log(processRestaurantManagerCommands(arr));
-        });
-    }
-})();

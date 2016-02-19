@@ -49,6 +49,7 @@ function processTravelAgencyCommands(commands) {
                 if (this.constructor === Travel) {
                     throw new Error("Cannot create instance of Travel.");
                 }
+
                 this.setName(name);
                 this.setStartDate(startDate);
                 this.setEndDate(endDate);
@@ -239,10 +240,10 @@ function processTravelAgencyCommands(commands) {
 
         return {
             Destination: Destination,
-            Travel: Travel,
-            Excursion: Excursion,
-            Vacation: Vacation,
-            Cruise: Cruise
+                Travel: Travel,
+                Excursion: Excursion,
+                Vacation: Vacation,
+                Cruise: Cruise
         }
     }());
 

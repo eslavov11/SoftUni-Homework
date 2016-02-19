@@ -1,27 +1,24 @@
+Object.prototype.extends = function(parent) {
+    this.prototype = Object.create(parent.prototype);
+    this.prototype.constructor = this;
+}
 
 function processRestaurantManagerCommands(commands) {
-    'use strict';
+    //'use strict';
 
     var RestaurantEngine = (function () {
         var _restaurants, _recipes,
             globalConstants = {
                 UNIT_GRAMS: 'g',
                 UNIT_MILLILITERS: 'ml'
-            };
+            }
 
         function initialize() {
             _restaurants = [];
             _recipes = [];
         }
 
-        Object.prototype.extend = function(parent) {
-            this.prototype = Object.create(parent.prototype);
-            this.prototype.constructor = this;
-        }
 
-        Object.prototype.isString = function () {
-            return typeof(this) === "";
-        }
 
         var Restaurant = (function() {
             function Restaurant (name, location) {
@@ -32,52 +29,52 @@ function processRestaurantManagerCommands(commands) {
 
             Restaurant.prototype.getName = function () {
                 return this._name;
-            };
+            }
 
             Restaurant.prototype.setName = function (name) {
-                var isString = name.isString();
-                if (!name || !isString) {
+                //var isString = name.isString();
+                if (!name || !(typeof(name) === "")) {
                     throw new Error('Name cannot be null or empty.');
                 }
 
                 this._name = name;
-            };
+            }
 
             Restaurant.prototype.getLocation = function () {
                 return this._location;
-            };
+            }
 
             Restaurant.prototype.setLocation = function (location) {
-                var isString = location.isString();
-                if (!location || !isString) {
+               // var isString = location.isString();
+                if (!location || !(typeof(location) === "")) {
                     throw new Error('Location cannot be null or empty.');
                 }
 
                 this._location = location;
-            };
+            }
 
             Restaurant.prototype.addRecipe = function (recipe) {
                 Restaurant.assureIsRecipe(recipe);
 
                 this._recipes.push(recipe);
-            };
+            }
 
             Restaurant.prototype.removeRecipe = function (recipe) {
                 Restaurant.assureIsRecipe(recipe);
                 var recipeIndex = this._recipes.indexOf(recipe);
                 if (recipeIndex < 0) {
-                    // TODO: will this mess up unit test?
+                    // TODO: will this mess up unit tests?
                     throw new RangeError('No such recipe found');
                 }
 
                 this._recipes.splice(recipeIndex, 1);
-            };
+            }
 
             Restaurant.assureIsRecipe = function (recipe) {
                 if (!(recipe instanceof Recipe)) {
                     throw new TypeError('Parameter should be instance of Recipe.');
                 }
-            };
+            }
 
             return Restaurant;
         })();
@@ -101,8 +98,8 @@ function processRestaurantManagerCommands(commands) {
             }
 
             Recipe.prototype.setName = function (name) {
-                var isString = name.isString();
-                if (!name || !isString) {
+                //var isString = name.isString();
+                if (!name || !(typeof(name) === "")) {
                     throw new Error('Name cannot be null or empty.');
                 }
 
@@ -231,7 +228,7 @@ function processRestaurantManagerCommands(commands) {
                 this.isCarbonated = isCarbonated;
             }
 
-            Drink.extend(Recipe);
+            Drink.extends(Recipe);
 
             Drink.prototype.isCarbonated = function () {
                 return this._isCarbonated;
@@ -275,7 +272,7 @@ function processRestaurantManagerCommands(commands) {
                 this._isVegan = isVegan;
             }
 
-            Meal.extend(Recipe);
+            Meal.extends(Recipe);
 
             Meal.prototype.toggleVegan = function () {
                 this._isVegan = !this._isVegan;
@@ -296,18 +293,18 @@ function processRestaurantManagerCommands(commands) {
                 this._withSugar = true;
             }
 
-            Dessert.extend(Meal);
+            Dessert.extends(Meal);
 
             Dessert.prototype.toggleSugar = function () {
                 this._withSugar = !this._withSugar;
-            };
+            }
 
             Dessert.prototype.toString = function () {
                 var result = this._withSugar ? '' : '[NO SUGAR] ';
                 result += Meal.prototype.toString.call(this);
 
                 return result;
-            };
+            }
 
             return Dessert;
         })();
@@ -318,14 +315,14 @@ function processRestaurantManagerCommands(commands) {
                 this._containsPasta = containsPasta;
             }
 
-            Salad.extend(Meal);
+            Salad.extends(Meal);
 
             Salad.prototype.toString = function () {
                 var result = Meal.prototype.toString.call(this);
                 result += 'Contains pasta: ' + (this._containsPasta ? 'yes' : 'no') + '\n';
 
                 return result;
-            };
+            }
 
             return Salad;
         }());
@@ -336,14 +333,14 @@ function processRestaurantManagerCommands(commands) {
                 this._type = type;
             }
 
-            MainCourse.extend(Meal);
+            MainCourse.extends(Meal);
 
             MainCourse.prototype.toString = function () {
                 var result = Meal.prototype.toString.call(this);
                 result += 'Type: ' + this._type + '\n';
 
                 return result;
-            };
+            }
 
             return MainCourse;
         }());
@@ -540,7 +537,7 @@ function processRestaurantManagerCommands(commands) {
         return {
             initialize: initialize,
             executeCommand: executeCommand
-        };
+        }
     }());
 
 

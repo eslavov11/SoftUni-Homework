@@ -1,6 +1,11 @@
 function processTravelAgencyCommands(commands) {
     'use strict';
 
+    Object.prototype.extends = function (parent) {
+        this.prototype = Object.create(parent.prototype);
+        this.prototype.constructor = this;
+    }
+
     var Models = (function() {
         var Destination = (function() {
             function Destination(location, landmark) {
@@ -39,24 +44,167 @@ function processTravelAgencyCommands(commands) {
             return Destination;
         }());
 
-        var Travel = {
-            // TODO: Implement Travel
-        }
+        var Travel = (function() {
+            function Travel(name, startDate, endDate, price) {
+                if (this.constructor === Travel) {
+                    throw new Error("Cannot instantiate an abstract class.");
+                }
 
-        var Excursion = {
-            // TODO: Implement Excursion
-        }
+                this.setName(name);
+                this.setStartDate(startDate);
+                this.setEndDate(endDate);
+                this.setPrice(price);
+            }
 
-        var Vacation = {
-            // TODO: Implement Vacation
-        }
+            Travel.prototype.getName = function() {
+                return this._name;
+            }
 
-        var Cruise = {
-            // TODO: Implement Cruise
-        }
+            Travel.prototype.setName = function(name) {
+                if (name === undefined || name === "") {
+                    throw new Error("Name cannot be empty or undefined.");
+                }
+
+                this._name = name;
+            }
+
+            Travel.prototype.getStartDate = function() {
+                return this._startDate;
+            }
+
+            Travel.prototype.setStartDate = function(startDate) {
+                if (startDate === undefined || !(startDate instanceof Date)) {
+                    throw new Error("Start date should be a non-empty date object.")
+                }
+
+                this._startDate = startDate;
+            }
+
+            Travel.prototype.getEndDate = function() {
+                return this._endDate;
+            }
+
+            Travel.prototype.setEndDate = function(endDate) {
+                if (endDate === undefined || !(endDate instanceof Date)) {
+                    throw new Error("End date should be a non-empty date object.")
+                }
+
+                this._endDate = endDate;
+            }
+
+            Travel.prototype.getPrice = function() {
+                return this._price;
+            }
+
+            Travel.prototype.setPrice = function(price) {
+                if (price < 0) {
+                    throw new Error("Price should be a non-negative number.");
+                }
+
+                this._price = price;
+            }
+
+            return Travel;
+        })();
+
+        var Excursion = (function() {
+            function Excursion(name, startDate, endDate, price, transport) {
+                Travel.call(this, name, startDate, endDate, price);
+                this.setTransport(transport);
+                this._destinations = [];
+            }
+
+            Excursion.extends(Travel);
+
+            Excursion.prototype.getTransport = function() {
+                return this._transport;
+            }
+
+            Excursion.prototype.setTransport = function(transport) {
+                if (transport === undefined || transport === "") {
+                    throw new Error("Transport cannot be empty or undefined.");
+                }
+                this._transport = transport;
+            }
+
+            Excursion.prototype.addDestination = function(destination) {
+                this.getDestinations().push(destination);
+            }
+
+            Excursion.prototype.getDestinations = function() {
+                return this._destinations;
+            }
+
+            Excursion.prototype.getDestinations = function(destination) {
+                var index = this.getDestinations().indexOf(destination);
+
+                if (index !== -1) {
+                    this.getDestinations().splice(index, 1);
+                } else {
+                    throw new Error("Travel does not contain such destination.");
+                }
+            }
+
+            return Excursion;
+        })();
+
+        var Vacation = (function() {
+            function Vacation(name, startDate, endDate, price, location, accommodation) {
+                Travel.call(this, name, startDate, endDate, price);
+                this.setLocation(location);
+                this.setAccommodation(accommodation);
+            }
+
+            Vacation.prototype.getLocation = function() {
+                return this._location;
+            }
+
+            Vacation.prototype.setLocation = function(location) {
+                this._location = location;
+            }
+
+            Vacation.prototype.getAccommodation = function() {
+                return this._accommodation;
+            }
+
+            Vacation.prototype.setAccommodation = function(accommodation) {
+                this._accommodation = accommodation;
+            }
+
+            return Vacation;
+        })();
+
+        var Cruise = (function() {
+            var DEFAULT_TRANSPORT = "cruise liner";
+
+            function Cruise(name, startDate, endDate, price, startDock) {
+                Excursion.call(this, name, startDate, endDate, price, DEFAULT_TRANSPORT);
+                this.setStartDock(startDock);
+            }
+
+            Cruise.extends(Excursion);
+
+            Cruise.prototype.getStartDock = function() {
+                return this._startDock;
+            }
+
+            Cruise.prototype.setStartDock = function(startDock) {
+                if (startDock !== undefined && startDock === "") {
+                    throw new Error("Start dock cannot be empty.");
+                }
+
+                this._startDock = startDock;
+            }
+
+            return Cruise;
+        })();
 
         return {
-            Destination: Destination
+            Destination: Destination,
+            Travel: Travel,
+            Excursion: Excursion,
+            Vacation: Vacation,
+            Cruise: Cruise
         }
     }());
 
@@ -292,11 +440,13 @@ function processTravelAgencyCommands(commands) {
     commands.forEach(function(cmd) {
         var result;
         if (cmd != "") {
-            try {
-                result = TravellingManager.executeCommands(cmd) + "\n";
-            } catch (e) {
-                result = "Invalid command." + "\n";
-            }
+            //try {
+            //    result = TravellingManager.executeCommands(cmd) + "\n";
+            //} catch (e) {
+            //    result = "Invalid command." + "\n";
+            //}
+            result = TravellingManager.executeCommands(cmd) + "\n";
+
             output += result;
         }
     });

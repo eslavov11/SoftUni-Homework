@@ -38,6 +38,12 @@ var models = models || {};
         var _this = this;
         button.addEventListener('click', function () {
             var content = input.value;
+
+            if (content === undefined || content === '') {
+                alert('Cant add empty items, you dumb motherfucker!');
+                return;
+            }
+
             var item = new models.Item(content);
             item.addToDOM(element.id);
             input.value = '';

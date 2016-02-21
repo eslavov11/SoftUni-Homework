@@ -23,6 +23,13 @@
         return this._actors;
     };
 
+
+    Movie.prototype.deleteActorById = function(id) {
+        this._actors = this._actors.filter(function (actor) {
+            return actor._id !== id;
+        });
+    };
+
     Movie.prototype.addReview = function(review) {
         this._reviews.push(review);
     };

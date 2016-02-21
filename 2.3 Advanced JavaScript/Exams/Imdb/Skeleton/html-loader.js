@@ -34,12 +34,13 @@ var imdb = imdb || {};
 							return Number(movie._id) === Number(movieId);
 						})[0];
 
-					movieLi.addEventListener('click', function (ev) {
+					movieLi.addEventListener('click', function () {
 						detailsContainer.innerHTML = '';
 						console.log(5555);
 						detailsContainer.appendChild(addActors(movie));
 						detailsContainer.appendChild(addReviews(movie));
-					})
+
+					},true)
 				});
 
 				var deleteButtons = Array.prototype.slice.call(moviesContainer.getElementsByClassName('delete-button'));
@@ -53,14 +54,21 @@ var imdb = imdb || {};
 						genre.deleteMovie(movieToDelete);
 						//console.log(666666);
 						moviesContainer.firstElementChild.removeChild(button.parentNode);
-					});
+						var detailsEl = document.querySelector('#details');
+						detailsEl.removeChild(document.getElementById('actors'));
+						detailsEl.removeChild(document.getElementById('reviews'));
+					}, true);
 				})
 			}
 		});
+
+
+
 	}
 
 	function addActors(movie) {
 		var actorsDiv = document.createElement('div');
+		actorsDiv.id = 'actors';
 		actorsDiv.innerHTML += '<h2>Actors</h2>';
 		var ul = document.createElement('ul');
 		movie.getActors().forEach(function (actor) {
@@ -71,9 +79,17 @@ var imdb = imdb || {};
 			bio.innerHTML = '<strong>Bio:</strong>' +  actor.bio;
 			var born = document.createElement('p');
 			born.innerHTML = '<strong>Born:</strong>' +  actor.born;
+			var deleteButton = document.createElement('button');
+			deleteButton.innerHTML = 'Remove actor';
+			deleteButton.addEventListener('click', function () {
+				movie.deleteActorById(actor._id);
+				ul.removeChild(li);
+			});
+
 			li.appendChild(actorName);
 			li.appendChild(bio);
 			li.appendChild(born);
+			li.appendChild(deleteButton);
 			ul.appendChild(li);
 		});
 
@@ -84,6 +100,7 @@ var imdb = imdb || {};
 
 	function addReviews(movie) {
 		var reviewsDiv = document.createElement('div');
+		reviewsDiv.id = 'reviews';
 		reviewsDiv.innerHTML += '<h2>Reviews</h2>';
 		var ul = document.createElement('ul');
 		movie.getReviews().forEach(function (review) {

@@ -35,6 +35,11 @@ var models = models || {};
         var _this = this;
         button.addEventListener('click', function () {
             var sectionTitle = input.value;
+            if (sectionTitle === undefined || sectionTitle === '') {
+                alert('Cant add empty sections, you dumb motherfucker!');
+                return;
+            }
+
             var section = new models.Section(sectionTitle);
             section.addToDOM(element.id);
             input.value = '';

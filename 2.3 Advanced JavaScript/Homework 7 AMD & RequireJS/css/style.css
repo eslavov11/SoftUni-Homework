@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0.3em;
+}
+main{
+    margin: auto;
+    width: 40%;
+    text-align: center;
+}
+h4, .input-section{
+    text-align: right;
+}
+section{
+    align-content: center;
+}
+.input-container{
+    text-align: left;
+}
+section>.wrapper {
+    width: 80%;
+    text-align: left;
+    display: inline-flex;
+    border: 1px solid black;
+}
+.wrapper {
+    border: 1px solid black;
+}
+input[type="checkbox"]:checked {
+
+}

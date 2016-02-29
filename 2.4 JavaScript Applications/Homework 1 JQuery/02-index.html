@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>jquery2</title>
+</head>
+<body>
+	Class<input id='text-input' type="text"/>
+	Color<input id='color-input' type='color' default='blue'/>
+	<button>Paint</button>
+	<ul>
+	    <li class="bird">Hummingbird</li>
+	    <li class="bird">Nightingale</li>
+	    <li>Lizard</li>
+	    <li class="bird">Eagle</li>
+	    <li class="bird">Sparrow</li>
+	</ul>
+		
+	<script type="text/javascript" src="jquery-2.2.1.js"></script>
+	<script>
+		$('button').on('click', function() {
+			$('.' + $('#text-input').val()).css('background', $('#color-input').val())
+		});
+	</script>
+</body>
+</html>

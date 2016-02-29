@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>jquery</title>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>	
+	<script type="text/javascript" src="jquery-2.2.1.js"></script>
+	<script>
+		var first = $('li');
+		first.next().append('<a href="#">Click</a>');
+		first.next().next().next().prev().append('<a href="#">Click2</a>');
+	</script>
+</body>
+</html>

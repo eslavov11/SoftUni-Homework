@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Greeting system</title>
+	</head>
+	<body>
+		<script src="jquery-2.2.1.js"></script>
+		<script>
+            var greetingDiv = $('<div>'),
+                    sessionVisits = $('<div>'),
+                    totalVisits = $('<div>');
+            while (!localStorage.personName) {
+                localStorage.personName = prompt("Your name:");
+            }
+
+            if (!sessionStorage.visits) {
+                sessionStorage.visits = 0;
+            }
+
+            if (!localStorage.visits) {
+                localStorage.visits = 0;
+            }
+
+            sessionStorage.visits++;
+            localStorage.visits++;
+
+            $('body').append(greetingDiv.text('Hello, ' + localStorage.personName));
+            $('body').append(sessionVisits.text('Session visits: ' + sessionStorage.visits));
+            $('body').append(totalVisits.text('Total visits: ' + localStorage.visits));
+
+        </script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Greeting system</title>
+	</head>
+	<body>
+        <h1 style="display: inline-block">Typical math test.</h1>
+        <strong>
+            <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp5 minutes is way too much time. You have
+                <div style="display: inline-block" id="time"></div>
+                seconds.</span>
+
+        </strong>
+        <br>
+        <section>
+            <h3>Q1 What's 2+2?</h3>
+            <input id="1-1" name="q1" type="radio"> Two.<br>
+            <input id="1-2" name="q1" type="radio"> Four.<br>
+            <input id="1-3" name="q1" type="radio"> Dunno.<br>
+            <input id="1-4" name="q1" type="radio"> Next question.<br>
+        </section>
+
+        <section>
+            <h3>Q2 What's the mass of our moon?</h3>
+            <input id="2-1" name="q2" type="radio"> 7.34765309 times 10 to the power of 22 kilograms<br>
+            <input id="2-2" name="q2" type="radio"> 7.34767309 times 10 to the power of 21 kilograms<br>
+            <input id="2-3" name="q2" type="radio"> 7.34767309 times 10 to the power of 22 kilograms<br>
+            <input id="2-4" name="q2" type="radio"> 7.34767309 times 10 to the power of 25 kilograms<br>
+        </section>
+        <br><br>
+        <button id="check">Check result</button>
+
+		<script src="jquery-2.2.1.js"></script>
+		<script>
+            if (!localStorage.hasTakenTest) {
+                localStorage.hasTakenTest = true;
+            } else {
+                $('body').text('');
+                alert('You cannot take this test twice!');
+            }
+
+
+
+            $('#check').on('click', function () {
+                var q1Answer = ($("input[type='radio'][name='q1']:checked").attr('id') === "1-2"),
+                        q2Answer = ($("input[type='radio'][name='q2']:checked").attr('id') === "2-3");
+
+                $('body').text('');
+
+                if (q1Answer && q2Answer) {
+                    $('*').css('background', 'green');
+                    $('body').append('<h1>You passed!</h1><br>0 wrong answers');
+                } else {
+                    $('*').css('background', 'red');
+                    $('body').append('<h1>You failed!</h1><br>' + (!q1Answer && !q2Answer ? "2" : "1") + ' wrong answers');
+                }
+            })
+
+            function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                setInterval(function () {
+                    seconds = parseInt(timer % 60, 10);
+
+                    display.text(seconds);
+
+                    if (--timer < 0) {
+                        $('body').text('');
+                        $('*').css('background', 'red');
+                        $('body').append('<h1>You failed!</h1><br>' + (!q1Answer && !q2Answer ? "2" : "1") + ' wrong answers');
+                        alert('Time\'s up!');
+                    }
+                }, 1000);
+
+                return;
+            }
+
+            jQuery(function ($) {
+                var fiveMinutes = 60 * 0.34,
+                        display = $('#time');
+                startTimer(fiveMinutes, display);
+            });
+        </script>
+	</body>
+</html>

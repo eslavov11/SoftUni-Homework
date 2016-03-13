@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Templates</title>
+    </head>
+    <body>
+        <div id="wrapper"></div>
+        <script src="../jquery-2.2.1.js"></script>
+        <script src="../q.js"></script>
+        <script src="../mustache.min.js"></script>
+        <script>
+            (function() {
+                var data = {
+                    employers: [
+                        {
+                            name: "peter",
+                            jobTitle: "musician",
+                            website: "www.muzi.bg"
+                        },
+                        {
+                            name: "peter2",
+                            jobTitle: "programmer",
+                            website: "www.intro.bg"
+                        },
+                        {
+                            name: "peter3",
+                            jobTitle: "piano player",
+                            website: "www.bye.bg"
+                        }
+                    ]
+                };
+
+                $.get('tbl-tmpl.html', function (tmpl) {
+                    var rendered = Mustache.render(tmpl, data);
+                    $('#wrapper').append(rendered);
+                })
+            })();
+        </script>
+    </body>
+</html>

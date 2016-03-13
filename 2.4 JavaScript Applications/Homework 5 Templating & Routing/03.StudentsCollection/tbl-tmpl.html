@@ -1,0 +1,20 @@
+<table border="1px" style="background:lightgray; margin: 0 auto;">
+    <tr style="background: tomato">
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Country</th>
+    </tr>
+
+    {{#students}}
+    <tr>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{gender}}</td>
+        <td>{{age}}</td>
+        <td>{{country}}</td>
+    </tr>
+    {{/students}}
+
+</table>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Routing</title>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/ivan">Ivan</a></li>
+            <li><a href="#/svetlin">Svetlin</a></li>
+            <li><a href="#/nakov">Nakov</a></li>
+        </ul>
+        <div id="wrapper">
+
+        </div>
+        <script src="../jquery-2.2.1.js"></script>
+        <script src="../q.js"></script>
+        <script src="../sammy-latest.min.js"></script>
+        <script>
+            var app = app || {};
+            (function() {
+                app.router = Sammy(function () {
+                    var selector = '#wrapper';
+
+                    this.get('#/', function() {
+                        $(selector).html('Home');
+                    });
+                    this.get('#/ivan', function() {
+                        $(selector).html('Hello, Ivan');
+                    });
+                    this.get('#/svetlin', function() {
+                        $(selector).html('Hello, Svetlin');
+                    });
+                    this.get('#/nakov', function() {
+                        $(selector).html('Hello, Nakov');
+                    });
+                });
+                app.router.run('#/');
+            }());
+
+        </script>
+    </body>
+</html>

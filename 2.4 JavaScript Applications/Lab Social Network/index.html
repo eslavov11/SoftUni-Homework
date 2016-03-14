@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/bootstrap.css" />
+    <title>Social Network</title>
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- logo -->
+    <div class="logo">
+        <a href="#"><img src="imgs/beer.png"/></a>
+        <span>Cool Story Bro</span>
+    </div>
+    <!-- end of logo -->
+
+    <!-- header -->
+    <header class="header" id="header">
+
+        <!-- user header -->
+        <div class="image-container">
+            <img class="thumbnail" />
+        </div>
+        <div class="summary-container">
+            <h2>Hello, Name!</h2>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Edit profile</a></li>
+                    <li><a href="#">Post</a></li>
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a class="navbar-brand"><u>Username</u></a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- end of user header -->
+
+    </header>
+    <!-- end of header -->
+
+    <!-- main -->
+    <section class="main" id="main">
+
+        <!-- guest home -->
+        <div>
+            <h1 class="center">Welcome to <strong>Cool Story Bro</strong></h1>
+            <h4 class="center">The place where every story seems 100% <strong><em>legit</em></strong> and is brought to you by your friendly <strong><em>bro</em></strong>.</h4>
+        </div>
+        <div class="row home-buttons-container">
+            <div class="col-md-12">
+                <div class="center col-lg-6">
+                    <a href="#">
+                        <button type="button" class="btn btn-lg btn-warning home-btn">Login</button>
+                    </a>
+                </div>
+                <div class="center col-lg-6">
+                    <a href="#">
+                        <button type="button" class="btn btn-lg btn-success home-btn">Register</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end of guest home -->
+
+        <!-- login -->
+        <div class="row">
+            <form class="login form-horizontal col-md-6">
+                <fieldset>
+                    <legend><h2>Login</h2></legend>
+                    <div class="form-group">
+                        <label for="login-username" class="col-lg-4 control-label">Username</label>
+                        <div class="col-lg-8">
+                            <input type="text" class="form-control" id="login-username" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" class="col-lg-4 control-label">Password</label>
+                        <div class="col-lg-8">
+                            <input type="password" class="form-control" id="login-password" placeholder="Password">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="button" class="btn btn-lg btn-primary">Login</button>
+                        <span>or</span>
+                        <a href="#">Register</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- end of login -->
+
+        <!-- register -->
+        <div class="row">
+            <form class="register form-horizontal col-lg-12">
+                <fieldset>
+                    <legend><h2>Create a new account</h2></legend>
+                    <div class="col-lg-9 form-info">
+                        <div class="form-group">
+                            <label for="reg-username" class="col-lg-3 control-label">Username:</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="reg-username" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password" class="col-lg-3 control-label">Password:</label>
+                            <div class="col-lg-9">
+                                <input type="password" class="form-control" id="reg-password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-name" class="col-lg-3 control-label">Name:</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="reg-name" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-about" class="col-lg-3 control-label">About me:</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" rows="3" id="reg-about"></textarea>
+                                <span class="help-block">Tell us a little about yourself!</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Gender:</label>
+                            <div class="col-lg-9">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender-radio" value="male">Male
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender-radio" value="female">Female
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender-radio" value="other">Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 picture-upload">
+                        <div class="form-group">
+                            <img class="thumbnail picture-preview"/>
+                        </div>
+                        <div class="form-group">
+                            <p class="picture-name"></p>
+                            <button type="button" id="upload-file-button" class="btn btn-md btn-info">Upload</button>
+                            <input type="file" id="picture" />
+                            <p>Size limit: 128KB</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="button" class="btn btn-lg btn-primary">Register</button>
+                            <span>or</span>
+                            <a href="#">Login</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- end of register -->
+
+        <!-- post box -->
+        <div class="post-container" id="post-container">
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <div>
+                            <textarea class="form-control" rows="3" id="post-content" placeholder="Any cool story you wanna share?"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group pull-left">
+                        <div>
+                            <button type="button" class="btn btn-primary">Post</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!-- end of post box -->
+
+        <!-- posts page -->
+        <article class="post well">
+            <header class="post-header">
+                <div class="post-image">
+                    <img class="mini-thumbnail" />
+                </div>
+                <div class="post-info">
+                    <p><a href="#" class="profile-link">Name</a> made a post</p>
+                    <p>on <time>DateTime</time></p>
+                </div>
+            </header>
+            <section class="post-content">
+                <p>Post Content</p>
+            </section>
+        </article>
+        <!-- end of posts page -->
+
+        <!-- edit profile -->
+        <section class="edit-profile">
+            <form class="register form-horizontal">
+                <fieldset>
+                    <legend>Edit Profile</legend>
+                    <div class="col-lg-9 form-info">
+                        <div class="form-group">
+                            <label for="username" class="col-lg-3 control-label">Username:</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="username" value="Username" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-lg-3 control-label">Password:</label>
+                            <div class="col-lg-9">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-lg-3 control-label">Name:</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="name" placeholder="Name" value="Full name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="about" class="col-lg-3 control-label">About me:</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" rows="3" id="about">about me</textarea>
+                                <span class="help-block">Tell us a little about yourself!</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Gender:</label>
+                            <div class="col-lg-9">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender-radio" value="male">Male
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender-radio" value="female">Female
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gender-radio" value="other">Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 picture-upload">
+                        <div class="form-group">
+                            <img class="thumbnail picture-preview" />
+                        </div>
+                        <div class="form-group">
+                            <p class="picture-name"></p>
+                            <button type="button" id="upload-file-button" class="btn btn-md btn-info">Upload</button>
+                            <input type="file" id="picture" />
+                            <p>Size limit: 128KB</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="button" class="btn btn-lg btn-primary">Save Changes</button>
+                            <button type="button" class="cancel-btn btn btn-lg btn-default">Cancel</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <!-- end of edit profile -->
+		
+		<!-- hover box -->
+        <div class="hover-box">
+            <div class="hover-profile-image">
+                <img class="thumbnail" />
+            </div>
+            <div class="hover-profile-info">
+                <p class="hover-profile-name">Name</p>
+                <p><strong>Gender:</strong> Gender</p>
+                <p><strong>About me:</strong> About</p>
+            </div>
+        </div>
+        <!-- end of hover box -->
+		
+    </section>
+</div>
+
+</body>
+</html>

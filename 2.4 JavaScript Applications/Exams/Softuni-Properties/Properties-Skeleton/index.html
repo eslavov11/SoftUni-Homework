@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css"/>
+    <title>Estates</title>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <img class="img-header" src="imgs/trash.png"/>
+        <h1 class="site-header">SoftUni Properties</h1>
+        <nav id="menu">
+            <ul>
+                <li class="nav-button"><a href="#">Home</a></li>
+                <li class="nav-button"><a href="#">Login</a></li>
+                <li class="nav-button"><a href="#">Register</a></li>
+            </ul>
+            <ul>
+                <li class="nav-button"><a href="#">Home</a></li>
+                <li class="nav-button"><a href="#">Estates</a></li>
+                <li class="nav-button"><a href="#">Add Estate</a></li>
+                <li class="nav-button"><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main">
+
+		<!-- Registration form -->
+        <section>
+            <div class="register-form">
+                <header class="main-header">Register</header>
+                <div class="data">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Username..."/>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Password..."/>
+                    <label for="confirm-password">Confirm password:</label>
+                    <input type="password" id="confirm-password" placeholder="Password again..."/>
+                </div>
+                <div class="panel">
+                    <button class="button" id="register-button">Register</button>
+                    <span>or</span>
+                    <a href="#">Login</a>
+                </div>
+            </div>
+        </section>
+
+        <br />
+		
+		<!-- Login form -->
+        <section>
+            <div class="login-form">
+                <header class="main-header">Login</header>
+                <div class="data">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Username..."/>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Password..."/>
+                </div>
+                <div class="panel">
+                    <button id="login-button" class="button">Login</button>
+                    <span>or</span>
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </section>
+
+        <br />
+		
+		<!-- Welcome guest -->
+        <section>
+            <div class="welcome-message">
+                <header class="main-header">Welcome to SoftUni Properties!</header>
+                <h3 class="centered">Please <a href="#">login</a> to access the site.</h3>
+            </div>
+        </section>
+        <br />
+		
+		<!-- Welcome user -->
+        <section>
+            <div class="welcome-message">
+                <header class="main-header">Welcome, username!</header>
+            </div>
+        </section>
+
+        <br />
+
+		<!-- Add estate form -->
+        <section>
+            <div class="add-estate-form">
+                <header class="main-header">Add new estate</header>
+                <div class="data">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Estate name..."/>
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" placeholder="Category..."/>
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" placeholder="0.00"/>
+                </div>
+                <div class="panel">
+                    <button id="add-estate-button" class="button">Add</button>
+                    <a href="#">
+                        <button class="button">Cancel</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <br />
+		
+		<!-- Delete estate form -->
+        <section>
+            <div class="delete-estate-form">
+                <header class="main-header">Delete estate</header>
+                <div class="data">
+                    <label>Name:</label>
+                    <input type="text" value="70 Broad Street" disabled/>
+                    <label>Category:</label>
+                    <input type="text" value="Condo" disabled/>
+                    <label>Price:</label>
+                    <input type="text" value="100000000.00" disabled>
+                </div>
+                <div class="panel">
+                    <button id="delete-estate-button" class="button">Delete</button>
+                    <a href="#">
+                        <button class="button">Cancel</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <br />
+		
+		<!-- Edit estate form -->
+        <section>
+            <div class="edit-estate-form">
+                <header class="main-header">Edit estate</header>
+                <div class="data">
+                    <label for="item-name">Name:</label>
+                    <input type="text" id="item-name" value="70 Broad Street" placeholder="Name..."/>
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" value="Condo" placeholder="Category..." disabled/>
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" value="100000000.00" placeholder="0.00"/>
+                </div>
+                <div class="panel">
+                    <button id="edit-estate-button" class="button">Edit</button>
+                    <a href="#">
+                        <button class="button">Cancel</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <br />
+
+		<!-- estates list -->
+        <section>
+            <aside class="filters">
+                <h3>Filter</h3>
+                <input id="search-bar" class="search-bar" type="text" placeholder="Keyword.."/>
+                <label>Price:</label>
+                <input id="min-price" class="input-num" type="number" value="0" min="0"/>
+                <span>-</span>
+                <input id="max-price" class="input-num" type="number" value="100000000"/>
+                <label>Category:</label>
+                <select id="category" class="category">
+                    <option value="All">All</option>
+                    <option value="Condo">Condo</option>
+                    <option value="Penthouse">Penthouse</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Studio">Studio</option>
+                </select>
+                <button id="filter" class="filter-button">Filter</button>
+                <p class="clear-filters" id="clear-filters">Clear filters</p>
+            </aside>
+            <div class="estates">
+                <ul>
+                    <li class="estate">
+                        <div class="estate-info">
+                            <p class="item-name">70 Broad Street</p>
+                            <p class="category"><span class="pre">Category:</span>Condo</p>
+                            <p class="price"><span class="pre">Price:</span> $100000000.00</p>
+                        </div>
+                        <footer class="estate-footer">
+                            <a href="#">
+                                <button class="edit-button">Edit</button>
+                            </a>
+                            <a href="#">
+                                <button class="delete-button">Delete</button>
+                            </a>
+                        </footer>
+                    </li>
+                    <li class="estate">
+                        <div class="estate-info">
+                            <p class="item-name">432 Park Avenue</p>
+                            <p class="category"><span class="pre">Category:</span>Penthouse</p>
+                            <p class="price"><span class="pre">Price:</span>$81000000.00</p>
+                        </div>
+                        <footer class="estate-footer">
+                            <a href="#">
+                                <button class="edit-button">Edit</button>
+                            </a>
+                            <a href="#">
+                                <button class="delete-button">Delete</button>
+                            </a>
+                        </footer>
+                    </li>
+                    <li class="estate">
+                        <div class="estate-info">
+                            <p class="item-name">Mirada 161 East 110th Street</p>
+                            <p class="category"><span class="pre">Category:</span>Apartment</p>
+                            <p class="price"><span class="pre">Price:</span>$650000.00</p>
+                        </div>
+                        <footer class="estate-footer">
+                        </footer>
+                    </li>
+                    <li class="estate">
+                        <div class="estate-info">
+                            <p class="item-name">200 West 56th Street</p>
+                            <p class="category"><span class="pre">Category:</span>Studio</p>
+                            <p class="price"><span class="pre">Price:</span>$15000.00</p>
+                        </div>
+                        <footer class="estate-footer">
+                        </footer>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+</body>
+</html>

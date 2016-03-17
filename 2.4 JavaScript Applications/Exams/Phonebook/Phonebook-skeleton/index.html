@@ -2,17 +2,17 @@
 <html>
     <head>
         <title>Phonebook</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <header id="header">Phonebook<span></span></header>
 
         <ul id="menu">
-            <li><a href="#" class="link">Home</a></li>
-            <li><a href="#" class="link">Phonebook</a></li>
-            <li><a href="#" class="link">Add Phone</a></li>
-            <li><a href="#" class="link">Edit Profile</a></li>
-            <li><a href="#" class="link">Logout</a></li>
+            <li><a href="#/home" class="link">Home</a></li>
+            <li><a href="#/phones" class="link">Phonebook</a></li>
+            <li><a href="#/phones/add" class="link">Add Phone</a></li>
+            <li><a href="#/edit-profile" class="link">Edit Profile</a></li>
+            <li><a href="#/logout" class="link">Logout</a></li>
         </ul>
 
         <main id="wrapper"></main>
@@ -23,6 +23,8 @@
         <script src="js/libs/q.js"></script>
         <script src="js/libs/sammy-latest.min.js"></script>
         <script src="js/libs/mustache.min.js"></script>
+
+        <script src="js/helpers/requester.js"></script>
 
         <script src="js/models/userModel.js"></script>
         <script src="js/models/phoneModel.js"></script>

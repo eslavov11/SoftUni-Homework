@@ -7,16 +7,29 @@ var app = app || {};
         var requester = app.requester.config('kid_-yoPnnU5yb','38b074daf65047cc9270265d4315a788');
 
         var userViewBag = app.userViews.load();
-        var booksViewBag = app.booksViews.load();
+       // var phoneViewBag = app.phoneViews.load();
+        var homeViewBag = app.homeViews.load();
 
         var userModel = app.userModel.load(requester);
-        var booksModel = app.booksModel.load(requester);
+        //var phoneModel = app.phoneModel.load(requester);
 
         var userController = app.userController.load(userModel, userViewBag);
-        var booksController = app.booksController.load(booksModel, booksViewBag);
+        //var phoneController = app.phoneController.load(phoneModel, phoneViewBag);
+        var homeController = app.homeController.load(homeViewBag);
+
+        this.before('#/[^login|register]', function () {
+            if (!sessionStorage['sessionAuth']) {
+                this.redirect('#/');
+                return false;
+            }
+        });
 
         this.get('#/', function() {
-            this.redirect('#/login');
+            homeController.showWelcomePage(selector);
+        });
+
+        this.get('#/home', function() {
+            homeController.showHomePage(selector);
         });
 
         this.get('#/login', function() {
@@ -25,18 +38,31 @@ var app = app || {};
 
         this.get('#/logout', function() {
             userController.logout();
+            this.redirect('#/');
         });
 
         this.get('#/register', function() {
             userController.showRegisterPage(selector);
         });
 
-        this.get('#/books', function() {
-            booksController.loadAllBooks(selector);
+        this.get('#/edit-profile', function() {
+            userController.showEditProfilePage(selector);
         });
 
-        this.get('#/addNewBook', function() {
-            booksController.loadAddBookPage(selector);
+        this.get('#/phones', function() {
+           // phoneController.loadPhones(selector);
+        });
+
+        this.get('#/phones/add', function() {
+           // phoneController.loadAddPhonePage(selector);
+        });
+
+        this.get('#/phones/edit', function() {
+          //  phoneController.loadEditPhonePage(selector);
+        });
+
+        this.get('#/phones/delete', function() {
+           // phoneController.loadDeletePhonePage(selector);
         });
 
         this.bind('redirectUrl', function(e, data) {
@@ -52,7 +78,7 @@ var app = app || {};
         });
 
         this.bind('add-new-book', function(e, data) {
-            booksController.addNewBook(data);
+          //  booksController.addNewBook(data);
         });
 
         this.bind('show-add-author', function (e, data) {

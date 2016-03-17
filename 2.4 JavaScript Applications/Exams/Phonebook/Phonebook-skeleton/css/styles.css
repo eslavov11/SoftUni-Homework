@@ -24,7 +24,9 @@ body {
 }
 
 #wrapper {
-    margin-left: 111px;
+    margin: 0 auto;
+    /*margin-left: 111px;*/
+    width: 400px;
     /*text-align: center;*/
 }
 
@@ -48,7 +50,7 @@ body {
 
 .dialog-box {
     display: inline-block;
-    margin: 10px 0;
+    margin: 10px auto;
     background: #A9D18E;
     padding: 20px;
     border-radius: 10px;

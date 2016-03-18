@@ -2,7 +2,8 @@ var app = app || {};
 
 (function() {
     var router = Sammy(function () {
-        var selector = '#wrapper';
+        var selector = '#wrapper',
+            sidebar = '#menu';
 
         var requester = app.requester.config('kid_-yoPnnU5yb','38b074daf65047cc9270265d4315a788');
         var notyMessages = app.notyMessages.load();
@@ -18,9 +19,12 @@ var app = app || {};
         var phoneController = app.phoneController.load(phoneModel, phoneViewBag, notyMessages);
         var homeController = app.homeController.load(null, homeViewBag, notyMessages);
 
+        $(sidebar).hide();
+
         this.before({except:{path:'#\/(login\/|register\/)?'}}, function () {
             if (!sessionStorage['sessionAuth']) {
                 this.redirect('#/');
+                $(sidebar).hide();
                 return false;
             }
         });
@@ -31,6 +35,7 @@ var app = app || {};
 
         this.get('#/home/', function() {
             homeController.showHomePage(selector);
+            $(sidebar).show();
         });
 
         this.get('#/login/', function() {
@@ -39,6 +44,7 @@ var app = app || {};
 
         this.get('#/logout/', function() {
             userController.logout();
+            $(sidebar).hide();
         });
 
         this.get('#/register/', function() {

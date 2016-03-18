@@ -57,13 +57,17 @@ app.phoneController = (function () {
     };
 
     PhoneController.prototype.editPhone = function (data) {
+        var _this = this;
+
         this.model.editPhone(data._id, data)
             .then(function (success) {
                 console.log(success);
                 Sammy(function() {
+                    _this._messages.success('You have successfully edited the phone!');
                     this.trigger('redirectUrl', {url: '#/phones/'});
                 });
             }, function(error) {
+                _this._messages.error('There was an error and the phone wasn\'t edited.');
                 console.error(error);
             })
     };
@@ -73,13 +77,17 @@ app.phoneController = (function () {
     };
 
     PhoneController.prototype.deletePhone = function (data) {
+        var _this = this;
+
         this.model.deletePhone(data._id)
             .then(function (success) {
                 Sammy(function() {
+                    _this._messages.success('You have successfully deleted the phone!');
                     this.trigger('redirectUrl', {url: '#/phones/'});
                 });
             }, function(error) {
-            console.error(error);
+                _this._messages.error('There was an error and the phone wasn\'t edited.');
+                console.error(error);
         });
     };
 

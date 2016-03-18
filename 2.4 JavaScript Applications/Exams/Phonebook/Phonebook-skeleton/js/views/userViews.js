@@ -29,16 +29,19 @@ app.userViews = (function () {
         })
     }
 
-    function showEditProfilePage(selector) {
+    function showEditProfilePage(selector, data) {
         $.get('templates/edit-user.html', function(templ) {
-            $(selector).html(templ);
+            var rendered = Mustache.render(templ, data);
+            $(selector).html(rendered);
             $('#editProfileButton').on('click', function(e) {
                 var username = $('#username').val(),
                     password = $('#password').val(),
                     fullName = $('#fullName').val();
 
+                password = password == '' ? data.password : password;
+
                 Sammy(function() {
-                    this.trigger('edit', {username: username, password: password, fullName: fullName});
+                    this.trigger('edit-profile', {userId: data.userId, username: username, password: password, fullName: fullName});
                 })
             })
         })

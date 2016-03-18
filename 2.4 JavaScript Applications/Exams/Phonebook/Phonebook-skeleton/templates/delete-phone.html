@@ -2,14 +2,14 @@
     <h1>Confirm Delete Phone?</h1>
     <p>
         <label for="personName">Name:</label>
-        <input type="text" id="personName" value="Peter Norton" disabled="disabled">
+        <input type="text" id="personName" value="{{person}}" disabled="disabled">
     </p>
     <p>
         <label for="phoneNumber">Number:</label>
-        <input type="text" id="phoneNumber" value="+1 855 344 567" disabled="disabled">
+        <input type="text" id="phoneNumber" value="{{number}}" disabled="disabled">
     </p>
     <p class="buttons">
-        <a href="#" class="button">Delete</a>
+        <button data-id="{{_id}}" id="deletePhoneButton" class="button">Delete</button>
         <a href="#" class="button">Cancel</a>
     </p>
 </div>

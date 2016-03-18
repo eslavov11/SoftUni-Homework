@@ -4,29 +4,17 @@
         <th>Phone</th>
         <th>Action</th>
     </tr>
-    <tr>
-        <td>Bay Ivan</td>
-        <td>+359 895 55 55 55</td>
+    {{#phones}}
+    <tr data-id="{{_id}}">
+        <td>{{person}}</td>
+        <td>{{number}}</td>
         <td>
-            <a href="#" class="link">Edit</a>
-            <a href="#" class="link">Delete</a>
+            <a href="#/phones/" class="link edit">Edit</a>
+            <a href="#/phones/" class="link delete">Delete</a>
         </td>
     </tr>
-    <tr>
-        <td>Kiro Kirov</td>
-        <td>+359 999 22 33</td>
-        <td>
-            <a href="#" class="link">Edit</a>
-            <a href="#" class="link">Delete</a>
-        </td>
-    </tr>
-    <tr>
-        <td>Peter Norton</td>
-        <td>+1 855 344 567</td>
-        <td>
-            <a href="#" class="link">Edit</a>
-            <a href="#" class="link">Delete</a>
-        </td>
-    </tr>
+    {{/phones}}
 </table>
-<p><a href="#" class="button">Add Phone</a></p>
+<p>
+    <button id="addPhoneButton" class="button">Add Phone</button>
+</p>

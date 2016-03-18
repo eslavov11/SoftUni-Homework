@@ -8,7 +8,7 @@ app.userModel = (function () {
 
     UserModel.prototype.login = function(data) {
         var loginUrl = this.serviceUrl + '/login';
-        return this._requester.post(loginUrl, data);
+        return this._requester.post(loginUrl, data, false);
     };
 
     UserModel.prototype.logout = function() {
@@ -21,7 +21,7 @@ app.userModel = (function () {
     };
 
     UserModel.prototype.editProfile = function(id, data) {
-        return this._requester.post(this.serviceUrl + '/' + id, data, true);
+        return this._requester.put(this.serviceUrl + '/' + id, data, true);
     };
 
     return {

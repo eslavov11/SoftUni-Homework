@@ -2,14 +2,14 @@
     <h1>Edit Phone</h1>
     <p>
         <label for="personName">Name:</label>
-        <input type="text" id="personName" value="Peter Norton">
+        <input type="text" id="personName" value="{{person}}">
     </p>
     <p>
         <label for="phoneNumber">Number:</label>
-        <input type="text" id="phoneNumber" value="+1 855 344 567">
+        <input type="text" id="phoneNumber" value="{{number}}">
     </p>
     <p class="buttons">
-        <a href="#" class="button">Edit</a>
+        <button data-id="{{_id}}" id="editPhoneButton" class="button">Edit</button>
         <a href="#" class="button">Cancel</a>
     </p>
 </div>

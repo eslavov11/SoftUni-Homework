@@ -7,17 +7,17 @@ var app = app || {};
         var requester = app.requester.config('kid_-yoPnnU5yb','38b074daf65047cc9270265d4315a788');
 
         var userViewBag = app.userViews.load();
-       // var phoneViewBag = app.phoneViews.load();
+        var phoneViewBag = app.phoneViews.load();
         var homeViewBag = app.homeViews.load();
 
         var userModel = app.userModel.load(requester);
-        //var phoneModel = app.phoneModel.load(requester);
+        var phoneModel = app.phoneModel.load(requester);
 
         var userController = app.userController.load(userModel, userViewBag);
-        //var phoneController = app.phoneController.load(phoneModel, phoneViewBag);
+        var phoneController = app.phoneController.load(phoneModel, phoneViewBag);
         var homeController = app.homeController.load(homeViewBag);
 
-        this.before('#/[^login|register]', function () {
+        this.before({except:{path:'#\/(login\/|register\/)?'}}, function () {
             if (!sessionStorage['sessionAuth']) {
                 this.redirect('#/');
                 return false;
@@ -28,41 +28,40 @@ var app = app || {};
             homeController.showWelcomePage(selector);
         });
 
-        this.get('#/home', function() {
+        this.get('#/home/', function() {
             homeController.showHomePage(selector);
         });
 
-        this.get('#/login', function() {
+        this.get('#/login/', function() {
             userController.showLoginPage(selector);
         });
 
-        this.get('#/logout', function() {
+        this.get('#/logout/', function() {
             userController.logout();
-            this.redirect('#/');
         });
 
-        this.get('#/register', function() {
+        this.get('#/register/', function() {
             userController.showRegisterPage(selector);
         });
 
-        this.get('#/edit-profile', function() {
+        this.get('#/edit-profile/', function() {
             userController.showEditProfilePage(selector);
         });
 
-        this.get('#/phones', function() {
-           // phoneController.loadPhones(selector);
+        this.get('#/phones/', function() {
+            phoneController.loadPhones(selector);
         });
 
-        this.get('#/phones/add', function() {
-           // phoneController.loadAddPhonePage(selector);
+        this.get('#/phones/add/', function() {
+            phoneController.loadAddPhone(selector);
         });
 
-        this.get('#/phones/edit', function() {
-          //  phoneController.loadEditPhonePage(selector);
+        this.get('#/phones/edit/', function() {
+            phoneController.loadEditPhone(selector);
         });
 
-        this.get('#/phones/delete', function() {
-           // phoneController.loadDeletePhonePage(selector);
+        this.get('#/phones/delete/', function() {
+            phoneController.loadDeletePhone(selector);
         });
 
         this.bind('redirectUrl', function(e, data) {
@@ -77,14 +76,33 @@ var app = app || {};
             userController.register(data);
         });
 
-        this.bind('add-new-book', function(e, data) {
-          //  booksController.addNewBook(data);
+        this.bind('edit-profile', function(e, data) {
+            userController.editProfile(data);
         });
 
-        this.bind('show-add-author', function (e, data) {
+        this.bind('show-add-phone', function(e, data) {
+            phoneController.loadAddPhone(selector, data);
+        });
 
-        })
+        this.bind('show-edit-phone', function(e, data) {
+            phoneController.loadEditPhone(selector, data);
+        });
 
+        this.bind('show-delete-phone', function(e, data) {
+            phoneController.loadDeletePhone(selector, data);
+        });
+
+        this.bind('add-phone', function(e, data) {
+            phoneController.addPhone(data);
+        });
+
+        this.bind('edit-phone', function(e, data) {
+            phoneController.editPhone(data);
+        });
+
+        this.bind('delete-phone', function(e, data) {
+            phoneController.deletePhone(data);
+        });
     });
 
     router.run('#/');

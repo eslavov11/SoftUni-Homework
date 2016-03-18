@@ -15,7 +15,7 @@ app.userController = (function() {
     };
 
     UserController.prototype.showEditProfilePage = function(selector) {
-        this._viewBag.showEditProfilePage(selector);
+        this._viewBag.showEditProfilePage(selector, sessionStorage);
     };
 
     UserController.prototype.login = function(data) {
@@ -24,7 +24,7 @@ app.userController = (function() {
                 setSessionStorage(successData);
 
                 Sammy(function() {
-                    this.trigger('redirectUrl', {url: '#/home'});
+                    this.trigger('redirectUrl', {url: '#/home/'});
                 });
             }).done();
     };
@@ -35,18 +35,19 @@ app.userController = (function() {
                 setSessionStorage(successData);
 
                 Sammy(function() {
-                    this.trigger('redirectUrl', {url: '#/home'});
+                    this.trigger('redirectUrl', {url: '#/home/'});
                 });
             }).done();
     };
 
     UserController.prototype.editProfile = function(data) {
-        this._model.editProfile(data)
+        this._model.editProfile(data.userId, data)
             .then(function(successData) {
-                setSessionStorage(successData); // TODO: check if not changed!!
+                sessionStorage['username'] = successData.username;// TODO: check if not changed!!
+                sessionStorage['fullName'] = successData.fullName;// TODO: check if not changed!!
 
                 Sammy(function() {
-                    this.trigger('redirectUrl', {url: '#/home'});
+                    this.trigger('redirectUrl', {url: '#/home/'});
                 });
             }).done();
     };
@@ -55,7 +56,9 @@ app.userController = (function() {
         this._model.logout()
             .then(function() {
                 clearSessionStorage();
-                this.trigger('redirectUrl', {url: '#/home'});
+                Sammy(function() {
+                    this.trigger('redirectUrl', {url: '#/'});
+                });
             }).done();
     };
 

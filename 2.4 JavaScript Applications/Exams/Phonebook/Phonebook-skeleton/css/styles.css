@@ -41,6 +41,10 @@ body {
     margin: 0 10px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .link {
     color: #2E75B6;
     text-decoration: none;

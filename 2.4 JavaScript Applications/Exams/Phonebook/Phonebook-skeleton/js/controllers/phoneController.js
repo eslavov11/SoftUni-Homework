@@ -1,9 +1,10 @@
 var app = app || {};
 
 app.phoneController = (function () {
-    function PhoneController(model, viewBag) {
+    function PhoneController(model, viewBag, messages) {
         this.model = model;
         this.viewBag = viewBag;
+        this._messages = messages;
     }
 
     PhoneController.prototype.loadPhones = function (selector) {
@@ -31,6 +32,8 @@ app.phoneController = (function () {
     };
 
     PhoneController.prototype.addPhone = function (data) {
+        var _this = this;
+        
         var result = {
             person: data.person,
             number: data.number
@@ -42,6 +45,10 @@ app.phoneController = (function () {
                 Sammy(function() {
                     this.trigger('redirectUrl', {url: '#/phones/'});
                 });
+                
+                _this._messages.success('You have successfully added a new phone!');
+            }, function (error) {
+                _this._messages.error('There was an error and the phone wasn\'t added.');
             });
     };
 
@@ -77,8 +84,8 @@ app.phoneController = (function () {
     };
 
     return {
-        load: function (model, viewBag) {
-            return new PhoneController(model, viewBag);
+        load: function (model, viewBag, messages) {
+            return new PhoneController(model, viewBag, messages);
         }
     };
 }());

@@ -1,9 +1,10 @@
 var app = app || {};
 
 app.userController = (function() {
-    function UserController(model, viewBag) {
+    function UserController(model, viewBag, messages) {
         this._model = model;
         this._viewBag = viewBag;
+        this._messages = messages;
     }
 
     UserController.prototype.showLoginPage = function(selector) {
@@ -77,8 +78,8 @@ app.userController = (function() {
     }
 
     return {
-        load: function (model, viewBag) {
-            return new UserController(model, viewBag);
+        load: function (model, viewBag, messages) {
+            return new UserController(model, viewBag, messages);
         }
     }
 }());

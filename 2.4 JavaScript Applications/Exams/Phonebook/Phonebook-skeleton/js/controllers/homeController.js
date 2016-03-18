@@ -1,8 +1,10 @@
 var app = app || {};
 
 app.homeController = (function() {
-    function HomeController(viewBag) {
+    function HomeController(model, viewBag, messages) {
+        this._model = model;
         this._viewBag = viewBag;
+        this._messages = messages;
     }
 
     HomeController.prototype.showWelcomePage = function(selector) {
@@ -18,8 +20,8 @@ app.homeController = (function() {
     };
 
     return {
-        load: function (viewBag) {
-            return new HomeController(viewBag);
+        load: function (model, viewBag, messages) {
+            return new HomeController(model, viewBag, messages);
         }
     }
 }());

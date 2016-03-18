@@ -5,6 +5,7 @@ var app = app || {};
         var selector = '#wrapper';
 
         var requester = app.requester.config('kid_-yoPnnU5yb','38b074daf65047cc9270265d4315a788');
+        var notyMessages = app.notyMessages.load();
 
         var userViewBag = app.userViews.load();
         var phoneViewBag = app.phoneViews.load();
@@ -13,9 +14,9 @@ var app = app || {};
         var userModel = app.userModel.load(requester);
         var phoneModel = app.phoneModel.load(requester);
 
-        var userController = app.userController.load(userModel, userViewBag);
-        var phoneController = app.phoneController.load(phoneModel, phoneViewBag);
-        var homeController = app.homeController.load(homeViewBag);
+        var userController = app.userController.load(userModel, userViewBag, notyMessages);
+        var phoneController = app.phoneController.load(phoneModel, phoneViewBag, notyMessages);
+        var homeController = app.homeController.load(null, homeViewBag, notyMessages);
 
         this.before({except:{path:'#\/(login\/|register\/)?'}}, function () {
             if (!sessionStorage['sessionAuth']) {

@@ -20,7 +20,7 @@ app.requester = (function () {
     };
 
     Requester.prototype.remove = function(url, useSession) {
-        return this.makeRequest('DELETE', url, useSession);
+        return this.makeRequest('DELETE', url, null, useSession);
     };
 
     Requester.prototype.makeRequest = function(method, url, data, useSession) {

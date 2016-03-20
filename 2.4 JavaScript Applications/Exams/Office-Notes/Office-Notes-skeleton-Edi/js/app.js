@@ -65,8 +65,14 @@ var app = app || {};
             userController.logout();
         });
 
-        this.get('#/office/', function() {
-            notesController.loadOfficeNotes(selector);
+        this.get('#/office/([-0-9]+)?', function() {
+            var page = 1;
+
+            if(this.params['splat'][0]){
+                page = this.params['splat'][0];
+            }
+
+            notesController.loadOfficeNotes(selector, page);
         });
 
         this.get('#/myNotes/([-0-9]+)?', function() {
@@ -76,9 +82,7 @@ var app = app || {};
                 page = this.params['splat'][0];
             }
 
-            console.log(page);
-
-            notesController.loadMyNotes(selector);
+            notesController.loadMyNotes(selector, page);
         });
 
         this.get('#/addNote/', function() {

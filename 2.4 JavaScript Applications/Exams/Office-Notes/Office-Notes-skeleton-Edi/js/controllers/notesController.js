@@ -4,52 +4,74 @@ app.notesController = (function () {
     function NotesController(viewBag, model) {
         this.model = model;
         this.viewBag = viewBag;
+        this._notesPerPage = 10;
     }
 
-    NotesController.prototype.loadOfficeNotes = function (selector) {
+    NotesController.prototype.loadOfficeNotes = function (selector, page) {
         var _this = this;
         var date = new Date().toISOString().substr(0, 10);
         this.model.getNotesForToday(date)
             .then(function (data) {
-                var result = {
-                    notes: []
-                };
+                _this.model.getNotesForTodayCount(date)
+                    .then(function (count) {
+                        var result = {
+                            notes: [],
+                            pagination: {
+                                numberOfItems: count,
+                                itemsPerPage: _this._notesPerPage,
+                                selectedPage: page,
+                                hrefPrefix: '#/office/'
+                            }
+                        };
 
-                data.forEach(function (note) {
-                    result.notes.push({
-                        title: note.title,
-                        text: note.text,
-                        deadline: note.deadline,
-                        author: note.author,
-                        id: note._id
+                        data.forEach(function (note) {
+                            result.notes.push({
+                                title: note.title,
+                                text: note.text,
+                                deadline: note.deadline,
+                                author: note.author,
+                                id: note._id
+                            })
+                        });
+
+                        _this.viewBag.showOfficeNotes(selector, result);
                     })
-                });
-
-                _this.viewBag.showOfficeNotes(selector, result);
-            })
+            });
     };
 
-    NotesController.prototype.loadMyNotes = function (selector) {
+    NotesController.prototype.loadMyNotes = function (selector, page) {
         var _this = this;
+        var skipPages = (page - 1) * this._notesPerPage;
         var userId = sessionStorage['userId'];
-        this.model.getNotesByCreatorId(userId)
+        this.model.getNotesByCreatorId(userId, _this._notesPerPage, skipPages)
             .then(function (data) {
-                var result = {
-                    notes: []
-                };
+                _this.model.getNotesByCreatorIdCount(userId)
+                    .then(function (count) {
+                        var result = {
+                            notes: [],
+                            pagination: {
+                            numberOfItems: count,
+                                itemsPerPage: _this._notesPerPage,
+                                selectedPage: page,
+                                hrefPrefix: '#/myNotes/'
+                            },
+                            isEdible : true
+                        };
 
-                data.forEach(function (note) {
-                    result.notes.push({
-                        title: note.title,
-                        text: note.text,
-                        deadline: note.deadline,
-                        author: note.author,
-                        id: note._id
+
+                        data.forEach(function (note) {
+                            result.notes.push({
+                                title: note.title,
+                                text: note.text,
+                                deadline: note.deadline,
+                                author: note.author,
+                                id: note._id
+                            })
+                        });
+
+                        _this.viewBag.showMyNotes(selector, result);
                     })
-                });
-
-                _this.viewBag.showMyNotes(selector, result);
-            })
+            });
     };
 
     NotesController.prototype.loadAddNote = function (selector) {

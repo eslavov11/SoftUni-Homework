@@ -11,8 +11,19 @@ app.notesModel = (function () {
         return this.requester.get(requestUrl, true);
     };
 
-    NotesModel.prototype.getNotesByCreatorId = function(userId) {
-        var requestUrl = this.serviceUrl + '?query={"_acl.creator":"'+ userId + '"}';
+    NotesModel.prototype.getNotesForTodayCount = function(deadline) {
+        var requestUrl = this.serviceUrl + '_count/' + '?query={"deadline":"'+deadline + '"}&resolve=_acl.creator';
+        return this.requester.get(requestUrl, true);
+    };
+
+    NotesModel.prototype.getNotesByCreatorId = function(userId, amount, offset) {
+        var requestUrl = this.serviceUrl + '?query={"_acl.creator":"'+ userId + '"}&limit=' + amount + '&skip=' + offset + '&_count';
+        return this.requester.get(requestUrl, true);
+    };
+
+    NotesModel.prototype.getNotesByCreatorIdCount = function(userId) {
+        //var requestUrl = this.serviceUrl + '?query={"_acl.creator":"'+ userId + '"}&_count';
+        var requestUrl = this.serviceUrl + '_count/' + '?query={"_acl.creator":"'+ userId + '"}';
         return this.requester.get(requestUrl, true);
     };
 

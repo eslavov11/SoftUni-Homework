@@ -5,7 +5,14 @@ app.notesViewBag = (function () {
         $.get('templates/officeNoteTemplate.html', function (templ) {
             var rendered = Mustache.render(templ, data);
             $(selector).html(rendered);
-        })
+
+            $('#pagination').pagination({
+                items: data.pagination.numberOfItems.count,
+                itemsOnPage: data.pagination.itemsPerPage,
+                cssStyle: 'light-theme',
+                hrefTextPrefix: data.pagination.hrefPrefix
+            }).pagination('selectPage', data.pagination.selectedPage);
+        });
     }
 
     function showMyNotes(selector, data) {
@@ -26,6 +33,7 @@ app.notesViewBag = (function () {
                     })
                 }
             });
+
             $('.delete').on('click', function () {
                 var noteId = $(this).parent().attr('data-id');
 
@@ -38,7 +46,14 @@ app.notesViewBag = (function () {
                         this.trigger('showDeleteNote', note[0]);
                     })
                 }
-            })
+            });
+
+            $('#pagination').pagination({
+                items: data.pagination.numberOfItems.count,
+                itemsOnPage: data.pagination.itemsPerPage,
+                cssStyle: 'light-theme',
+                hrefTextPrefix: data.pagination.hrefPrefix
+            }).pagination('selectPage', data.pagination.selectedPage);
         })
     }
 

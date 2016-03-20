@@ -1,0 +1,19 @@
+<section>
+    <div class="delete-lecture-form">
+        <header class="main-header">Delete lecture</header>
+        <div class="data">
+            <label>Title:</label>
+            <input type="text" value="{{title}}" disabled/>
+            <label>Start:</label>
+            <input type="text" value="{{start}}" disabled/>
+            <label>End:</label>
+            <input type="text" value="{{end}}" disabled>
+        </div>
+        <div class="panel">
+            <button id="deleteLecture" class="button" data-id="{{_id}}">Delete</button>
+            <a href="#/home/">
+                <button class="button">Cancel</button>
+            </a>
+        </div>
+    </div>
+</section>

@@ -6,6 +6,7 @@ class CalculateCombinations
     static int size;
     static int[] arr;
 
+    private static int count = 0;
     static void Main()
     {
         int n = int.Parse(Console.ReadLine()),
@@ -14,21 +15,23 @@ class CalculateCombinations
         arr = new int[k];
 
         GenerateCombination(1, k - 1);
+
+        Console.WriteLine("\r\nTotal count: " + count);
     }
 
-    static void GenerateCombination(int previous, int index)
+    static void GenerateCombination(int startNum, int index)
     {
         if (index < 0)
         {
+            count++; 
             Console.WriteLine(string.Join("", arr.Reverse()));
             return;
         }
 
-        for (int i = previous; i <= size; i++)
+        for (int i = startNum; i <= size; i++)
         {
             arr[index] = i;
-            GenerateCombination(previous, index - 1);
-            previous++;
+            GenerateCombination(i+1, index - 1);
         }
     }
 }

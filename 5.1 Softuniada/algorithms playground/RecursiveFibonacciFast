@@ -1,0 +1,34 @@
+using System;
+
+class RecursiveFibonacciFast
+{
+    // Fibonacci numbers as cache to avoid unnecessary recursion.
+    static decimal[] fibCache = new decimal[10000];
+
+    static void Main()
+    {
+        int fibonacciNumber = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(FindFibonacci(fibonacciNumber));
+    }
+
+    private static decimal FindFibonacci(int fibNum)
+    {
+        if (fibCache[fibNum] != 0)
+        {
+            // Such number is already calculated and returns it.
+            return fibCache[fibNum];
+        }
+
+        if (fibNum == 1 || fibNum == 2)
+        {
+            fibCache[fibNum] = 1;
+            return fibCache[fibNum];
+        }
+
+        // Calculating the current Fibonacci number and setting it to the cache.
+        fibCache[fibNum] = FindFibonacci(fibNum - 1) + FindFibonacci(fibNum - 2);
+
+        return fibCache[fibNum];
+    }
+}

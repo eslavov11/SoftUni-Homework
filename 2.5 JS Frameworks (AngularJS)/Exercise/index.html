@@ -1,0 +1,26 @@
+<!doctype html>
+	<head>
+		<title>Test</title>
+	</head>
+	<body>
+		<div id='wrapper' ng-app="zara">
+			<div ng-controller="zaraController">
+				<h1>{{name}}</h1>
+
+				<input ng-model='name' type="text"/>
+
+			</div>
+		</div>
+
+
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript">
+			angular.module('zara', [])
+			.controller('zaraController', ['$scope', 
+				function zaraController(a) {
+					a.name = "Zarcheto!";
+			}])
+
+		</script>
+	</body>
+</html>

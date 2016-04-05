@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Student app</title>
+    </head>
+    <body>
+        <div id='wrapper' ng-app="student">
+            <div ng-controller="studentController">
+                <h1>Name: {{studentInfo.name}}</h1>
+                <img ng-src="{{studentInfo.photo}}">{{studentInfo.grade}}</img>
+                <h3>Grade: {{studentInfo.grade}}</h3>
+                <h3>School: {{studentInfo.school}}</h3>
+                <h3>Teacher: {{studentInfo.teacher}}</h3>
+            </div>
+        </div>
+
+        <script src="angular.min.js"></script>
+        <script>
+            angular.module('student', [])
+                    .controller('studentController', ['$scope',
+                        function studentController($scope) {
+                            $scope.studentInfo = {
+                                "name": "Pesho",
+                                "photo": "http://www.nakov.com/wp-content/uploads/2014/05/SoftUni-Logo.png",
+                                "grade": 5,
+                                "school": "High School of Mathematics",
+                                "teacher": "Gichka Pesheva",
+                            }
+
+                        }]);
+        </script>
+    </body>
+</html>

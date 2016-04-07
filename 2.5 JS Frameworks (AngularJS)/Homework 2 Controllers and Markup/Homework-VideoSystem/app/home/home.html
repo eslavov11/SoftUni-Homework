@@ -1,0 +1,58 @@
+<header>
+    <h1>Available videos</h1>
+</header>
+<div class="filter">
+    <label for="category">Get videos by category</label>
+    <input id="category" type="text" ng-model="filterByCategory"/>
+</div>
+<div class="filter">
+    <label for="date">Get videos by date</label>
+    <input id="date" type="date" ng-model="filterByDate"/>
+</div>
+<div class="filter">
+    <label>Get videos by having subtitles</label>
+    <input type="radio" value="true" ng-model="filterByHavingSubtitles"/>Yes
+    <input type="radio" value="false" ng-model="filterByHavingSubtitles"/>No
+    <!--<input type="radio" value="true" ng-model="filterByHavingSubtitles"/>Clean filter-->
+</div>
+<div class="filter">
+    <label>
+        Sort videos
+    </label>
+    <select name="sortVideos" id="sort-videos" ng-model="sortVideos">
+        <option value="'title'">By title</option>
+        <option value="'length'">By length</option>
+        <option value="'date'">By date</option>
+        <!--TODO sort videos by likes <option value="">By likes </option>-->
+    </select>
+</div>
+<div ng-repeat="video in videos
+    | filter: {category:filterByCategory}:true
+    | filter: {date:filterByDate}:true
+    | filter: {haveSubtitles:filterByHavingSubtitles}:true
+    | orderBy: sortVideos">
+    <section class="inline">
+        <img ng-src="{{video.pictureUrl}}" width="140px">
+    </section>
+    <section class="inline">
+        <div>Title: {{video.title}}</div>
+        <div>Length: {{video.length}}</div>
+        <div>Category: {{video.category}}</div>
+        <div>Subscribers count: {{video.subscribers}}</div>
+        <div>Date: {{video.date}}</div>
+        <div>Subtitles: {{video.haveSubtitles == 'true' ? 'yes' : 'no'}}</div>
+    </section>
+    <section>
+        <button>
+            <a href="#/addComment">Add comment</a>
+        </button>
+        <!--Comments:
+        <div ng-repeat="comment in video.comments">
+            <div>
+                <img ng-src="{{comment.websiteUrl}}"> {{comment.username}}:
+            </div>
+            <div>{{comment.content}}</div>
+            <div>published on: {{comment.date}}</div>
+        </div>-->
+    </section>
+</div>

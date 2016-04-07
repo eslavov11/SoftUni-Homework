@@ -1,0 +1,28 @@
+<form name="addVideoForm">
+    <label for="title">
+        Title:
+    </label>
+    <input id="title" ng-model="video.title" type="text" required>
+    <label for="picture-url">
+        Picture url:
+    </label>
+    <input id="picture-url" ng-model="video.pictureUrl" type="url" required>
+    <label for="length">
+        Length:
+    </label>
+    <input id="length" ng-model="video.length" type="text">
+    <label for="category">
+        Category:
+    </label>
+    <input id="category" ng-model="video.category" type="text" required>
+    <label for="date">
+        Date:
+    </label>
+    <input id="date" ng-model="video.date" type="date">
+    <label>
+        Has subtitles:
+        <input ng-model="video.haveSubtitles" type="radio" value="true">Yes
+        <input ng-model="video.haveSubtitles" type="radio" value="false">No
+    </label>
+    <button ng-disabled="addVideoForm.$invalid || addVideoForm.$pending" ng-click="addVideo(video)">Add video</button>
+</form>

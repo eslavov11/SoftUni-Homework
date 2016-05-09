@@ -1,0 +1,41 @@
+<div id="welcome-title">
+    <h1 >Issue tracking system</h1>
+    <h4>Welcome to SoftUni's Issue tracking system. Please login or register if you don't have an account.</h4>
+</div>
+<div id="welcome-menu" class="row">
+    <section class="col-md-4">
+        <form name="login">
+            <div>
+                <label for="log-user">Username</label>
+                <input type="email" ng-model="user.username" id="log-user" class="form-control"
+                       placeholder="Enter your email..." required />
+            </div>
+            <div>
+                <label for="log-password">Password</label>
+                <input type="password" ng-model="user.password" id="log-password" class="form-control"
+                       placeholder="Enter password..." required minlength="6" />
+            </div>
+            <button class="btn btn-primary" ng-click="logUser()">Login</button>
+        </form>
+    </section>
+        <section class="col-md-4">
+            <form name="register">
+                <div>
+                    <label for="reg-username">Username</label>
+                    <input type="email" ng-model="userReg.email" id="reg-username" class="form-control"
+                           placeholder="Enter your email..." required/>
+                </div>
+                <div>
+                    <label for="reg-password">Password</label>
+                    <input type="password" ng-model="userReg.password" id="reg-password" class="form-control"
+                           placeholder="Enter password..." required minlength="6"/>
+                </div>
+                <div>
+                    <label for="reg-rp-password">Repeat password</label>
+                    <input type="password" ng-model="userReg.confirmPassword" id="reg-rp-password" class="form-control"
+                           placeholder="Repeat password..." required minlength="6"/>
+                </div>
+                <button class="btn btn-primary" ng-click="registerUser()">Register</button>
+            </form>
+    </section>
+</div>

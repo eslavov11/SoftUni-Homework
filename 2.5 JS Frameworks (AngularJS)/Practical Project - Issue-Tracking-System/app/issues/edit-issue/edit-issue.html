@@ -1,0 +1,55 @@
+<section id="edit-issue-wrapper"  ng-show="contentLoaded">
+    <form  id="edit-issue" name="edit-issue"  ng-hide="!isProjectLead">
+        <h1>Edit issue</h1>
+
+        <label for="name">Issue title</label>
+        <input ng-model="issueData.Title" id="name" type="text" class="form-control" placeholder="Issue title..." required>
+
+        <label for="description">Description</label>
+        <textarea ng-model="issueData.Description" name="" id="description" class="form-control"
+                  placeholder="Edit issue description..." required>
+        </textarea>
+
+        <label for="select-leader">Select assignee</label>
+        <div>
+            <select id="select-leader" ng-options="u.Username for u in users"
+                    ng-model="issueData.Assignee" class="form-control" required>
+            </select>
+        </div>
+
+        <label for="select-project">Select project</label>
+        <div>
+            <select id="select-project" ng-options="p.Name for p in projects" ng-model="issueData.Project"
+                    class="form-control" required>
+            </select>
+        </div>
+
+        <label for="select-priority">Choose priority</label>
+        <div>
+            <select id="select-priority" ng-options="p.Name for p in issueData.Project.Priorities"
+                    ng-model="issueData.Priority" class="form-control" required>
+            </select>
+        </div>
+
+        <label for="select-leader">Due</label>
+        <input ng-model="issueData.DueDate" id="due" type="date" class="form-control" required />
+
+        <label for="proj-labels">Labels (Comma separated)</label>
+        <input ng-model="issueData.Labels" id="proj-labels" type="text" class="form-control" placeholder="Give issue label..." required>
+
+        <button class="btn btn-primary" ng-click="editIssue()">Save issue</button>
+        <input class="btn btn-primary"  type="reset" value="Reset values">
+    </form>
+
+    <aside>
+        <h4>
+            Current status:
+            <strong>{{issueData.Status.Name}}</strong>
+        </h4>
+
+        <button ng-if="issueData.Status.Id == 2" class="btn btn-primary" ng-click="changeStatus(3)">In Progress</button>
+        <button ng-if="issueData.Status.Id == 3" class="btn btn-primary" ng-click="changeStatus(4)">Stop progress</button>
+        <button ng-if="issueData.Status.Id != 1" class="btn btn-primary" ng-click="changeStatus(1)">Close</button>
+    </aside>
+</section>
+

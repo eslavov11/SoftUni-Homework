@@ -1,0 +1,68 @@
+<main id="project-wrapper">
+    <section id="project-info">
+        <h2>Project details</h2>
+        <hr/>
+
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd>{{project.Name}}</dd>
+
+            <dt>Project key</dt>
+            <dd>{{project.ProjectKey}}</dd>
+
+            <dt>Description</dt>
+            <dd>{{project.Description}}</dd>
+
+            <dt>Leader</dt>
+            <dd>{{project.Lead.Username}}</dd>
+
+            <dt>Priorities</dt>
+            <dd>{{prioritiesString}}</dd>
+
+            <dt>Labels</dt>
+            <dd>{{labelsString}}</dd>
+        </dl>
+
+        <button ng-show="isLeader || isAdmin" class="btn btn-primary" ng-click="editProject()">Edit</button>
+        <button ng-show="isLeader || isAdmin" class="btn btn-primary" ng-click="addIssue()">Add issue</button>
+    </section>
+
+    <section id="project-issues">
+        <h3>Issues</h3>
+
+        <table class="table">
+            <tr>
+                <th>
+                    Title
+                </th>
+                <!--<th>Description</th>-->
+                <th>Due date</th>
+                <th>Assignee</th>
+            </tr>
+            <tr ng-repeat="i in filteredIssues">
+                <td>
+                    <a href="#/issues/{{i.Id}}">{{i.Title}}</a>
+                </td>
+                <!--<td>{{i.Description}}</td>-->
+                <td>{{i.DueDate  | date:'dd-MM-yyyy'}}</td>
+                <td>{{i.Assignee.Username}}</td>
+            </tr>
+        </table>
+
+        <div ng-if="issuesCount == 0" style="text-align: center;">No Issues</div>
+
+        <pagination
+                ng-model="currentPage"
+                total-items="issuesCount"
+                items-per-page="numPerPage"
+                max-size="maxSize"
+                boundary-links="true">
+        </pagination>
+
+        <select id="select-issue-type" ng-model="selectedIssueType"
+		data-ng-options="issueType.type for issueType in issueTypes"
+                ng-change="updateIssues()" class="form-control">
+        </select>
+    </section>
+</main>
+

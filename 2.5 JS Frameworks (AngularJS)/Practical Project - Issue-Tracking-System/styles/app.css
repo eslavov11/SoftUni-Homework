@@ -1,0 +1,388 @@
+/* app css stylesheet */
+
+body {
+  /*background: lightsalmon;*/
+  background: #fafafa;
+  color:#111;
+}
+
+#wrapper {
+  margin-top: 100px;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/*LOGIN AND REGISTER MENU home.html*/
+#welcome-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#welcome-menu {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+#welcome-menu div {
+  margin: 10px 0;
+}
+
+#welcome-menu button {
+  margin-top: 20px;
+}
+/************************/
+
+/*CHANGE-PASSWORD TMPL*/
+form#change-password {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form#change-password input,
+form#change-password button {
+  margin-bottom: 20px;
+}
+/***********************/
+
+/****PROJECT TMPL***********/
+#project-wrapper {
+  width: 84%;
+  margin: 0 auto;
+}
+
+#project-info {
+  vertical-align: top;
+  width: 44%;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+#project-issues {
+  display: inline-block;
+  width: 40%;
+  float: right;
+}
+
+#select-issue-type {
+  display: inline-block;
+  width: 30%;
+  float: right;
+  margin-top: 20px;;
+}
+/***********************/
+
+/****ADD-PROJECT TMPL***/
+#add-project h1 {
+  text-align: center;
+}
+
+#add-project {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#add-project input,
+#add-project select,
+#add-project button,
+#add-project textarea {
+  margin-bottom: 20px;
+}
+/*************************/
+
+/****EDIT-PROJECT TMPL***/
+#edit-project h1 {
+  text-align: center;
+}
+
+#edit-project {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#edit-project input,
+#edit-project select,
+#edit-project button,
+#edit-project textarea {
+  margin-bottom: 20px;
+}
+/*************************/
+
+/****ISSUE TMPL***********/
+#issue-page {
+  width: 84%;
+  margin: 0 auto;
+}
+
+#issue-page ul {
+  padding: 0;
+}
+
+#issue-page li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#issue-comments {
+  margin: 40px auto;
+  width: 84%;
+}
+
+#issue-comments h4 {
+  display: inline-block;
+  font-weight: bold;
+}
+
+#issue-comments p {
+  width: 60%;
+}
+
+.comment-wrapper {
+  margin: 10px 0;
+}
+
+#add-comment-wrapper {
+  margin-top: 30px;
+}
+
+#add-comment-wrapper button {
+  margin-top: 10px;
+}
+/*************************/
+
+/****ADD-ISSUE TMPL***/
+#add-issue h1 {
+  text-align: center;
+}
+
+#add-issue {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#add-issue input,
+#add-issue select,
+#add-issue button,
+#add-issue textarea {
+  margin-bottom: 20px;
+}
+/*************************/
+
+/****EDIT-ISSUE TMPL***/
+#edit-issue-wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#edit-issue h1 {
+  text-align: center;
+}
+
+#edit-issue {
+  display: inline-block;
+  margin: 0 auto;
+  width: 59%;
+}
+
+ aside {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 50px;
+  margin-left:30px;;
+}
+
+#edit-issue input,
+#edit-issue select,
+#edit-issue button,
+#edit-issue textarea {
+  margin-bottom: 20px;
+}
+/*************************/
+
+/****ALL-PROJECTS TMPL***/
+#projects-table a {
+  cursor: pointer;
+}
+
+#projects-table {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#projects-table div {
+  margin-bottom: 10px;
+}
+/*************************/
+
+/****DASHBOARD TMPL***/
+#title {
+  text-align: center;
+}
+
+#dashboard a {
+  cursor: pointer;
+}
+
+#dashboard {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#dashboard div {
+  margin-bottom: 10px;
+}
+
+.sort-dir:after {
+  content: '\25b2';
+}
+
+.sort-dir.reverse:after {
+  content: '\25bc';
+}
+
+.table-column {
+  cursor: pointer;
+}
+
+.table-column:hover {
+  color: #337ab7;
+  text-decoration: underline;
+}
+
+#user-issues {
+  width: 70%;
+  display: inline-block;
+}
+
+#associated-projects {
+  margin-left: 11%;
+}
+
+#associated-projects ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#associated-projects li {
+  margin: 5px 0;
+}
+/*************************/
+
+/*****COMMON IN TEMPLS**/
+.label-option {
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.label-option:hover {
+  background: #286090;
+  color: floralwhite;
+  cursor: pointer;
+}
+
+.label-holder {
+  height: 130px;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: 1px solid grey;
+  border-top: none;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+/***********************/
+
+/****APP-FOOTER CSS***/
+html{
+  position:relative;
+  min-height: 100%;
+}
+
+/*Normalize html and body elements,this style is just good to have*/
+html,body{
+  margin:0;
+  padding:0;
+}
+#wrapper{
+  margin-bottom:50px;/* Height of footer*/
+}
+#app-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height:20px;
+  width: 85%;
+  margin: 0 auto;
+  /*background:#ccc;*/
+}
+/*****************/
+
+/****PAGINATION******/
+#user-issues > ul {
+  float:right;
+  margin: 0;
+}
+
+#projects-table > ul {
+  float:right;
+  margin: 0;
+}
+/********************/
+
+/*NAVBAR-MENU******/
+body > div:nth-child(1) > div > div > div.navbar-header > a {
+  color: #bbb;
+}
+
+body > div:nth-child(1) > div > div > div.navbar-header > a:hover {
+  color: #bbb;
+  cursor: default;
+}
+
+#navbar-main > ul > li a {
+  font-weight: 300;
+  color: #bbb;
+}
+
+#navbar-main > ul > li :hover {
+  font-weight: 700;
+  background: #337ab7;
+  color: white;
+}
+
+body > div:nth-child(1) > div {
+  background-color: #060606;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover  {
+  color:#777;
+}
+/*****************/

@@ -1,0 +1,763 @@
+{
+	"id": "65214140-acef-7ff8-00cf-ec96a4299d47",
+	"name": "SoftUni Issue Tracker",
+	"description": "",
+	"order": [
+		"8e24223e-5da0-70c4-9580-32d419a0e559",
+		"cb3ec151-dbe0-edbc-bc14-8a28733ebdbc",
+		"2ca42d07-e82e-47b1-b5aa-4f101767b18e",
+		"1a9b8858-b6a2-3686-61bc-d5fc3ac7e497",
+		"f4d002db-e247-e015-f4d3-50e72ea8e1ee",
+		"6cbcea46-a315-0ea7-54f4-9a3ff37b3557",
+		"a06b7a12-a91f-9cb5-b4cd-92a2bb109224",
+		"beb156f2-bd37-84be-7a2f-483775305946",
+		"b57517d0-147c-225b-a55d-ad266cd1b02b",
+		"3e4078b0-2e43-1939-7515-87f6adbf4a2c",
+		"bc4c976c-a351-2d05-396b-a49253c15935",
+		"ce1701a5-8999-04eb-6ce3-89a1160bdbdb",
+		"29e3682f-d95a-8c10-de17-9097907a54e4",
+		"cd6be072-a232-fab2-d462-1e8a3190ebfa",
+		"746fbdb1-aca3-91e1-524b-69e6868dd295",
+		"99abbea4-b566-e78b-9fdd-068cef1ea21e",
+		"b3c192b3-4a95-53ab-1a36-ed0e75025b47",
+		"b10bf85d-49f9-b708-d26b-e33c4cd8b8b4",
+		"df3e51be-cbd2-97d6-cee6-e81bc78b3e5a",
+		"02867783-33e3-5bee-9828-90eeb6ff7b6a"
+	],
+	"folders": [],
+	"timestamp": 1459073943983,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "02867783-33e3-5bee-9828-90eeb6ff7b6a",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/api/Account/ChangePassword",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "OldPassword",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "NewPassword",
+					"value": "1234567",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ConfirmPassword",
+					"value": "1234567",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460393287521,
+			"name": "Change Password",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "1a9b8858-b6a2-3686-61bc-d5fc3ac7e497",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/projects/2",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "Name",
+					"value": "entirely new project",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Description",
+					"value": "random desc",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ProjectKey",
+					"value": "123adfj",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "TransitionSchemeId",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[0].Name",
+					"value": "Label3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[1].Name",
+					"value": "Label4",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[0].Name",
+					"value": "URGENT",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[1].Name",
+					"value": "Priority2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460106682637,
+			"name": "Get project by id",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "29e3682f-d95a-8c10-de17-9097907a54e4",
+			"headers": "Authorization: Bearer BXaA9KT6QPBv3bqFEnlIhJgmDUAVqeRiqEpqvR8z_T-69kpPIkjAAmXANElILe5Vce1O_Ehp3Iaza0gm7WBDeyPaYpsizWKpXJghxV3drXLCX-zediPI-jsQawmuHMCCpn8OHXtoTSY8GmhxbpEDiznWQbpHkoC3NcbymjlTeH18z1WbEszOPYVBSG_bQPRCDegHoiFcxDsJI3Obg2999znAohDy_6EAjJBxBREOliyaw9Bps-I0VohfewpOZJIyMjgOS4gq4qr8hx-9YKCASgRjiiPlHITujrC4hZ_XbC1qZ41OunPISwTyyPuI8foMRBNRZzlhQqmXyN6nW39mAon4I4UPJ-gRhctR2Q0irUkjH8G0-kibk4qXVbJFbvt96RHvBgy5_cmPm0xDGUS1iEtUO9bpmXHgSt6KIt5CxyoK_uShWVuIcFqWE0hAzRGIrr2jWBOXB3i4b2UX2XqiTDQuhvJ_kzKlemehqjW3860\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/4/comments",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Text",
+					"value": "blabla random spammer 2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105677321,
+			"name": "Add comment to issue",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "2ca42d07-e82e-47b1-b5aa-4f101767b18e",
+			"headers": "Authorization: Bearer DA2i_EltWiSMJ2aPwlj6MlN1K4rpt70afdsKjALXRCCNY1IptGZ9r-h9IBkRGaOn2DMlsjpy_vwPj4rDPPJgWF0zfPocz4bBhET3uIl76GeFVI95AUyI3GaFlDcyYqQqvPBUw4fqzzotsjiH5hVn1GLgKxfa4qG4O16Vep1Jyrmj2Vz68EmtQN-GLxO083P2IQONqupr9i5MpIjOPqI3l33kRIvfBZR78cxqcwP9O2Ue07Rxtmv8aLRGWXvsatedq51yS00PJeawE1pDMR_NSDRs7SgsiD-ORcaVqT2ouRdk-_l7Q2b2EEt49kUVrAfk7LN6kT0vD3snEv-0e8mFk0iGK4r2USwH18iI8Tb5EZHPVqJbKjcxlovv7SH7AxgucCvUMGQHfAOzE8ZC_AbZ2kYeO2lTWWIeSngg3jdlmd7uxheIcAcbZNVmQO1Wm8A05E2CkKMmo6rLIym2UvQA3m8VoemcBr538fVIOdiW9jY\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/projects",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "Name",
+					"value": "entirely new project",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Description",
+					"value": "random desc",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ProjectKey",
+					"value": "123adfj",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "TransitionSchemeId",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[0].Name",
+					"value": "Label3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[1].Name",
+					"value": "Label4",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[0].Name",
+					"value": "URGENT",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[1].Name",
+					"value": "Priority2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460106694136,
+			"name": "Get all projects",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "3e4078b0-2e43-1939-7515-87f6adbf4a2c",
+			"headers": "Authorization: Bearer EE5R4Vo2iP4HZzIFMIu5IFO_QGkoBewjnk1so-S4x8xqO9mFaDu-v6vFFaUJYdsQc9PW4HK2Oxb-koQwRoW6l1hYVNW6ZHSc0uFmWkXT3KnefqdJZkNwXDRDhJUBj72dvVjc6HDPS_oB5TnN5MWE84E6h0ZXVEaYrgFVzgGW0Vd6U8fpyEBhaqiyr2JPh94MrMZD0JwhQ51voaXcYq6kaXsw8nMyETrysMKdrTnzB2aUzy6801iH7hvUjCHpMaDL0usufEYXbOJEZHSv-GPyOLgKzd5R6rxelb_nNE_0Hp0gjhHC1hSnKQMaR9p-SM3kxzeRlDHyY_TqyyopmtMxztSXzks8dqGg0fNO_gEHmlNuDoeKtTr-gaJXfMxC6oVOv_K018Gxwzkoj6hoO88sEFyERjM4R0wtQTMMyM4lF18giy7mL2_xeJdhml2R3fWOz4NqUPwl_H1un1YNjNsUk_CEOA7xJ1DNLZz89qUAy15ycx2DgqAfnZg-FZfER9G4\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/me?orderBy=Project.Name desc, IssueKey&pageSize=2&pageNumber=1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105658569,
+			"name": "Get my issues",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "6cbcea46-a315-0ea7-54f4-9a3ff37b3557",
+			"headers": "Authorization: Bearer BXaA9KT6QPBv3bqFEnlIhJgmDUAVqeRiqEpqvR8z_T-69kpPIkjAAmXANElILe5Vce1O_Ehp3Iaza0gm7WBDeyPaYpsizWKpXJghxV3drXLCX-zediPI-jsQawmuHMCCpn8OHXtoTSY8GmhxbpEDiznWQbpHkoC3NcbymjlTeH18z1WbEszOPYVBSG_bQPRCDegHoiFcxDsJI3Obg2999znAohDy_6EAjJBxBREOliyaw9Bps-I0VohfewpOZJIyMjgOS4gq4qr8hx-9YKCASgRjiiPlHITujrC4hZ_XbC1qZ41OunPISwTyyPuI8foMRBNRZzlhQqmXyN6nW39mAon4I4UPJ-gRhctR2Q0irUkjH8G0-kibk4qXVbJFbvt96RHvBgy5_cmPm0xDGUS1iEtUO9bpmXHgSt6KIt5CxyoK_uShWVuIcFqWE0hAzRGIrr2jWBOXB3i4b2UX2XqiTDQuhvJ_kzKlemehqjW3860\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "Title",
+					"value": "new title for issuee",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Description",
+					"value": "blablablabla lorem",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "DueDate",
+					"value": "2016-5-25",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "AssigneeId",
+					"value": "e980a9d8-53e5-4f6b-b8ae-1efec2e58938",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "PriorityId",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Labels[0].Name",
+					"value": "NewLabel",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Labels[1].Name",
+					"value": "Label5",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105639613,
+			"name": "Edit issue",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "746fbdb1-aca3-91e1-524b-69e6868dd295",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/api/Token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Username",
+					"value": "admin@softuni.bg",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105933803,
+			"name": "Get Token",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "8e24223e-5da0-70c4-9580-32d419a0e559",
+			"headers": "Authorization: Bearer 2KC7i2dHRS2n05JbgmdUgqV-65HW962c2F4P-RyioM9NJk0ylMXwgoAF231XDHcbBCMKmKm94BVJvoVbvfSeizfhtFQkCgKC4h3mcauZl66fJoCMQn--1aDLxy-Klmm7bDDsRQKa37FJDRVKiI3Bfc1b_ZM981p0nNIg4M46KJR9wd_k3vZ1s49xvsvUej1dwGAExVKLEdJCJI7hNc4g5dDpdTIE1DAFVA1Rpa_2ITeSFgSboVs7A0f796kGF0QvZf8yhRs_MaC_s1PNJb7-VkqHoaFdiBA_uqqVbbkIrU-Os2-6RD9QAyBNObbTOdN_wgVzWVa4P52hrQLvGoXcmQtP89Q5Ls1OERL21x6yhnnS1ZQIz3YMCN540fVqZBCMfPMuVx6T2WsB2OryRbxOhpPKt-nnMqYq4cECFvFuZ7yuSRuDNHdB24Whk1r4mr6bmC7J5Ml3zA62M5mYAFg-hF0vYboN8tGRvFgPdGgr9y0\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/projects",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Name",
+					"value": "entirely new project",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Description",
+					"value": "random desc",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ProjectKey",
+					"value": "123adfj",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[0].Name",
+					"value": "Label1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[1].Name",
+					"value": "Label2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[0].Name",
+					"value": "Low",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[1].Name",
+					"value": "Urgent",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "LeadId",
+					"value": "e0e672ee-9382-4860-98be-cfa68743a20a",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460107677204,
+			"name": "Add project",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "99abbea4-b566-e78b-9fdd-068cef1ea21e",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/api/Account/Register",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Email",
+					"value": "admin@softuni.bg",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Password",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ConfirmPassword",
+					"value": "123456",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460106686951,
+			"name": "Register",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "a06b7a12-a91f-9cb5-b4cd-92a2bb109224",
+			"headers": "Authorization: Bearer BXaA9KT6QPBv3bqFEnlIhJgmDUAVqeRiqEpqvR8z_T-69kpPIkjAAmXANElILe5Vce1O_Ehp3Iaza0gm7WBDeyPaYpsizWKpXJghxV3drXLCX-zediPI-jsQawmuHMCCpn8OHXtoTSY8GmhxbpEDiznWQbpHkoC3NcbymjlTeH18z1WbEszOPYVBSG_bQPRCDegHoiFcxDsJI3Obg2999znAohDy_6EAjJBxBREOliyaw9Bps-I0VohfewpOZJIyMjgOS4gq4qr8hx-9YKCASgRjiiPlHITujrC4hZ_XbC1qZ41OunPISwTyyPuI8foMRBNRZzlhQqmXyN6nW39mAon4I4UPJ-gRhctR2Q0irUkjH8G0-kibk4qXVbJFbvt96RHvBgy5_cmPm0xDGUS1iEtUO9bpmXHgSt6KIt5CxyoK_uShWVuIcFqWE0hAzRGIrr2jWBOXB3i4b2UX2XqiTDQuhvJ_kzKlemehqjW3860\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/3/changestatus?statusid=3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105646290,
+			"name": "Change issue status",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "b10bf85d-49f9-b708-d26b-e33c4cd8b8b4",
+			"headers": "Authorization: Bearer hslj6wY5LTZEHQzDoPV1JPcbeLFHi6paX6SfqxpyqdullCkjmX-H4KN75xDJWgQle3RL39WNQDiWJWHeBQMImRN_LUGAlXlq-CVY8nNyT0p3YgsfZBlSqh9uvvum4ldeL_4BT9WHWgeYKCaQxLkf9K5RYckj_zUYYO8HfAcp8fXzuyfOD76G-dJSEm3AoUuhRlRQlXR-SNBRigvY6-tl2sDjsqY5-DL9EdtWI9L77SoqrBmwtAnGMW-wkQwuMFIw7ctX7ZyzClV99xfcj9dZpfPMcKtxFTBiOhcJA1phdoZbCukYCLHxdMNQQys3p6MX9yPvbOoxWmkU0YbYavhoQTCjz6RqUXBqS3M0wGg1xvdcY8mwxG0iepXSaXJiJSX9DLddd7p1lgZKuf6O04tnSmQa1dKtyStbam7PlbN_rPmp-wF0Vg7MYZH_9IEl4O1MlxLWlNUbwvCp2ok_xA5UviwL6bOVNxweCgkfncvrQx0\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/users/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105696326,
+			"name": "Get Users",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "b3c192b3-4a95-53ab-1a36-ed0e75025b47",
+			"headers": "Authorization: Bearer hslj6wY5LTZEHQzDoPV1JPcbeLFHi6paX6SfqxpyqdullCkjmX-H4KN75xDJWgQle3RL39WNQDiWJWHeBQMImRN_LUGAlXlq-CVY8nNyT0p3YgsfZBlSqh9uvvum4ldeL_4BT9WHWgeYKCaQxLkf9K5RYckj_zUYYO8HfAcp8fXzuyfOD76G-dJSEm3AoUuhRlRQlXR-SNBRigvY6-tl2sDjsqY5-DL9EdtWI9L77SoqrBmwtAnGMW-wkQwuMFIw7ctX7ZyzClV99xfcj9dZpfPMcKtxFTBiOhcJA1phdoZbCukYCLHxdMNQQys3p6MX9yPvbOoxWmkU0YbYavhoQTCjz6RqUXBqS3M0wGg1xvdcY8mwxG0iepXSaXJiJSX9DLddd7p1lgZKuf6O04tnSmQa1dKtyStbam7PlbN_rPmp-wF0Vg7MYZH_9IEl4O1MlxLWlNUbwvCp2ok_xA5UviwL6bOVNxweCgkfncvrQx0\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/labels/?filter=sof",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105692402,
+			"name": "Get Labels",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "b57517d0-147c-225b-a55d-ad266cd1b02b",
+			"headers": "Authorization: Bearer hslj6wY5LTZEHQzDoPV1JPcbeLFHi6paX6SfqxpyqdullCkjmX-H4KN75xDJWgQle3RL39WNQDiWJWHeBQMImRN_LUGAlXlq-CVY8nNyT0p3YgsfZBlSqh9uvvum4ldeL_4BT9WHWgeYKCaQxLkf9K5RYckj_zUYYO8HfAcp8fXzuyfOD76G-dJSEm3AoUuhRlRQlXR-SNBRigvY6-tl2sDjsqY5-DL9EdtWI9L77SoqrBmwtAnGMW-wkQwuMFIw7ctX7ZyzClV99xfcj9dZpfPMcKtxFTBiOhcJA1phdoZbCukYCLHxdMNQQys3p6MX9yPvbOoxWmkU0YbYavhoQTCjz6RqUXBqS3M0wGg1xvdcY8mwxG0iepXSaXJiJSX9DLddd7p1lgZKuf6O04tnSmQa1dKtyStbam7PlbN_rPmp-wF0Vg7MYZH_9IEl4O1MlxLWlNUbwvCp2ok_xA5UviwL6bOVNxweCgkfncvrQx0\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105654506,
+			"name": "Get Issue by id",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "bc4c976c-a351-2d05-396b-a49253c15935",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/?filter=Priority.Name == \"In Progress\" or DueDate.Day == 21&pageSize=2&pageNumber=1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105662882,
+			"name": "Get issues",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "beb156f2-bd37-84be-7a2f-483775305946",
+			"headers": "Authorization: Bearer hslj6wY5LTZEHQzDoPV1JPcbeLFHi6paX6SfqxpyqdullCkjmX-H4KN75xDJWgQle3RL39WNQDiWJWHeBQMImRN_LUGAlXlq-CVY8nNyT0p3YgsfZBlSqh9uvvum4ldeL_4BT9WHWgeYKCaQxLkf9K5RYckj_zUYYO8HfAcp8fXzuyfOD76G-dJSEm3AoUuhRlRQlXR-SNBRigvY6-tl2sDjsqY5-DL9EdtWI9L77SoqrBmwtAnGMW-wkQwuMFIw7ctX7ZyzClV99xfcj9dZpfPMcKtxFTBiOhcJA1phdoZbCukYCLHxdMNQQys3p6MX9yPvbOoxWmkU0YbYavhoQTCjz6RqUXBqS3M0wGg1xvdcY8mwxG0iepXSaXJiJSX9DLddd7p1lgZKuf6O04tnSmQa1dKtyStbam7PlbN_rPmp-wF0Vg7MYZH_9IEl4O1MlxLWlNUbwvCp2ok_xA5UviwL6bOVNxweCgkfncvrQx0\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/projects/2/issues",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105650681,
+			"name": "Get project issues",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "cb3ec151-dbe0-edbc-bc14-8a28733ebdbc",
+			"headers": "Authorization: Bearer BXaA9KT6QPBv3bqFEnlIhJgmDUAVqeRiqEpqvR8z_T-69kpPIkjAAmXANElILe5Vce1O_Ehp3Iaza0gm7WBDeyPaYpsizWKpXJghxV3drXLCX-zediPI-jsQawmuHMCCpn8OHXtoTSY8GmhxbpEDiznWQbpHkoC3NcbymjlTeH18z1WbEszOPYVBSG_bQPRCDegHoiFcxDsJI3Obg2999znAohDy_6EAjJBxBREOliyaw9Bps-I0VohfewpOZJIyMjgOS4gq4qr8hx-9YKCASgRjiiPlHITujrC4hZ_XbC1qZ41OunPISwTyyPuI8foMRBNRZzlhQqmXyN6nW39mAon4I4UPJ-gRhctR2Q0irUkjH8G0-kibk4qXVbJFbvt96RHvBgy5_cmPm0xDGUS1iEtUO9bpmXHgSt6KIt5CxyoK_uShWVuIcFqWE0hAzRGIrr2jWBOXB3i4b2UX2XqiTDQuhvJ_kzKlemehqjW3860\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/projects/2",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "Name",
+					"value": "new titlee",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Description",
+					"value": "random desc",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[0].Name",
+					"value": "Label8",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "labels[1].Name",
+					"value": "Label2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[0].Name",
+					"value": "URGENT",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "priorities[1].Name",
+					"value": "Priority5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "LeadId",
+					"value": "e980a9d8-53e5-4f6b-b8ae-1efec2e58938",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105548238,
+			"name": "Edit project",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "cd6be072-a232-fab2-d462-1e8a3190ebfa",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/1/comments",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105681017,
+			"name": "Get comments for issue",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "ce1701a5-8999-04eb-6ce3-89a1160bdbdb",
+			"headers": "",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/issues/?filter=issuekey.contains(\"24\")",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105676049,
+			"name": "Get issues by .contains() method",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		},
+		{
+			"id": "df3e51be-cbd2-97d6-cee6-e81bc78b3e5a",
+			"headers": "Authorization: Bearer 2qYaYrz39S3-FXS5dELrknFc73Jg7vcUJ2JNTltz4XKwDXDRFQJ7Py2_yUAbpl_QFl0WAN6QtFbr64Ds5yDWTk8rDlps5dEM2Je98ftcg4RFp8XrwofaYTkkznSlqkbu18OKatMAeLInyNLJJeapTG7CSXmAwJxpnCbsmyppSXhZU4uvA-dj-YOFFkRtU4Sh-E0OSXTULpS9NY-8FmC67UQLTn0GGEELCmlsrs3Yq75KILS6g5zEpWRFUM_s9Ua99XXxFjyL9JAJoziyKmpV55IYgyKBVD5_WdizgE9E4XVN4F9xdpIi9urqQr6GqkfhY4RBT96gpsXerngv1nZNp7DFfG0XGLmKWUmciWGjI-wlWpDqKrVATkoJ6xDzkKR2RbSyq6VLYFzuPJNDijuW91LmE4BjiR9EUJcUmRRQ2jgxcYLanJZ02p7katFyxxPgsUdouWUMDai7_AQsqtR0irR1uJc6LXs8NjWSQhx25qU\n",
+			"url": "http://softuni-issue-tracker.azurewebsites.net/users/me",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get Currently Logged User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1460392363749,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f4d002db-e247-e015-f4d3-50e72ea8e1ee",
+			"headers": "Authorization: Bearer BXaA9KT6QPBv3bqFEnlIhJgmDUAVqeRiqEpqvR8z_T-69kpPIkjAAmXANElILe5Vce1O_Ehp3Iaza0gm7WBDeyPaYpsizWKpXJghxV3drXLCX-zediPI-jsQawmuHMCCpn8OHXtoTSY8GmhxbpEDiznWQbpHkoC3NcbymjlTeH18z1WbEszOPYVBSG_bQPRCDegHoiFcxDsJI3Obg2999znAohDy_6EAjJBxBREOliyaw9Bps-I0VohfewpOZJIyMjgOS4gq4qr8hx-9YKCASgRjiiPlHITujrC4hZ_XbC1qZ41OunPISwTyyPuI8foMRBNRZzlhQqmXyN6nW39mAon4I4UPJ-gRhctR2Q0irUkjH8G0-kibk4qXVbJFbvt96RHvBgy5_cmPm0xDGUS1iEtUO9bpmXHgSt6KIt5CxyoK_uShWVuIcFqWE0hAzRGIrr2jWBOXB3i4b2UX2XqiTDQuhvJ_kzKlemehqjW3860\n",
+			"url": "http://localhost:64791/issues/",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "Title",
+					"value": "issue 3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Description",
+					"value": "ArgumentException should describe the exact problem",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "DueDate",
+					"value": "2016/03/21",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ProjectId",
+					"value": "2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "AssigneeId",
+					"value": "fc0543e8-5a41-4369-95dc-c75198f229c3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "PriorityId",
+					"value": "3",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Labels[0].Name",
+					"value": "label1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "Labels[1].Name",
+					"value": "software",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460105671547,
+			"name": "add issue",
+			"description": "",
+			"collectionId": "65214140-acef-7ff8-00cf-ec96a4299d47",
+			"responses": []
+		}
+	]
+}

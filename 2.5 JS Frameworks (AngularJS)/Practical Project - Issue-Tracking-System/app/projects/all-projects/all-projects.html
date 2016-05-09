@@ -1,0 +1,37 @@
+<section id="projects-table" >
+    <h1>List of all projects</h1>
+
+    <table class="table">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Leader</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="p in filteredProjects">
+            <td>{{p.Id}}</td>
+            <td>{{p.Name}}</td>
+            <td>{{p.Lead.Username}}</td>
+            <td>
+                <a ng-click="editProject(p.Id)">Edit</a> |
+                <a ng-click="openProject(p.Id)">Details</a> |
+                <a ng-click="addIssue(p.Id)">Add issue</a>
+            </td>
+        </tr>
+    </table>
+
+    <button id="new-project" ng-click="addProject()" class="btn btn-primary">Add new project</button>
+
+    <pagination
+            ng-model="currentPage"
+            total-items="projectsCount"
+            items-per-page="numPerPage"
+            max-size="maxSize"
+            boundary-links="true">
+    </pagination>
+</section>
+
+
+
+
+

@@ -1,0 +1,61 @@
+<main id="dashboard">
+    <h1 id="title">Dashboard</h1>
+
+    <section id="user-issues" >
+            <h3>List of all {{username}} issues</h3>
+            <table class="table">
+                <tr>
+                    <th class="table-column" ng-click="order('Id')">
+                        Issue #
+                        <span class="sort-dir" ng-show="predicate === 'Id'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th class="table-column" ng-click="order('Title')">
+                        Title
+                        <span class="sort-dir" ng-show="predicate === 'Title'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>Due date</th>
+                    <th>Project</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="i in filteredIssues  | orderBy:predicate:reverse">
+                    <td>{{i.Id}}</td>
+                    <td>{{i.Title}}</td>
+                    <td>{{i.DueDate  | date:'dd-MM-yyyy'}}</td>
+                    <td>{{i.Project.Name}}</td>
+                    <td>
+                        <a ng-click="editIssue(i.Id)">Edit</a> |
+                        <a ng-click="openIssue(i.Id)">Details</a>
+                        <!--<a ng-click="addIssue(p.Id)">Add issue</a>-->
+                    </td>
+                </tr>
+            </table>
+
+            <div ng-if="issues.length == 0" style="text-align: center;">No Issues</div>
+
+        <button id="new-project" ng-show="isAdmin" ng-click="addNewProject()" class="btn btn-primary">Add new project</button>
+        <button id="all-projects" ng-show="isAdmin" ng-click="listAllProjects()" class="btn btn-primary">All projects</button>
+
+        <pagination
+                ng-model="currentPage"
+                total-items="issuesCount"
+                items-per-page="numPerPage"
+                max-size="maxSize"
+                boundary-links="true">
+        </pagination>
+    </section>
+
+    <aside id="associated-projects">
+        <h3>Associated projects</h3>
+        <ul>
+            <li ng-repeat="p in projects">
+                <a href="#/projects/{{p.Id}}">{{p.Name}}</a>
+            </li>
+            <li ng-repeat="project in issueProjects">
+                <a href="#/projects/{{project.Id}}">{{project.Name}}</a>
+            </li>
+            <div ng-if="projects.length == 0 && issueProjects.length == 0" style="text-align: center;">No projects</div>
+        </ul>
+            <div ng-if="projects.length == 0 && issueProjects.length == 0" style="text-align: center;">No projects</div>
+        </table>
+    </aside>
+</main>

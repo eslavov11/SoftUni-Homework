@@ -1,0 +1,45 @@
+<form id="add-issue" name="add-issue">
+    <h1>Create new issue</h1>
+
+    <label for="name">Issue title</label>
+    <input ng-model="issueData.Title" id="name" type="text" class="form-control" placeholder="Issue title..." required>
+
+    <label for="description">Description</label>
+    <textarea ng-model="issueData.Description" name="" id="description" class="form-control"
+              placeholder="Add issue description..." required>
+    </textarea>
+
+    <label for="select-assignee">Select assignee</label>
+    <input type="text" ng-model="issueData.Assignee" id="select-assignee" class="form-control" placeholder="Select issue assignee..."
+           ng-keyup="getUsersByFilter()" autocomplete="off" focus-element="userSelected" required>
+    <div ng-if="filteredUsers.length > 0" class="label-holder">
+        <div ng-repeat="user in filteredUsers" ng-click="setAssignee(user)" class="label-option">{{user.Username}}</div>
+    </div>
+
+    <label for="select-project">Select project</label>
+    <div>
+        <select id="select-project" data-ng-options="p.Name for p in projects" ng-model="issueData.Project"
+                class="form-control" required>
+        </select>
+    </div>
+
+    <label for="select-priority">Choose priority</label>
+    <div>
+        <select id="select-priority" data-ng-options="p.Name for p in issueData.Project.Priorities"
+                ng-model="issueData.Priority" class="form-control" required>
+        </select>
+    </div>
+
+    <label for="due">Due</label>
+    <input ng-model="issueData.Due" id="due" type="date" class="form-control" required />
+
+    <label for="issue-labels">Labels (Comma separated)</label>
+    <input type="text" ng-model="issueData.LabelsText" id="issue-labels" class="form-control" placeholder="Give issue label..."
+           ng-keyup="getLabels()" autocomplete="off" focus-element="labelSelected" required>
+    <div ng-if="labels.length > 0" class="label-holder">
+        <div ng-repeat="label in labels" ng-click="addLabel(label)" class="label-option">{{label.Name}}</div>
+    </div>
+
+    <button class="btn btn-primary" ng-click="addNewIssue()">Create issue</button>
+    <input class="btn btn-primary"  type="reset" value="Reset values">
+</form>

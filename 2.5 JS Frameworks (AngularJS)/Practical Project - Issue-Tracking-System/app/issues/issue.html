@@ -1,0 +1,56 @@
+<section id="issue-page">
+    <h2>Issue details</h2>
+    <hr/>
+
+    <dl class="dl-horizontal">
+        <dt>Title</dt>
+        <dd>{{issue.Title}}</dd>
+
+        <dt>Description</dt>
+        <dd>{{issue.Description}}</dd>
+
+        <dt>Assignee </dt>
+        <dd>{{issue.Assignee.Username}}</dd>
+
+        <dt>Project</dt>
+        <dd><a href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></dd>
+
+        <dt>Due date</dt>
+        <dd>{{issue.DueDate | date:'dd/MM/yyyy'}}</dd>
+
+        <dt>Status</dt>
+        <dd>{{issue.Status.Name}}</dd>
+
+        <dt>Labels</dt>
+        <dd>
+            <ul>
+                <li ng-repeat="l in issue.Labels">{{l.Name}}</li>
+            </ul>
+        </dd>
+    </dl>
+
+    <footer>
+        <button ng-show="isLeader" ng-click="editIssue()" class="btn btn-primary">Edit issue</button>
+        <button ng-show="isAssignee && !isLeader" ng-click="editIssue()" class="btn btn-primary">Change status</button>
+    </footer>
+</section>
+
+<section id="issue-comments" ng-show="isLeader || isAssignee">
+    <article ng-repeat="comment in comments" class="comment-wrapper">
+        <header>
+            <h4>{{comment.Author.Username}}</h4> - {{comment.CreatedOn | date:'dd/MM/yyyy hh:mm:ss'}}
+        </header>
+        <p>
+            {{comment.Text}}
+        </p>
+    </article>
+
+    <form id="add-comment-wrapper">
+        <label for="comment">Add comment</label>
+        <textarea ng-model="commentText" id="comment" class="form-control" 
+		placeholder="Add new comment..." required="required">
+        </textarea>
+
+        <button class="btn btn-primary" ng-click="addComment()">Submit</button>
+    </form>
+</section>

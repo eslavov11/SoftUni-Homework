@@ -1,0 +1,70 @@
+/******Project********/
+@media only screen and (max-width: 760px) {
+    #project-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+
+    #project-info {
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    #project-issues {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/*****NAVBAR-MENU******/
+@media only screen and (max-width: 767px) {
+    #navbar-main {
+        display: block;
+    }
+
+    #navbar-main ul li {
+        display: block;
+        width: 100%;
+    //border-bottom: 1px solid #ccc;
+    }
+
+    body > div:nth-child(1) > div > div > div.navbar-header {
+        border-bottom: none;
+    }
+    /******************************/
+
+    /*****DASHBOARD*******/
+    #wrapper main {
+        width: 100%;
+    }
+
+    #wrapper main section {
+        width: 100%;
+    }
+
+    #user-issues > ul {
+        float: left;
+        margin-top: 15px;
+    }
+
+    #associated-projects {
+        margin-left: 27%;
+    }
+    /*********************/
+
+	/****Edit-issue*******/
+    #edit-issue,
+    #edit-issue-wrapper aside {
+        width: 100%;
+    }
+	/********************/
+
+	/****FOOTER*******/
+    #app-footer {
+        width: 100%;
+    }
+	/***************/
+}

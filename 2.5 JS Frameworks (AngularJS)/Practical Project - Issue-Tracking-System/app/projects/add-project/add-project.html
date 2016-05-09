@@ -1,0 +1,33 @@
+<form id="add-project" name="add-project">
+    <h1>Create new project</h1>
+
+    <label for="name">Project name</label>
+    <input ng-model="projectData.Name" id="name" type="text" class="form-control" placeholder="Project name..." required>
+
+    <label for="description">Description</label>
+    <textarea ng-model="projectData.Description" name="" id="description" class="form-control" placeholder="Add project description..." required>
+    </textarea>
+
+    <label for="select-leader">Select leader</label>
+    <input type="text" ng-model="projectData.Leader" id="select-leader" class="form-control" placeholder="Select project leader..."
+           ng-keyup="getUsersByFilter()" autocomplete="off" focus-element="userSelected" required>
+    <div ng-if="filteredUsers.length > 0" class="label-holder">
+        <div ng-repeat="user in filteredUsers" ng-click="setLeader(user)" class="label-option">{{user.Username}}</div>
+    </div>
+
+    <label for="project-key">Project key</label>
+    <input ng-model="projectData.ProjectKey" id="project-key" type="text" class="form-control" placeholder="Project key..." required>
+
+    <label for="priorities">Priorities (Comma separated)</label>
+    <input ng-model="projectData.Priorities" id="priorities" type="text" class="form-control" placeholder="List project priorities..." required>
+
+    <label for="proj-labels">Labels (Comma separated)</label>
+    <input type="text" ng-model="projectData.LabelsText" id="proj-labels" class="form-control" placeholder="Give project label..."
+           ng-keyup="getLabels()" autocomplete="off" focus-element="labelSelected" required>
+    <div ng-if="labels.length > 0" class="label-holder">
+        <div ng-repeat="label in labels" ng-click="addLabel(label)" class="label-option">{{label.Name}}</div>
+    </div>
+
+    <button class="btn btn-primary" ng-click="addNewProject()">Create project</button>
+    <input class="btn btn-primary"  type="reset" value="Reset values">
+</form>

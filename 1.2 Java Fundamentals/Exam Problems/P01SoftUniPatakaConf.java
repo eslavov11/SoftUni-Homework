@@ -26,7 +26,6 @@ public class P01SoftUniPatakaConf {
                 } else {
                     totalBeds += amount*3;
                 }
-
             } else if (input[0].equals("food")) {
                 if (type.equals("musaka")) {
                     foodAmount += 2*amount;
@@ -45,7 +44,5 @@ public class P01SoftUniPatakaConf {
         } else {
             System.out.println("People are starving. Meals needed: " + (people - foodAmount));
         }
-
-
         }
 }

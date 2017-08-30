@@ -26,7 +26,7 @@
           <element id="library" level="project" name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" />
           <element id="library" level="project" name="Maven: org.jboss:jandex:2.0.3.Final" />
           <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:0.7.5" />
-          <element id="file-copy" path="$PROJECT_DIR$/../mvc-framework-windows.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../mvc-framework-v4.jar" />
         </element>
       </element>
     </root>

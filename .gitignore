@@ -198,3 +198,6 @@ FakesAssemblies/
 
 #java
 *.class
+
+#jetbrains
+/.idea
